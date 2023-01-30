@@ -4,7 +4,7 @@
 npm create astro@latest -- --template basics
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/Kyaw-Thiha/IIP-Website?file="src/pages/index.astro"&title="IIP Website")
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/Kyaw-Thiha/IIP_Website?file="src/pages/index.astro"&title=IIP%20Website)
 [![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/s/github/withastro/astro/tree/latest/examples/basics)
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
