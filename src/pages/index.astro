@@ -1,8 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Button from "../components/Button.astro";
 import i18next, { t, changeLanguage } from "i18next";
-import { Trans, HeadHrefLangs, LanguageSelector, } from "astro-i18next/components";
+import {
+  Trans,
+  HeadHrefLangs,
+  LanguageSelector,
+} from "astro-i18next/components";
 
 changeLanguage("en");
 ---
@@ -10,6 +15,9 @@ changeLanguage("en");
 <Layout title="Welcome to Astro.">
   <main>
     <h1>Welcome to <span class="text-gradient">Astro</span></h1>
+    <div class="text-xl">
+      <Button rounded="lg" label="IGCSE" />
+    </div>
     <p class="instructions">
       To get started, open the directory <code>src/pages</code> in your project.<br
       />

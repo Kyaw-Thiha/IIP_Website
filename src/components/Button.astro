@@ -1,0 +1,42 @@
+---
+export interface Props {
+  label: string;
+  rounded?: string;
+}
+
+const { label, rounded } = Astro.props;
+
+const roundedClass = `rounded-${rounded ? rounded : "none"}`;
+---
+
+<div class:list={["btn", roundedClass]}>{label}</div>
+
+<style>
+  .btn {
+    background-color: rgba(18, 31, 75, 1);
+    color: #fff;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+    /* font-size: 15px; */
+    text-align: center;
+    /* min-height: 36px; */
+    /* line-height: 20px; */
+    min-width: 185px;
+    padding: 6px 16px;
+    color: white;
+    cursor: pointer;
+    transition: 0.4s ease-out;
+  }
+
+  .btn:hover {
+    background-color: rgba(18, 31, 75, 0.85);
+  }
+
+  .btn:active {
+    background-color: rgba(18, 31, 75, 1);
+  }
+</style>
