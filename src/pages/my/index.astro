@@ -1,6 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Card from "../../components/Card.astro";
+import HomeHero from "../../components/Home/HomeHero.astro";
+import HomeVideo from "../../components/Home/HomeVideo.astro";
+import HomeAboutUs from "../../components/Home/HomeAboutUs.astro";
+import HomeAlumni from "../../components/Home/HomeAlumni.astro";
 import Button from "../../components/Button.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs, LanguageSelector, } from "astro-i18next/components";
@@ -9,14 +12,27 @@ changeLanguage("my");
 ---
 
 <Layout title="IIP International School">
-  <main></main>
+  <main>
+    <HomeHero />
+    <HomeVideo />
+    <HomeAboutUs />
+    <HomeAlumni />
+    <div class="flex flex-row items-center justify-center">
+      <div class="w-[50vw] rounded-lg text-xl">
+        <Button
+          class="py-2.5 rounded-lg"
+          label="See Our Latest Announcements"
+        />
+      </div>
+    </div>
+  </main>
 </Layout>
 
 <style>
   main {
-    margin: auto;
+    /* margin: auto;
     padding: 1.5rem;
-    max-width: 60ch;
+    max-width: 60ch; */
   }
   h1 {
     font-size: 3rem;
