@@ -1,6 +1,74 @@
 ---
-//Add you javascript here if you need
-//Please read about image plugin from here - https://astro-imagetools-docs.vercel.app/en/usage
+//Please read about image plugin from here - https://astro-imagetools-docs.vercel.app/en/usageW
 ---
 
-<div></div>
+<div class="title">Alumni</div>
+<div class="see-more">
+  <a href="">See all <i class="fa-solid fa-greater-than"></i></a>
+</div>
+
+<div class="alumni-flex">
+  <div class="alumni-image">
+    <img src="/images/IIP_Logo.png" />
+  </div>
+  <div class="alumni-image text-center">
+    <img src="/images/IIP_Logo.png" />
+  </div>
+  <div class="alumni-image text-center">
+    <img src="/images/IIP_Logo.png" />
+  </div>
+  <div class="alumni-image text-center">
+    <img src="/images/IIP_Logo.png" />
+  </div>
+</div>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  .title {
+    margin-left: 12%;
+    font-size: 60px;
+    color: #b3783e;
+    display: inline;
+  }
+
+  .see-more {
+    color: #ed9127;
+    padding-left: 7px;
+    display: inline;
+  }
+
+  .see-more:hover {
+    text-decoration: underline;
+  }
+
+  .alumni-flex {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .alumni-image {
+    flex: auto;
+    padding: 20px 30px 30px 30px;
+  }
+
+  .alumni-image img {
+    width: 250px;
+    border-radius: 30px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  @media (max-width: 800px) {
+    .alumni-flex {
+      flex-direction: column;
+    }
+  }
+</style>
