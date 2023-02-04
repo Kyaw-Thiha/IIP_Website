@@ -5,10 +5,11 @@ export interface Props {
   src: string;
   alt: string;
   placeholder?: "dominantColor" | "blurred" | "tracedSVG" | "none";
+  objectFit?: "fill" | "contain" | "cover" | "none" | "scale-down";
   expandFullScreen?: boolean;
 }
 
-const { src, alt, placeholder, expandFullScreen } = Astro.props;
+const { src, alt, placeholder, objectFit, expandFullScreen } = Astro.props;
 
 // Adding in image classes
 //
@@ -23,6 +24,7 @@ const imageClass = `img ${expandFullScreen ? "fullscreen" : "no-fullscreen"} `;
     src={src}
     alt={alt}
     placeholder={placeholder}
+    objectFit={objectFit}
     artDirectives={[
       {
         src: src,
