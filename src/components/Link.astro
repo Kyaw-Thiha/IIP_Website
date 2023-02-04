@@ -1,0 +1,23 @@
+---
+import { localizePath } from "astro-i18next";
+
+export interface Props {
+  href: string;
+  target?: "_blank" | "_parent" | "_self" | "_top";
+  secondary?: boolean;
+}
+
+const { href, target: targetProp, secondary } = Astro.props;
+
+const target = targetProp ?? "";
+var textColor = "";
+var textHoverColor = "";
+var textActiveColor = "";
+
+textColor = secondary ? "text-secondary" : "text-indigo-500";
+const classNames = `${textColor} no-underline hover:underline`;
+---
+
+<a href={localizePath(href)} target={target} class={classNames}>
+  <slot />
+</a>
