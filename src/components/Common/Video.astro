@@ -1,0 +1,83 @@
+---
+export interface Props {
+  src: string;
+}
+
+const { src } = Astro.props;
+---
+
+<div>
+  <video class="w-screen" controls loop>
+    <source src={src} type="video/mp4" />
+    <!-- <source src="movie.ogg" type="video/ogg" /> -->
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<script>
+  // Select elements here
+  // const videos = document.querySelectorAll("video");
+  // const videosControls = document.querySelectorAll(".video-controls");
+
+  // const videoWorks = !!document.createElement("video").canPlayType;
+
+  // for (let i = 0; i < videos.length; i++) {
+  //   const video = videos[i];
+  //   const videoControls = videosControls[i];
+
+  //   if (videoWorks) {
+  //     video.controls = false;
+  //     videoControls.classList.remove("hidden");
+  //   }
+  // }
+</script>
+
+<script>
+  /*
+    Function to automatically play the video when in user's view
+    and pause the video when user scroll away from the video
+    
+    Threshold determines how much of the video has to be scrolled into before it is considered as visible.
+    1 - video has to be fully visible when played
+    0.1 - only 10% of video has to be visible in order to start playing
+  */
+  const useVideoAutoplay = () => {
+    let videos = document.querySelectorAll("video");
+
+    videos.forEach((video) => {
+      // We can only control playback without interaction if video is mute
+      video.muted = true;
+
+      // Play is a promise so we need to check we have it
+      let playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.then((_) => {
+          let observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.intersectionRatio !== 1 && !video.paused) {
+                  video.pause();
+                } else if (video.paused) {
+                  video.play();
+                }
+              });
+            },
+            { threshold: 0.4 }
+          );
+          observer.observe(video);
+        });
+      }
+
+      video.addEventListener("click", () => {
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+    });
+  };
+
+  //Invoking the function
+  useVideoAutoplay();
+</script>
