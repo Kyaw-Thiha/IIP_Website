@@ -4,5 +4,63 @@ import LanguageSelector from "./LanguageSelector.astro";
 ---
 
 <div>
-  <LanguageSelector />
+  <div class="langselector">
+    <LanguageSelector />
+  </div>
+  <div class="header">
+    <h1>Institute of International Professionalism</h1>
+  </div>
+  <div class="navbar">
+    <div></div>
+    <div id="navbuttons">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Programs</a>
+      <a href="#">Admissions</a>
+    </div>
+  </div>
 </div>
+
+<style>
+  * {
+    /* font-family: Arial, Helvetica, sans-serif; */
+    color: #f29023;
+  }
+  .header {
+    background-color: #181f4b;
+    color: #ffffff;
+    padding: 30px;
+    text-align: center;
+  }
+  .header h1 {
+    margin: 0;
+    font-size: 36px;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f29023;
+    color: #ffffff;
+    padding: 10px 30px;
+  }
+  #navbuttons a {
+    color: #ffffff;
+    width: 100px;
+    background-color: #0a2a4f;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: none;
+    text-align: center;
+  }
+  #navbuttons a:hover {
+    background-color: #f78f3a;
+  }
+  .langselector {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+</style>
