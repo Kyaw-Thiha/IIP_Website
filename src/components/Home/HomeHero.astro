@@ -1,6 +1,26 @@
 ---
+import Button from "../Common/Button.astro";
+import Image from "../Common/Image.astro";
 //Add you javascript here if you need
-//Please read about image plugin from here - https://astro-imagetools-docs.vercel.app/en/usage
 ---
 
-<div class="min-h-[80vh]"></div>
+<div>
+  <Image src="/images/hero.png" alt="" expandFullScreen />
+
+  <div class="inline-flex w-full">
+    <Button
+      label="IGCSE"
+      secondary
+      class="inline-block flex-auto p-9 m-4 align-middle text-4xl rounded-xl"
+    />
+    <Button
+      label="Years 1 to 9"
+      class="inline-block flex-auto p-9 my-4 mx-2 align-middle text-4xl rounded-xl"
+    />
+    <Button
+      label="A level"
+      secondary
+      class="inline-block flex-auto p-9 m-4 align-middle text-4xl rounded-xl"
+    />
+  </div>
+</div>
