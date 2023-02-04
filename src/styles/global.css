@@ -3,6 +3,11 @@ h2 {
   font-weight: 700;
 }
 
+h3 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
 p {
   font-size: 1.125rem;
   line-height: 2.5rem;
