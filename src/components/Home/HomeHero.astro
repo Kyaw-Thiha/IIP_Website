@@ -2,25 +2,63 @@
 import Button from "../Common/Button.astro";
 import Image from "../Common/Image.astro";
 //Add you javascript here if you need
+
+interface Program {
+  name: string;
+  text: string;
+  link: string;
+}
+
+const programs: Program[] = [
+  {
+    name: "IGCSE",
+    text: "These are classes for freaking kiddos. Idk what else to write. Somebody replace this text.",
+    link: "",
+  },
+  {
+    name: "Year 1-9",
+    text: "This is class for IGCSE. Idk what else to write. Somebody replace this text.",
+    link: "",
+  },
+  {
+    name: "A Levels",
+    text: "This is the best class in the school. All hail Alvls. Somebody replace this text.",
+    link: "",
+  },
+];
 ---
 
-<div>
-  <Image src="/images/hero.png" alt="" expandFullScreen />
+<!-- The hero image and text -->
+<div class="flex min-h-[50vh]">
+  <div class="flex flex-1 flex-col items-center justify-center px-6">
+    <h2 class="text-center">Where excellence is found</h2>
 
-  <div class="inline-flex w-full">
-    <Button
-      label="IGCSE"
-      secondary
-      class="inline-block flex-auto p-9 m-4 align-middle text-4xl rounded-xl"
-    />
-    <Button
-      label="Years 1 to 9"
-      class="inline-block flex-auto p-9 my-4 mx-2 align-middle text-4xl rounded-xl"
-    />
-    <Button
-      label="A level"
-      secondary
-      class="inline-block flex-auto p-9 m-4 align-middle text-4xl rounded-xl"
-    />
+    <div class="mt-12 flex items-center justify-center">
+      <Button label="Find programs " class="p-4 rounded-xl" />
+    </div>
   </div>
+
+  <!-- Still needs some fix so that image covers full height -->
+  <div class="flex flex-1 items-center justify-center">
+    <Image src="/images/hero.png" alt="Hero Image" objectFit="fill" />
+  </div>
+</div>
+
+<!-- The 3 different programs -->
+<div class="mt-12 mb-16 flex">
+  {
+    programs.map((program) => (
+      <div class="bg-primary mx-12 rounded-md px-6 pt-4 pb-3">
+        <h3 class="text-white">{program["name"]}</h3>
+
+        <p class="flex min-h-[150px] items-center justify-center text-center  text-white">
+          {program["text"]}
+        </p>
+
+        <div class="mb-3 flex items-center justify-center">
+          <Button label="Enrol Now" class="w-16 rounded-xl p-4" />
+        </div>
+      </div>
+    ))
+  }
 </div>
