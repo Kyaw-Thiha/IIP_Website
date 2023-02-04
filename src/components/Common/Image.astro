@@ -1,0 +1,117 @@
+---
+import { Picture } from "astro-imagetools/components";
+
+export interface Props {
+  src: string;
+  alt: string;
+  placeholder?: "dominantColor" | "blurred" | "tracedSVG" | "none";
+  expandFullScreen?: boolean;
+}
+
+const { src, alt, placeholder, expandFullScreen } = Astro.props;
+
+// Adding in image classes
+//
+// Class of 'fullscreen' or 'no-fullscreen' is added to flag image
+// as requiring full screen or not
+const imageClass = `img ${expandFullScreen ? "fullscreen" : "no-fullscreen"} `;
+---
+
+<!-- Normal image -->
+<div class={imageClass}>
+  <Picture
+    src={src}
+    alt={alt}
+    placeholder={placeholder}
+    artDirectives={[
+      {
+        src: src,
+        media: "(orientation: potrait)",
+        breakpoints: {
+          count: 3,
+          minWidth: 128,
+          maxWidth: 1024,
+        },
+      },
+    ]}
+  />
+</div>
+
+<!-- Expanded image in full screen -->
+<div class="full-img hidden flex-row items-center justify-center">
+  <div class="w-[80vw]">
+    <Picture
+      src={src}
+      alt={alt}
+      placeholder={placeholder}
+      artDirectives={[
+        {
+          src: src,
+          media: "(orientation: potrait)",
+          breakpoints: {
+            count: 3,
+            minWidth: 128,
+            maxWidth: 1024,
+          },
+        },
+      ]}
+    />
+  </div>
+</div>
+
+<script>
+  /*
+    This is the function that causes image to show an enlarged image in fullscreen when clicked on
+    The enlarged image has a low opacity background and the image
+
+    Once user clicks back on the enlarged image, it closes
+    All this logic is coded using classes
+  */
+  const useImageExpand = () => {
+    // Selecting the images
+    const images = document.querySelectorAll("div.img"); // Normal image
+    const fullImages = document.querySelectorAll("div.full-img"); // Expanded full screen image
+
+    // Looping through each images to add event listeners
+    for (var i = 0; i < images?.length; i++) {
+      const image = images[i];
+      const fullImage = fullImages[i];
+
+      // First check if the image is meant to have fullscreen mode by looking for fullscreen class
+      if (image.classList.contains("fullscreen")) {
+        //When user clicks the normal image,
+        //make the full image appear
+        image.addEventListener("click", () => {
+          fullImage.classList.remove("hidden");
+          fullImage.classList.add("flex");
+        });
+
+        //When user clicks the full image,
+        //hide it
+        fullImage.addEventListener("click", () => {
+          fullImage.classList.remove("flex");
+          fullImage.classList.add("hidden");
+        });
+      }
+    }
+  };
+
+  // Invoking the function
+  useImageExpand();
+</script>
+
+<style>
+  .full-img {
+    /* display: none; */
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat no-repeat;
+    background-position: center center;
+    background-color: rgba(00, 00, 00, 0.4);
+  }
+</style>
