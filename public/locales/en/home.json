@@ -6,5 +6,9 @@
   "home": {
     "title": "Welcome to my awesome website!",
     "subtitle": "This is a <0>more complex</0> string to translate, mixed with <1>html elements</1>, such as a <2>a cool link</2>!"
+  },
+  "about-us": {
+    "title": "About Us",
+    "description": "Students attending in IIP school will get unlimited support to their creations. The school will provide absolute safety to the kids therefore parents can enroll without being worried. IIP provides both CIE and Edexcel exam board and in addition to that, the school is a licensed edexcel centre. IIP have produced many talented student over the years."
   }
 }
