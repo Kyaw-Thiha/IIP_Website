@@ -28,7 +28,7 @@ const programs: Program[] = [
 ---
 
 <!-- The hero image and text -->
-<div class="flex min-h-[50vh]">
+<div class="flex min-h-[60vh]">
   <div class="flex flex-1 flex-col items-center justify-center px-6">
     <h2 class="text-center">Where excellence is found</h2>
 
@@ -37,9 +37,10 @@ const programs: Program[] = [
     </div>
   </div>
 
-  <!-- Still needs some fix so that image covers full height -->
-  <div class="flex flex-1 items-center justify-center">
-    <Image src="/images/hero.png" alt="Hero Image" objectFit="fill" />
+  <!-- TODO: Still needs some fix so that image covers full height -->
+  <div class="flex-1">
+    <!-- <Image src="/images/hero.png" alt="Hero Image" objectFit="cover" /> -->
+    <img src="/images/hero.png" alt="Hero Image" class="h-full" />
   </div>
 </div>
 
@@ -55,7 +56,11 @@ const programs: Program[] = [
         </p>
 
         <div class="mb-3 flex items-center justify-center">
-          <Button label="Enrol Now" class="w-16 rounded-xl p-4" />
+          <Button
+            label="Enrol Now"
+            href={program["link"]}
+            class="w-16 rounded-xl p-4"
+          />
         </div>
       </div>
     ))
