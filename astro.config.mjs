@@ -11,4 +11,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), astroI18next(), astroImageTools, sitemap()],
+  site: import.meta.env.DEV
+    ? "http://localhost:3000"
+    : "https://www.my-site.dev",
 });
