@@ -1,16 +1,16 @@
 ---
 //Add you javascript here if you need
 import i18next, { t, changeLanguage } from "i18next";
-import Link from "../Link.astro";
+import Link from "../Common/Link.astro";
 ---
 
 <div class="mx-[12vw] mt-32 mb-64">
   <div class="title mt-10 mb-12 text-6xl font-bold text-secondary">
     {t("home:about-us.title")}
   </div>
-  <div class="">
+  <div>
     <p class="mb-3">{t("home:about-us.description")}</p>
 
-    <Link href="#seemore" secondary>Read More</Link>
+    <Link href="">Read More</Link>
   </div>
 </div>
