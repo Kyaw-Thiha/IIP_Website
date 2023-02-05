@@ -5,9 +5,10 @@ export interface Props {
   href: string;
   target?: "_blank" | "_parent" | "_self" | "_top";
   secondary?: boolean;
+  isButton?: boolean; //Prop to check if child is the Button component [src/components/Common/Button.astro]
 }
 
-const { href, target: targetProp, secondary } = Astro.props;
+const { href, target: targetProp, secondary, isButton } = Astro.props;
 
 //Setting the target
 const target = targetProp ?? "";
@@ -26,7 +27,11 @@ if (href.startsWith("http")) {
   link = localizeUrl(`${Astro.site?.origin}${href}`);
 }
 
-const classNames = `${textColor} no-underline hover:underline active:brightness-75`;
+//Setting up classes
+//If the child is button, then, there will be no classes applied
+const classNames = isButton
+  ? ""
+  : `${textColor} no-underline hover:underline active:brightness-75`;
 ---
 
 <a href={link} target={target} class={classNames}>

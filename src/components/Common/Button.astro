@@ -1,35 +1,35 @@
 ---
+import Link from "./Link.astro";
+
 export interface Props {
   label: string;
   class?: string;
   secondary?: boolean;
+  href?: string;
 }
 
-const { label, secondary, class: className } = Astro.props;
+const { label, secondary, class: className, href } = Astro.props;
 
 const bgColor = secondary ? "bg-secondary" : "bg-primary";
 const animationClasses = "opacity-100 hover:opacity-[0.85] active:opacity-100";
 const classNames = `${className} ${bgColor} ${animationClasses} btn text-white text-center min-w-max `;
 ---
 
-<div class={classNames}>
-  {label}
-</div>
+{
+  href ? (
+    <Link href={href} isButton>
+      <div class={classNames}>{label}</div>
+    </Link>
+  ) : (
+    <div class={classNames}>{label}</div>
+  )
+}
 
 <style>
   .btn {
-    /* background-color: rgba(18, 31, 75, 1); */
     color: white;
     cursor: pointer;
     transition: 0.4s ease-out;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
-
-  .btn:hover {
-    /* background-color: rgba(18, 31, 75, 0.85); */
-  }
-
-  .btn:active {
-    /* background-color: rgba(18, 31, 75, 1); */
   }
 </style>
