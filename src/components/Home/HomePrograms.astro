@@ -1,0 +1,50 @@
+---
+import Button from "../Common/Button.astro";
+
+interface Program {
+  name: string;
+  text: string;
+  link: string;
+}
+
+const programs: Program[] = [
+  {
+    name: "IGCSE",
+    text: "These are classes for freaking kiddos. Idk what else to write. Somebody replace this text.",
+    link: "",
+  },
+  {
+    name: "Year 1-9",
+    text: "This is class for IGCSE. Idk what else to write. Somebody replace this text.",
+    link: "",
+  },
+  {
+    name: "A Levels",
+    text: "This is the best class in the school. All hail Alvls. Somebody replace this text.",
+    link: "",
+  },
+];
+---
+
+<!-- The 3 different programs -->
+<div class="mt-12 mb-16 flex">
+  {
+    programs.map((program) => (
+      <div class="bg-primary mx-12 rounded-md px-6 pt-4 pb-3">
+        <h3 class="text-white">{program["name"]}</h3>
+
+        <p class="flex min-h-[150px] items-center justify-center text-center  text-white">
+          {program["text"]}
+        </p>
+
+        <div class="mb-3 flex items-center justify-center">
+          <Button
+            label="Enrol Now"
+            href={program["link"]}
+            class="w-16 rounded-xl p-4"
+          />
+        </div>
+      </div>
+    ))
+  }
+</div>
