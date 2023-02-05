@@ -15,7 +15,7 @@ const { src, alt, placeholder, objectFit, expandFullScreen } = Astro.props;
 //
 // Class of 'fullscreen' or 'no-fullscreen' is added to flag image
 // as requiring full screen or not
-const imageClass = `img ${expandFullScreen ? "fullscreen" : "no-fullscreen"} `;
+const imageClass = `img ${expandFullScreen ? "fullscreen" : "no-fullscreen"}`;
 ---
 
 <!-- Normal image -->
@@ -30,7 +30,7 @@ const imageClass = `img ${expandFullScreen ? "fullscreen" : "no-fullscreen"} `;
         src: src,
         media: "(orientation: potrait)",
         breakpoints: {
-          count: 3,
+          count: 4,
           minWidth: 128,
           maxWidth: 1024,
         },
@@ -40,26 +40,32 @@ const imageClass = `img ${expandFullScreen ? "fullscreen" : "no-fullscreen"} `;
 </div>
 
 <!-- Expanded image in full screen -->
-<div class="full-img hidden flex-row items-center justify-center">
-  <div class="w-[80vw]">
-    <Picture
-      src={src}
-      alt={alt}
-      placeholder={placeholder}
-      artDirectives={[
-        {
-          src: src,
-          media: "(orientation: potrait)",
-          breakpoints: {
-            count: 3,
-            minWidth: 128,
-            maxWidth: 1024,
-          },
-        },
-      ]}
-    />
-  </div>
-</div>
+{
+  expandFullScreen ? (
+    <div class="full-img hidden flex-row items-center justify-center">
+      <div class="w-[80vw]">
+        <Picture
+          src={src}
+          alt={alt}
+          placeholder={placeholder}
+          artDirectives={[
+            {
+              src: src,
+              media: "(orientation: potrait)",
+              breakpoints: {
+                count: 3,
+                minWidth: 128,
+                maxWidth: 1024,
+              },
+            },
+          ]}
+        />
+      </div>
+    </div>
+  ) : (
+    <></>
+  )
+}
 
 <script>
   /*
