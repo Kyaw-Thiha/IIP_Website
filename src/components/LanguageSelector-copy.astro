@@ -1,0 +1,224 @@
+---
+---
+
+<div class="button r" id="button-3">
+  <input name="checkbox" type="checkbox" class="checkbox" />
+  <div class="knobs"></div>
+  <div class="layer"></div>
+</div>
+
+<script>
+  //Language codes
+  const myanmarLanguageCode = "my";
+  const englishLanguageCode = "en";
+
+  //The checkbox element
+  const checkbox = document.querySelector(
+    "input[name=checkbox]"
+  ) as HTMLInputElement;
+
+  //Initialising the selected language during new page load
+  const initialiseLanguage = () => {
+    const { language, ...returns } = processCurrentURL();
+
+    if (language == englishLanguageCode) {
+      checkbox.checked = false;
+    } else {
+      checkbox.checked = true;
+    }
+  };
+  initialiseLanguage();
+
+  checkbox.addEventListener("change", function () {
+    const { domain, route, language } = processCurrentURL();
+
+    if (checkbox.checked) {
+      //When user changes to myanmar language
+      if (!(language == myanmarLanguageCode)) {
+        /*)
+          First check if the route is already in myanmar language
+          If it is in myanmar language, nothing is done
+
+          If the route is not already in myanmar language,
+          change it to the new url with myanmar language.
+        */
+        location.assign(`${domain}/${myanmarLanguageCode}${route}`);
+      }
+    } else {
+      //When user changes to english language
+
+      /*
+          First check if the route is already not in myanmar language
+          If it is not in myanmar language, nothing is done
+
+          If the route is in myanmar language,
+          change it to the new url with english language.
+      */
+
+      if (!(language == englishLanguageCode)) {
+        //Eg: https://localhost:3000/my/about-us
+        const languageCodeIndex = route.indexOf(myanmarLanguageCode);
+        const newRoute = route.slice(
+          languageCodeIndex + myanmarLanguageCode.length
+        ); //   /about-us
+
+        location.assign(`${domain}${newRoute}`);
+      }
+    }
+  });
+
+  //Function that process the current page url
+  /*
+    It seperates the url [https://localhost:3000/about-us] back into 3 chunks -
+    - domain [https://localhost:3000]
+    - route [/about-us]
+    - language [en]
+  */
+  function processCurrentURL() {
+    const currentURL = window.location.href;
+
+    //Eg: https://localhost:3000/about-us
+    //Start index should be the third '/'
+    const startIndex = nthIndexOf(currentURL, "/", 3);
+
+    const domain = currentURL.slice(0, startIndex); //   https://localhost:3000
+    const route = currentURL.slice(startIndex); //   /about-us
+
+    return {
+      domain: domain,
+      route: route,
+      language: route.startsWith(`/${myanmarLanguageCode}`)
+        ? myanmarLanguageCode
+        : englishLanguageCode,
+    };
+  }
+
+  //Helper function that returns the nth term inside a string
+  function nthIndexOf(str: string, pat: string, n: number) {
+    var L = str.length,
+      i = -1;
+    while (n-- && i++ < L) {
+      i = str.indexOf(pat, i);
+      if (i < 0) break;
+    }
+    return i;
+  }
+</script>
+
+<style>
+  .toggle-button-cover {
+    display: table-cell;
+    position: relative;
+    width: 200px;
+    height: 140px;
+    box-sizing: border-box;
+  }
+
+  .button-cover {
+    height: 100px;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px -8px #c5d6d6;
+    border-radius: 4px;
+  }
+
+  .button-cover:before {
+    counter-increment: button-counter;
+    content: counter(button-counter);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #d7e3e3;
+    font-size: 12px;
+    line-height: 1;
+    padding: 5px;
+  }
+
+  .button-cover,
+  .knobs,
+  .layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .button {
+    position: relative;
+    top: 50%;
+    width: 74px;
+    height: 36px;
+    /* margin: -20px auto 0 auto; */
+    overflow: hidden;
+  }
+
+  .button.r,
+  .button.r .layer {
+    border-radius: 100px;
+  }
+
+  .button.b2 {
+    border-radius: 2px;
+  }
+
+  .checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .knobs {
+    z-index: 2;
+  }
+
+  .layer {
+    width: 100%;
+    background-color: #ebf7fc;
+    transition: 0.3s ease all;
+    z-index: 1;
+  }
+
+  #button-3 .knobs:before {
+    content: "UK";
+    /* position: absolute; */
+    padding: 10px;
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 10px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    background-color: #03a9f4;
+    border-radius: 50%;
+    transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+  }
+
+  #button-3 .checkbox:active + .knobs:before {
+    width: 46px;
+    border-radius: 100px;
+  }
+
+  #button-3 .checkbox:checked:active + .knobs:before {
+    margin-left: -25px;
+  }
+
+  #button-3 .checkbox:checked + .knobs:before {
+    content: "MM";
+    margin-left: 38px;
+    left: 42px;
+    background-color: #f44336;
+  }
+
+  #button-3 .checkbox:checked ~ .layer {
+    background-color: #fcebeb;
+  }
+</style>

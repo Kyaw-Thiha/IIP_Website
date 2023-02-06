@@ -1,13 +1,8 @@
 ---
 ---
 
-<div>
-  <div class="button r" id="button-3">
-    <input name="checkbox" type="checkbox" class="checkbox" />
-    <div class="knobs"></div>
-    <div class="layer"></div>
-  </div>
-</div>
+<input type="checkbox" id="switch" name="toggle-switch" />
+<label for="switch">Language Selector</label>
 
 <script>
   //Language codes
@@ -16,7 +11,7 @@
 
   //The checkbox element
   const checkbox = document.querySelector(
-    "input[name=checkbox]"
+    "input[name=toggle-switch]"
   ) as HTMLInputElement;
 
   //Initialising the selected language during new page load
@@ -31,31 +26,35 @@
   };
   initialiseLanguage();
 
-  checkbox.addEventListener("change", function () {
+  const handleToggle = () => {
     const { domain, route, language } = processCurrentURL();
 
     if (checkbox.checked) {
       //When user changes to myanmar language
       if (!(language == myanmarLanguageCode)) {
-        /*)
-          First check if the route is already in myanmar language
-          If it is in myanmar language, nothing is done
+        /*
+      First check if the route is already in myanmar language
+      If it is in myanmar language, nothing is done
 
-          If the route is not already in myanmar language,
-          change it to the new url with myanmar language.
-        */
-        location.assign(`${domain}/${myanmarLanguageCode}${route}`);
+      If the route is not already in myanmar language,
+      change it to the new url with myanmar language.
+    */
+
+        //Adding in buffer time to allow smooth transition
+        setTimeout(() => {
+          location.assign(`${domain}/${myanmarLanguageCode}${route}`); //Changing the route
+        }, 250);
       }
     } else {
       //When user changes to english language
 
       /*
-          First check if the route is already not in myanmar language
-          If it is not in myanmar language, nothing is done
+      First check if the route is already not in myanmar language
+      If it is not in myanmar language, nothing is done
 
-          If the route is in myanmar language,
-          change it to the new url with english language.
-      */
+      If the route is in myanmar language,
+      change it to the new url with english language.
+  */
 
       if (!(language == englishLanguageCode)) {
         //Eg: https://localhost:3000/my/about-us
@@ -64,12 +63,18 @@
           languageCodeIndex + myanmarLanguageCode.length
         ); //   /about-us
 
-        location.assign(`${domain}${newRoute}`);
+        //Adding in buffer time to allow smooth transition
+        setTimeout(() => {
+          location.assign(`${domain}${newRoute}`); //Changing the route
+        }, 250);
       }
     }
-  });
+  };
 
-  //Function that process the current page url
+  //Adding in the function that handle toggles
+  checkbox.addEventListener("change", handleToggle);
+
+  //Helper function that process the current page url
   /*
     It seperates the url [https://localhost:3000/about-us] back into 3 chunks -
     - domain [https://localhost:3000]
@@ -108,119 +113,66 @@
 </script>
 
 <style>
-  .toggle-button-cover {
-    display: table-cell;
-    position: relative;
-    width: 200px;
-    height: 140px;
-    box-sizing: border-box;
+  input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
   }
 
-  .button-cover {
-    height: 100px;
-    margin: 20px;
-    background-color: #fff;
-    box-shadow: 0 10px 20px -8px #c5d6d6;
-    border-radius: 4px;
-  }
-
-  .button-cover:before {
-    counter-increment: button-counter;
-    content: counter(button-counter);
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    color: #d7e3e3;
-    font-size: 12px;
-    line-height: 1;
-    padding: 5px;
-  }
-
-  .button-cover,
-  .knobs,
-  .layer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-
-  .button {
-    position: relative;
-    top: 50%;
-    width: 74px;
-    height: 36px;
-    /* margin: -20px auto 0 auto; */
-    overflow: hidden;
-  }
-
-  .button.r,
-  .button.r .layer {
-    border-radius: 100px;
-  }
-
-  .button.b2 {
-    border-radius: 2px;
-  }
-
-  .checkbox {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    opacity: 0;
+  label {
     cursor: pointer;
-    z-index: 3;
-  }
-
-  .knobs {
-    z-index: 2;
-  }
-
-  .layer {
-    width: 100%;
-    background-color: #ebf7fc;
-    transition: 0.3s ease all;
-    z-index: 1;
-  }
-
-  #button-3 .knobs:before {
-    content: "UK";
-    /* position: absolute; */
-    padding: 10px;
-    top: 4px;
-    left: 4px;
-    width: 20px;
-    height: 10px;
-    color: #fff;
-    font-size: 10px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 1;
-    background-color: #03a9f4;
-    border-radius: 50%;
-    transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
-  }
-
-  #button-3 .checkbox:active + .knobs:before {
-    width: 46px;
+    text-indent: -9999px;
+    width: 100px;
+    height: 50px;
+    background: grey;
+    display: block;
     border-radius: 100px;
+    position: relative;
   }
 
-  #button-3 .checkbox:checked:active + .knobs:before {
-    margin-left: -26px;
+  input:checked + label {
+    background: #bada55;
   }
 
-  #button-3 .checkbox:checked + .knobs:before {
-    content: "MM";
-    margin-left: 38px;
-    left: 42px;
-    background-color: #f44336;
+  label:after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
   }
 
-  #button-3 .checkbox:checked ~ .layer {
-    background-color: #fcebeb;
+  input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
   }
+
+  label:active:after {
+    width: 80px;
+  }
+
+  /* .handler {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+  }
+
+  input:checked + .handler {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+
+  label:active + .handler {
+    width: 80px;
+  } */
 </style>
