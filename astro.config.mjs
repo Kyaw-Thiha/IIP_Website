@@ -9,9 +9,10 @@ import { astroImageTools } from "astro-imagetools";
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
+import react from "@astrojs/react";
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), astroI18next(), astroImageTools, sitemap()],
-  site: import.meta.env.DEV
-    ? "http://localhost:3000"
-    : "https://www.my-site.dev",
+  integrations: [tailwind(), astroI18next(), astroImageTools, sitemap(), react()],
+  site: import.meta.env.DEV ? "http://localhost:3000" : "https://www.my-site.dev"
 });
