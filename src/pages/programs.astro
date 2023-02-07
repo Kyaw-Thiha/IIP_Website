@@ -1,0 +1,45 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "../layouts/Layout.astro";
+
+changeLanguage("en");
+
+interface Program {
+    name: string;
+    text: string;
+    image: string;
+    link: string;
+}
+const programs: Program[] = [
+    {
+        name: "IGCSE",
+        text: "These are classes for freaking kiddos. Idk what else to write. Somebody replace this text.",
+        image: "",
+        link: "",
+    },
+    {
+        name: "Year 1-9",
+        text: "This is class for IGCSE. Idk what else to write. Somebody replace this text.",
+        image: "",
+        link: "",
+    },
+    {
+        name: "A Levels",
+        text: "This is the best class in the school. All hail Alvls. Somebody replace this text.",
+        image: "",
+        link: "",
+    },
+];
+---
+
+<Layout title="Programs | IIP">
+  <main>
+    {
+      programs.map((program) => (
+        <div class="">
+          <h2>{program.name}</h2>
+        </div>
+      ))
+    }
+  </main>
+</Layout>
