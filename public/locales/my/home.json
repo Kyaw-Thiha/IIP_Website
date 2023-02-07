@@ -1,11 +1,8 @@
 {
-  "site": {
-    "title": "Mon super site web !",
-    "description": "Voici la description de mon super site web !"
-  },
-  "home": {
-    "title": "Bienvenue sur mon super site web !",
-    "subtitle": "Ceci est une chaine de charactères <0>plus compliquée</0> à traduire, il y a des <1>éléments html</1>, comme <2>un super lien</2> par exemple !"
+  "programs": {
+    "IGCSE": "These are classes for freaking kiddos. Idk what else to write. Somebody replace this text.",
+    "Year 1-9": "This is class for IGCSE. Idk what else to write. Somebody replace this text.",
+    "A-Level": "This is the best class in the school. All hail Alvls. Somebody replace this text."
   },
   "about-us": {
     "title": "About Us",

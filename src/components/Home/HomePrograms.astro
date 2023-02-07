@@ -1,5 +1,6 @@
 ---
 import Button from "../Common/Button.astro";
+import { t } from "i18next";
 
 interface Program {
   name: string;
@@ -10,17 +11,17 @@ interface Program {
 const programs: Program[] = [
   {
     name: "IGCSE",
-    text: "These are classes for freaking kiddos. Idk what else to write. Somebody replace this text.",
+    text: t("home:programs.IGCSE"),
     link: "",
   },
   {
     name: "Year 1-9",
-    text: "This is class for IGCSE. Idk what else to write. Somebody replace this text.",
+    text: t("home:programs.Year 1-9"),
     link: "",
   },
   {
     name: "A Levels",
-    text: "This is the best class in the school. All hail Alvls. Somebody replace this text.",
+    text: t("home:programs.A-Level"),
     link: "",
   },
 ];
