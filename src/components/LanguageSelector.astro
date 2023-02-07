@@ -1,8 +1,16 @@
 ---
 ---
 
+<span class="fi fi-mm text-xl"></span>
+<span class="fi fi-gb text-xl"></span>
 <input type="checkbox" id="switch" name="toggle-switch" />
-<label for="switch">Language Selector</label>
+<label for="switch">
+  Language Selector
+  <div class="handler">
+    <span class="fi fi-gb flag text-2xl"></span>
+    <span class="fi fis fi-mm flag hidden text-2xl"></span>
+  </div>
+</label>
 
 <script>
   //Language codes
@@ -13,6 +21,7 @@
   const checkbox = document.querySelector(
     "input[name=toggle-switch]"
   ) as HTMLInputElement;
+  //M
 
   //Initialising the selected language during new page load
   const initialiseLanguage = () => {
@@ -124,17 +133,17 @@
     text-indent: -9999px;
     width: 100px;
     height: 50px;
-    background: grey;
+    background: #d7e3e3;
     display: block;
     border-radius: 100px;
     position: relative;
   }
 
   input:checked + label {
-    background: #bada55;
+    background: #fcebeb;
   }
 
-  label:after {
+  /* label:after {
     content: "";
     position: absolute;
     top: 5px;
@@ -153,26 +162,30 @@
 
   label:active:after {
     width: 80px;
-  }
+  } */
 
-  /* .handler {
-    content: "";
+  .handler {
     position: absolute;
     top: 5px;
     left: 5px;
     width: 40px;
     height: 40px;
-    background: #fff;
+    background: #03a9f4;
     border-radius: 90px;
     transition: 0.3s;
+    text-indent: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  input:checked + .handler {
+  input:checked + label .handler {
     left: calc(100% - 5px);
     transform: translateX(-100%);
+    background: #f44336;
   }
 
-  label:active + .handler {
-    width: 80px;
-  } */
+  input:active + label .handler {
+    width: 60px;
+  }
 </style>
