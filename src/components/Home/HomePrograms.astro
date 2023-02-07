@@ -28,24 +28,37 @@ const programs: Program[] = [
 ---
 
 <!-- The 3 different programs -->
-<div class="mt-12 mb-16 flex">
+<div
+  class="flex-direction m-auto mt-12 mb-12 flex w-4/5 items-center justify-center"
+>
   {
     programs.map((program) => (
-      <div class="bg-primary mx-12 rounded-md px-6 pt-4 pb-3">
-        <h3 class="text-white">{program["name"]}</h3>
+      <div class="h-[300px] w-[400px] ">
+        <div class="bg-primary mx-5 rounded-md px-5 py-4">
+          <h3 class="text-white">{program["name"]}</h3>
 
-        <p class="flex min-h-[150px] items-center justify-center text-center  text-white">
-          {program["text"]}
-        </p>
+          <p class="flex min-h-[150px] items-center justify-center text-center text-white">
+            {program["text"]}
+          </p>
 
-        <div class="mb-3 flex items-center justify-center">
-          <Button
-            label="Enrol Now"
-            href={program["link"]}
-            class="w-16 rounded-xl p-4"
-          />
+          <div class="mb-3 flex items-center justify-center">
+            <Button
+              label="Enrol Now"
+              secondary
+              href={program["link"]}
+              class="w-16 rounded-xl p-4 "
+            />
+          </div>
         </div>
       </div>
     ))
   }
 </div>
+
+<style>
+  @media (max-width: 800px) {
+    .flex-direction {
+      flex-direction: column;
+    }
+  }
+</style>

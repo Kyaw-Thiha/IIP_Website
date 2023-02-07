@@ -6,13 +6,11 @@ export interface Props {
 const { src } = Astro.props;
 ---
 
-<div>
-  <video class="w-screen" controls loop>
-    <source src={src} type="video/mp4" />
-    <!-- <source src="movie.ogg" type="video/ogg" /> -->
-    Your browser does not support the video tag.
-  </video>
-</div>
+<video class="w-[76vw]" controls loop>
+  <source src={src} type="video/mp4" />
+  <!-- <source src="movie.ogg" type="video/ogg" /> -->
+  Your browser does not support the video tag.
+</video>
 
 <script>
   // Select elements here
