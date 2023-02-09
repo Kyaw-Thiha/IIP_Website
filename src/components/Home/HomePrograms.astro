@@ -6,59 +6,99 @@ interface Program {
   name: string;
   text: string;
   link: string;
+  background: string;
 }
 
 const programs: Program[] = [
   {
-    name: "IGCSE",
-    text: t("home:programs.IGCSE"),
-    link: "",
-  },
-  {
     name: "Year 1-9",
     text: t("home:programs.Year 1-9"),
     link: "",
+    background: "bg-primary",
   },
+
+  {
+    name: "IGCSE",
+    text: t("home:programs.IGCSE"),
+    link: "",
+    background: "bg-secondary",
+  },
+
   {
     name: "A Levels",
     text: t("home:programs.A-Level"),
     link: "",
+    background: "bg-primary",
   },
 ];
 ---
 
 <!-- The 3 different programs -->
-<div
-  class="flex-direction m-auto mt-12 mb-12 flex w-4/5 items-center justify-center"
->
-  {
-    programs.map((program) => (
-      <div class="h-[300px] w-[400px] ">
-        <div class="bg-primary mx-5 rounded-md px-5 py-4">
-          <h3 class="text-white">{program["name"]}</h3>
+<div class="flex min-h-[60vh] items-center justify-center">
+  <div class="flex-direction m-auto flex w-10/12 items-center justify-center">
+    {
+      programs.map((program) => (
+        <div class="flex-direction w-[400px]">
+          <div
+            class={`${program["background"]} ${
+              program["background"] == "bg-primary"
+                ? "border-black"
+                : "border-black"
+            } mx-5 rounded-md border-4 border-black px-5 py-2 text-center`}
+          >
+            <h3
+              class={`${
+                program["background"] == "bg-primary"
+                  ? "text-white"
+                  : "text-black"
+              }`}
+            >
+              {program["name"]}
+            </h3>
 
-          <p class="flex min-h-[150px] items-center justify-center text-center text-white">
-            {program["text"]}
-          </p>
+            <p
+              class={`flex min-h-[200px] items-center justify-center text-center ${
+                program["background"] == "bg-primary"
+                  ? "text-white"
+                  : "text-black"
+              }`}
+            >
+              {program["text"]}
+            </p>
 
-          <div class="mb-3 flex items-center justify-center">
-            <Button
-              label="Enrol Now"
-              secondary
-              href={program["link"]}
-              class="w-16 rounded-xl p-4 "
-            />
+            <div class="my-3 flex items-center justify-center">
+              {program["background"] == "bg-primary" ? (
+                <Button
+                  label="Enroll Now"
+                  href={program["link"]}
+                  class="w-16 px-2 py-1"
+                  outlined
+                />
+              ) : (
+                <div class="border-1 border-black">
+                  <Button
+                    label="Enroll Now"
+                    secondary
+                    href={program["link"]}
+                    outlined
+                    textColor="black"
+                    class="w-16 px-2 py-1"
+                  />
+                </div>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    ))
-  }
+      ))
+    }
+  </div>
 </div>
 
 <style>
   @media (max-width: 800px) {
     .flex-direction {
       flex-direction: column;
+      padding: 20px 0px 20px 0px;
     }
   }
 </style>
