@@ -3,7 +3,7 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     fontFamily: {
-      sans: ["Lato", "sans-serif"],
+      sans: ["Open Sans", "Lato", "sans-serif"],
       serif: ["Merriweather", "serif"],
     },
 
@@ -11,6 +11,7 @@ module.exports = {
       colors: {
         primary: "#181F4B",
         secondary: "#F29023",
+        background: "#F3F1EC",
         // secondary: {
         //   100: "#e8810e",
         //   200: "#cb710c",
