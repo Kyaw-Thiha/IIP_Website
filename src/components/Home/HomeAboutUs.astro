@@ -4,13 +4,17 @@ import { t } from "i18next";
 import Link from "../Common/Link.astro";
 ---
 
-<div class="mx-[12vw] mt-32 mb-64">
-  <div class="title mt-10 mb-12 text-6xl font-bold text-secondary">
-    {t("home:about-us.title")}
-  </div>
-  <div>
-    <p class="mb-3">{t("home:about-us.description")}</p>
+<div class="flex min-h-[60vh] items-center bg-background">
+  <div class="mx-[12vw]">
+    <div class="title mb-8 text-6xl font-bold text-secondary">
+      {t("home:about-us.title")}
+    </div>
+    <div>
+      <p class="mb-3">{t("home:about-us.description")}</p>
 
-    <Link href="">Read More</Link>
+      <div class="text-blue-700">
+        <Link href="">Read More</Link>
+      </div>
+    </div>
   </div>
 </div>
