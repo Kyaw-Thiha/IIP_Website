@@ -5,14 +5,30 @@ export interface Props {
   label: string;
   class?: string;
   secondary?: boolean;
+  outlined?: boolean;
+  textColor?: string;
   href?: string;
 }
 
-const { label, secondary, class: className, href } = Astro.props;
+const {
+  label,
+  secondary,
+  outlined,
+  textColor,
+  class: className,
+  href,
+} = Astro.props;
 
 const bgColor = secondary ? "bg-secondary" : "bg-primary";
 const animationClasses = "opacity-100 hover:opacity-[0.85] active:opacity-100";
-const classNames = `${className} ${bgColor} ${animationClasses} btn text-white text-center min-w-max `;
+
+var border = "";
+if (outlined) {
+  border = `border-2 border-${textColor ?? "transparent"}`;
+}
+
+const text = `text-${textColor ?? "white"}`;
+const classNames = `${className} ${bgColor} ${text} ${border} ${animationClasses} btn text-center min-w-max `;
 ---
 
 {
@@ -27,7 +43,6 @@ const classNames = `${className} ${bgColor} ${animationClasses} btn text-white t
 
 <style>
   .btn {
-    color: white;
     cursor: pointer;
     transition: 0.4s ease-out;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
