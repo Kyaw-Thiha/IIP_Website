@@ -4,17 +4,17 @@ import { localizeUrl } from "astro-i18next";
 export interface Props {
   href: string;
   target?: "_blank" | "_parent" | "_self" | "_top";
-  secondary?: boolean;
+  color?: string;
   isButton?: boolean; //Prop to check if child is the Button component [src/components/Common/Button.astro]
 }
 
-const { href, target: targetProp, secondary, isButton } = Astro.props;
+const { href, target: targetProp, color, isButton } = Astro.props;
 
 //Setting the target
 const target = targetProp ?? "";
 
 //Setting the text color as blue link color or secondary dark orange color
-const textColor = `text-${secondary ? "secondary" : "blue-700"}`;
+const textColor = `${color ?? "blue-700"}`;
 
 //Setting the href link value
 /*
