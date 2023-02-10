@@ -1,21 +1,24 @@
 ---
-import { Picture } from "astro-imagetools/components";
+import { Picture, } from "astro-imagetools/components";
 
 export interface Props {
   src: string;
   alt: string;
+  expandFullScreen?: boolean;
+  class?: string;
   placeholder?: "dominantColor" | "blurred" | "tracedSVG" | "none";
   objectFit?: "fill" | "contain" | "cover" | "none" | "scale-down";
-  expandFullScreen?: boolean;
+  width?: string;
+  height?: string;
 }
 
-const { src, alt, placeholder, objectFit, expandFullScreen } = Astro.props;
+const { src, alt, expandFullScreen, class:parentClass, placeholder, objectFit, width, height  } = Astro.props;
 
 // Adding in image classes
 //
 // Class of 'fullscreen' or 'no-fullscreen' is added to flag image
 // as requiring full screen or not
-const imageClass = `img ${expandFullScreen ? "fullscreen" : "no-fullscreen"}`;
+const imageClass = `img ${expandFullScreen ? "fullscreen" : "no-fullscreen"} ${parentClass}`;
 ---
 
 <!-- Normal image -->
@@ -25,6 +28,8 @@ const imageClass = `img ${expandFullScreen ? "fullscreen" : "no-fullscreen"}`;
     alt={alt}
     placeholder={placeholder}
     objectFit={objectFit}
+    width={width}
+    height={height}
     artDirectives={[
       {
         src: src,
@@ -116,8 +121,8 @@ const imageClass = `img ${expandFullScreen ? "fullscreen" : "no-fullscreen"}`;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
-    background-size: contain;
+    height:100vh;
+    background-size: cover;
     background-repeat: no-repeat no-repeat;
     background-position: center center;
     background-color: rgba(00, 00, 00, 0.4);
