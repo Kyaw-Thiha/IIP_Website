@@ -5,21 +5,22 @@ import Image from "../Common/Image.astro";
 
 <!-- The hero image and text -->
 <div class="flex min-h-[60vh]">
-  <div class="flex flex-1 flex-col items-center justify-center px-6">
-    <h3 class="w-4/5 text-black">Where excellence is found</h3>
-    <h4 class="text center p-3 text-xl text-black"></h4>
+  <div class="flex flex-[0.6] flex-col items-center justify-center">
+    <h3 class="mb-3 w-4/5 text-center text-black">Where excellence is found</h3>
+    <h4 class="text center p-3 text-2xl text-black">
+      and Aristotle's excellence at that
+    </h4>
     <div class="mt-12 flex items-center justify-center">
       <Button
         label="Browse Programs"
-        class="py-6 px-20 rounded-2xl text-black text-3xl"
+        class="py-6 px-12 rounded-2xl text-black text-3xl"
         secondary
       />
     </div>
   </div>
 
-  <!-- TODO: Still needs some fix so that image covers full height -->
   <div class="flex-1">
-    <!-- <Image src="/images/hero.png" alt="Hero Image" objectFit="cover" /> -->
+    <!-- <Image src="/images/hero.jpg" alt="Hero Image" objectFit="contain" /> -->
     <img src="/images/hero.jpg" alt="Hero Image" class="h-full" />
   </div>
 </div>
