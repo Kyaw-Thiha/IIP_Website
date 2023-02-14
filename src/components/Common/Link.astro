@@ -1,5 +1,5 @@
 ---
-import { localizeUrl } from "astro-i18next";
+import { localizeUrl, localizePath } from "astro-i18next";
 
 export interface Props {
   href: string;
@@ -24,7 +24,8 @@ var link = "";
 if (href.startsWith("http")) {
   link = localizeUrl(href);
 } else {
-  link = localizeUrl(`${Astro.site?.origin}${href}`);
+  //link = localizeUrl(`${Astro.site?.origin}${href}`);
+  link = localizePath(`${href}`);
 }
 
 //Setting up classes
