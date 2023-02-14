@@ -1,5 +1,5 @@
 ---
-import Button from "../Common/Button.astro";
+import Button from "@components/Common/Button.astro";
 import { t } from "i18next";
 
 interface Program {
@@ -42,8 +42,6 @@ const programs: Program[] = [
           <div
             class={`${program["background"]} ${
               program["background"] == "bg-primary"
-                ? "border-black"
-                : "border-black"
             } mx-5 rounded-md border-4 border-black px-5 py-2 text-center`}
           >
             <h3
@@ -75,7 +73,7 @@ const programs: Program[] = [
                   outlined
                 />
               ) : (
-                <div class="border-1 border-black">
+                <div class="border-1 border-bl">
                   <Button
                     label="Enroll Now"
                     secondary
