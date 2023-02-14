@@ -1,11 +1,14 @@
 ---
 import Button from "../Common/Button.astro";
 import Image from "../Common/Image.astro";
+import Slideshow from "../Common/Slideshow.astro";
+
+const images = ["images/hero.jpg", "images/graduation_2022.png"];
 ---
 
 <!-- The hero image and text -->
 <div class="flex min-h-[60vh]">
-  <div class="flex flex-[0.6] flex-col items-center justify-center">
+  <div class="flex flex-[0.5] flex-col items-center justify-center">
     <h3 class="mb-3 w-4/5 text-center text-black">Where excellence is found</h3>
     <h4 class="text center p-3 text-2xl text-black">
       and Aristotle's excellence at that
@@ -20,7 +23,8 @@ import Image from "../Common/Image.astro";
   </div>
 
   <div class="flex-1">
-    <!-- <Image src="/images/hero.jpg" alt="Hero Image" objectFit="contain" /> -->
+    <Image src="/images/hero.jpg" alt="Hero Image" objectFit="contain" />
     <img src="/images/hero.jpg" alt="Hero Image" class="h-full" />
+    <!-- <Slideshow images={images} /> -->
   </div>
 </div>

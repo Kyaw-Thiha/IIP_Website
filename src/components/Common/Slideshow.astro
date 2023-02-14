@@ -1,0 +1,14 @@
+---
+export interface Props {
+  images: string[];
+}
+
+const { images } = Astro.props;
+let i = 0;
+---
+
+<div class="w-full">
+  <img src={images[1]} alt="" />
+</div>
+
+<script></script>
