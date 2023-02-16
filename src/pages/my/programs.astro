@@ -1,6 +1,7 @@
 ---
 import { changeLanguage } from "i18next";
 import Layout from "../../layouts/Layout.astro";
+import Button from "../../components/Common/Button.astro";
 
 changeLanguage("my");
 
@@ -38,6 +39,7 @@ const programs: Program[] = [
       programs.map((program) => (
         <div class="">
           <h2>{program.name}</h2>
+          <img src={program.image} alt="" />
         </div>
       ))
     }
