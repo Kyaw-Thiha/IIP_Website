@@ -1,6 +1,6 @@
 ---
 import Map from "@components/Common/Map.astro";
-
+import Button from "@components/Common/Button.astro";
 interface Address {
   text: string;
   src: string;
@@ -64,4 +64,8 @@ const addresses: Address[] = [
       <Map src={addresses[2].src} width="550" height="500" />
     </div>
   </div>
+</div>
+
+<div class="mt-20 flex items-center justify-center">
+  <Button class="rounded-2xl py-3 px-56" label="Apply Now" />
 </div>
