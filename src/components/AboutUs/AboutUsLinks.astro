@@ -1,12 +1,24 @@
 ---
+import Link from "@components/Common/Link.astro";
 ---
 
 <div>
   <div class="main_link">
     <h1><b>Related Links</b></h1>
-    <p><a href="Achievements">Achievements</a></p>
-    <p><a href="Alumini">Alumini</a></p>
-    <p><a href="Previous Grades">Previous Grades</a></p>
+    <div class="mt-5 flex flex-col gap-4 text-[20px]">
+      <Link class="text-blue-700 hover:text-secondary" href="achievements">
+        Achievements
+      </Link>
+      <Link class="text-blue-700 hover:text-secondary" href="alumni">
+        Alumini
+      </Link>
+      <Link class="text-blue-700 hover:text-secondary" href="previous-grades">
+        Previous Grades
+      </Link>
+      <Link class="text-blue-700 hover:text-secondary" href="announcements">
+        Announcements
+      </Link>
+    </div>
   </div>
   <style>
     h1 {
@@ -14,9 +26,6 @@
     }
     .main_link {
       margin: 30px;
-    }
-    a:hover {
-      color: blue;
     }
   </style>
 </div>
