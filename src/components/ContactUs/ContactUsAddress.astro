@@ -1,5 +1,67 @@
 ---
+import Map from "@components/Common/Map.astro";
 
+interface Address {
+  text: string;
+  src: string;
+}
+
+// const names = ["Yadanar", "Hnin Pwint", "Hnin Oo"];
+// console.log(names[0]);
+
+// const yadanar = {
+//   age: 19,
+//   school: "IIP",
+//   hobbies: ["dancing", "singing"],
+// };
+
+const addresses: Address[] = [
+  {
+    text: "No. 1B, Wingabar Street, Shwegonedine, Bahan, Yangon, Myanmar",
+    src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1511.273696124255!2d96.15731153433755!3d16.804273828418847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1ed2bea3ecf41%3A0xb865bb161d3290fb!2sInstitute%20of%20International%20Professionalism%20(IIP)!5e0!3m2!1sen!2smm!4v1676608624809!5m2!1sen!2smm",
+  },
+  {
+    text: "27, Thiri Min Galar Street,(Former Artira Road), Kamaryut Township,Yangon",
+    src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3819.057724551744!2d96.12565641440032!3d16.82349218841886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c194ca5bd4426d%3A0x5a9b495bb8d17d37!2sInstitute%20of%20International%20Professionalism!5e0!3m2!1sen!2smm!4v1676622851177!5m2!1sen!2smm",
+  },
+  {
+    text: "No. 1B, Wingabar Street, Shwegonedine, Bahan, Yangon, Myanmar",
+    src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1511.273696124255!2d96.15731153433755!3d16.804273828418847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1ed2bea3ecf41%3A0xb865bb161d3290fb!2sInstitute%20of%20International%20Professionalism%20(IIP)!5e0!3m2!1sen!2smm!4v1676608624809!5m2!1sen!2smm",
+  },
+];
 ---
 
-<div></div>
+<!--FIrst map -->
+<div class="mx-8 my-5 block text-xl">
+  From Year 1 to 9 : {addresses[0].text}
+</div>
+<div class="inline-flex">
+  <div class="mx-8"><img src="images/hero.jpg" width="800" height="400" /></div>
+  <div>
+    <Map src={addresses[0].src} width="550" height="500" />
+  </div>
+</div>
+
+<div class="second map">
+  <div class="mx-8 my-5 block text-xl">IGCSE : {addresses[1].text}</div>
+  <div class="inline-flex">
+    <div class="mx-8">
+      <img src="images/hero.jpg" width="800" height="400" />
+    </div>
+    <div>
+      <Map src={addresses[1].src} width="550" height="500" />
+    </div>
+  </div>
+</div>
+
+<div class="third map">
+  <div class="mx-8 block text-xl">Alevel : {addresses[2].text}</div>
+  <div class="inline-flex">
+    <div class="mx-8">
+      <img src="images/hero.jpg" width="800" height="400" />
+    </div>
+    <div>
+      <Map src={addresses[2].src} width="550" height="500" />
+    </div>
+  </div>
+</div>

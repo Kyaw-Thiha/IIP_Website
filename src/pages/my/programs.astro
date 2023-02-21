@@ -10,38 +10,96 @@ interface Program {
     text: string;
     image: string;
     link: string;
+    reverse: boolean;
 }
 const programs: Program[] = [
     {
         name: "IGCSE",
-        text: "These are classes for freaking kiddos. Idk what else to write. Somebody replace this text.",
-        image: "",
+        text: "This is class for IGCSE. Idk what else to write. Somebody replace this text.",
+        image: "/images/graduation_2022.png",
         link: "",
+        reverse: false,
     },
     {
         name: "Year 1-9",
-        text: "This is class for IGCSE. Idk what else to write. Somebody replace this text.",
-        image: "",
+        text: "Class for kiddos,if you hear bad violin playing, yep thats them.",
+        image: "/images/hero-old.png",
         link: "",
+        reverse: true,
     },
     {
         name: "A Levels",
         text: "This is the best class in the school. All hail Alvls. Somebody replace this text.",
-        image: "",
+        image: "/images/hero.jpg",
         link: "",
+        reverse: false,
     },
 ];
 ---
 
 <Layout title="Programs | IIP">
-  <main>
+  <main class="">
     {
       programs.map((program) => (
-        <div class="">
-          <h2>{program.name}</h2>
-          <img src={program.image} alt="" />
+        <div
+          class={`flex ${program.reverse ? "flex-row-reverse" : "flex-row"}`}
+        >
+          <div class="flex flex-1 flex-col items-center justify-center">
+            <h2 class="mb-6 text-center">{program.name}</h2>
+
+            <h4>
+              Class for kiddos,if you hear bad violin playing, yep thats them
+            </h4>
+            <div class="mt-12 flex items-center justify-center">
+              <Button class="rounded-2xl py-3 px-8" label="Enroll Now" />
+            </div>
+          </div>
+
+          <div class="flex-1">
+            <img class="h-full min-h-[50vh] w-full" src={program.image} />
+          </div>
         </div>
       ))
     }
   </main>
 </Layout>
+
+<style>
+  /* .IGCSE_text {
+    width: 50%;
+    height: 100%;
+    
+  } */
+
+  /* .IGtopic {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 200;
+    margin-left: auto;
+    margin-bottom: 7%;
+    
+  } */
+
+  /* .IGbody {
+    text-align: center;
+    font-size: 20px;
+    margin-left: 4%;
+    margin-bottom: 8%;
+  } */
+
+  /* .btn {
+    outline: solid 3px #181f4b;
+    background-color: #181f4b;
+    color: white;
+    padding: 10px 45px;
+    margin-top: 10%;
+    margin-left: 40%;
+    text-decoration: none;
+    border-radius: 15%;
+  } */
+
+  .IG_pic {
+    width: max-content;
+    height: auto;
+  }
+</style>
