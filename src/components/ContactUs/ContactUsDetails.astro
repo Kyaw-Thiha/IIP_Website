@@ -1,29 +1,50 @@
 ---
+import Link from "@components/Common/Link.astro";
 ---
 
 <div class="text-center text-4xl">Contact Us</div>
 <div class="mx-8 my-3 flex items-center justify-center gap-12 bg-primary py-4">
+  <!--Call us -->
   <div
     class="flex-direction vertical-center flex h-[400px] w-[400px] flex-col items-center justify-center rounded-3xl bg-white text-center"
   >
-    <p class="text-4xl">☎</p>
+    <img
+      src="https://img.icons8.com/plasticine/100/null/phone.png"
+      class="mr-1 inline-block"
+      width="40"
+      height="40"
+    />
     <p class="text-3xl font-semibold leading-loose">Give us a call</p>
     <p class="mb-0.5">09 458844188</p>
     <p class="mb-0.5">or</p>
     <p class="mb-0.5">09 405554100</p>
   </div>
-  <div class="">
-    <div
-      class="flex-direction h-[400px] w-[400px] rounded-3xl bg-white text-center"
-    >
-      Pay us a visit
-    </div>
-  </div>
+  <!--Visit -->
   <div
-    class="flex-direction h-[400px] w-[400px] rounded-3xl bg-white text-center"
+    class="flex-direction vertical-center flex h-[400px] w-[400px] flex-col items-center justify-center rounded-3xl bg-white text-center"
   >
-    Send us an email
-
-    <!-- <div class=""> -->
+    <p class="mb-1 text-4xl">🏫</p>
+    <p class="text-3xl font-semibold leading-loose">Pay us a visit</p>
+    <p class="mb-0.5 p-2">
+      27, Thiri Min Galar Street,(Former Artira Road), Kamaryut Township,Yangon
+    </p>
+  </div>
+  <!--mail -->
+  <div
+    class="flex-direction vertical-center flex h-[400px] w-[400px] flex-col items-center justify-center rounded-3xl bg-white text-center"
+  >
+    <p class="text-4xl">✉️</p>
+    <p class="text-3xl font-semibold leading-loose">Send us an email.</p>
+    <p class="mb-0.5">
+      <Link href="mailto:info@iprofessionalism.com">
+        info@iprofessionalism.com
+      </Link>
+    </p>
+    <p class="mb-0.5">or</p>
+    <p class="mb-0.5">
+      <Link href="mailto:iipexam3@iipschool.edu.mm">
+        iipexam3@iipschool.edu.mm
+      </Link>
+    </p>
   </div>
 </div>
