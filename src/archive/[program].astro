@@ -1,0 +1,82 @@
+---
+import Admission from "@layouts/Admission.astro";
+import Layout from "@layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { program: "year-1" } },
+    { params: { program: "year-2" } },
+    { params: { program: "year-3" } },
+    { params: { program: "year-4" } },
+    { params: { program: "year-5" } },
+    { params: { program: "year-6" } },
+    { params: { program: "year-7" } },
+    { params: { program: "year-8" } },
+    { params: { program: "year-9" } },
+    { params: { program: "igcse" } },
+    { params: { program: "a-level" } },
+  ];
+}
+
+const { program } = Astro.params;
+
+// Title
+// Function to get an uppercase form of each program from the params
+/*
+  igcse --> IGCSE
+  a-level --> A-Level
+  year-8 --> Year-8
+*/
+const getProgramUppercase = (program: string) => {
+  if (program == "igcse") {
+    return "IGCSE";
+  } else if (program == "a-level") {
+    return "A-Level";
+  } else {
+    //Making the first letter of the word uppercase
+    //year-8 --> Year-8
+    return program.charAt(0).toUpperCase() + program.slice(1);
+  }
+};
+
+const pageTitle = `${getProgramUppercase(program as string)} | IIP`;
+const programTitle = getProgramUppercase(program as string);
+
+// Active
+// Function to get which program is active
+const getActiveProgram = (program: string) => {
+  const lastCharacter = program.slice(-1);
+
+  if (program == "igcse" || program == "a-level") {
+    return program;
+  } else {
+    if (lastCharacter == "8" || lastCharacter == "9") {
+      return "year-8_to_9";
+    } else {
+      return "year-1_to_7";
+    }
+  }
+};
+const activeProgram = getActiveProgram(program as string);
+
+// Link
+const links = {
+  "year-1": "",
+  "year-2": "",
+  "year-3": "",
+  "year-4": "",
+  "year-5": "",
+  "year-6": "",
+  "year-7": "",
+  "year-8": "",
+  "year-9": "",
+  igcse: "",
+  "a-level": "",
+};
+---
+
+<Layout title={pageTitle}>
+  <Admission title={programTitle} active={activeProgram} link="">
+    <div></div>
+  </Admission>
+</Layout>
