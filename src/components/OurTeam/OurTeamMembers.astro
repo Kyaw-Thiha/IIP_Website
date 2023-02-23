@@ -1,0 +1,33 @@
+---
+import MemberCard from "./MemberCard.astro";
+
+interface TeamMember {
+  name: string;
+  image: string;
+  quote: string;
+}
+
+const members: Array<TeamMember> = [
+  {
+    name: "",
+    image: "",
+    quote: "",
+  },
+];
+---
+
+<div>
+  <h2>Our Team</h2>
+  <p>blah blah blah</p>
+  <div>
+    {
+      members.map((member) => (
+        <MemberCard
+          image={member.image}
+          name={member.name}
+          quote={member.quote}
+        />
+      ))
+    }
+  </div>
+</div>
