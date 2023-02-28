@@ -1,5 +1,6 @@
 ---
 import Button from "@components/Common/Button.astro";
+import Link from "@components/Common/Link.astro";
 
 export interface Props {
   title: string;
@@ -15,16 +16,16 @@ const { title, active, link } = Astro.props;
   <h2 class="ml-5">{title}</h2>
   <div class="ml-1 flex">
     <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
-      Year 1 to 7
+      <Link href="/admission/year-1_to_7">Year 1 to 7</Link>
     </div>
     <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
-      Year 8 to 9
+      <Link href="/admission/year-8_to_9">Year 8 to 9</Link>
     </div>
     <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
-      IGCSE
+      <Link href="/admission/igcse">IGCSE</Link>
     </div>
     <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
-      A Level
+      <Link href="/admission/a-level">A Level</Link>
     </div>
   </div>
   <!--body -->
