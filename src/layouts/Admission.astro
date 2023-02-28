@@ -10,14 +10,26 @@ export interface Props {
 const { title, active, link } = Astro.props;
 ---
 
+<!--Nav bar -->
 <div>
-  <h2>{title}</h2>
-  <div class="flex">
-    <div>Year 1 to 7</div>
-    <div>Year 8 to 9</div>
-    <div>IGCSE</div>
-    <div>A Level</div>
+  <h2 class="ml-5">{title}</h2>
+  <div class="ml-1 flex">
+    <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
+      Year 1 to 7
+    </div>
+    <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
+      Year 8 to 9
+    </div>
+    <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
+      IGCSE
+    </div>
+    <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
+      A Level
+    </div>
   </div>
+  <!--body -->
+
+  <!--Button -->
   <slot />
   <div class="mt-20 flex items-center justify-center">
     <Button class="rounded-2xl py-3 px-56" href={link} label="Apply Now" />

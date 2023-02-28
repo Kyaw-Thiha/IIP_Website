@@ -2,12 +2,46 @@
 import { changeLanguage } from "i18next";
 import Admission from "@layouts/Admission.astro";
 import Layout from "@layouts/Layout.astro";
-
+import Image from "@components/Common/Image.astro";
 changeLanguage("en");
 ---
 
-<Layout title="IGCSE Admission| IIP">
+<Layout title="IGCSE Admission | IIP">
   <Admission title="IGCSE Admission" active="igcse" link="">
-    <div></div>
+    <div class="">
+      <!--first box-->
+      <div class="inline-block">
+        <div>
+          <div class="mt-9 ml-5 h-1/2 bg-gray-300">
+            <p>
+              <ul class="ml-9 list-disc p-7">
+                <li class="mb-5">Must be in age of 13 to 18</li>
+                <li class="mb-2">Must finished Year-9 or equivalent</li>
+                <ul class="ml-9 list-decimal">
+                  <li class="mb-2">Myanmar School Grade-8</li>
+                  <li class="mb-2">Singapore Course Secondary-2</li>
+                </ul>
+                <li class="mb-2">
+                  Can attend if completed year 8 with all A*s
+                </li>
+                <li class="mb-2">Dun be an idiot kiddo</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+        <!--second box -->
+        <div class="mt-8 ml-5 bg-gray-300">
+          <p class="ml-4">School fees - $1000</p>
+          <p class="ml-4">Campus - 1, Wingabar street, shwe gon dine</p>
+          <p class="ml-4">Dress Code- Uniform</p>
+          <p class="ml-4">curriculum - CIE (or) Edexcel</p>
+          <p class="ml-4">Duration - 18 months</p>
+        </div>
+      </div>
+
+      <img class="inline-bl" src="/images/graduation_2022.png" alt="" />
+      <!--image -->
+      <!-- <Image src="/images/hero.jpg" /> -->
+    </div>
   </Admission>
 </Layout>
