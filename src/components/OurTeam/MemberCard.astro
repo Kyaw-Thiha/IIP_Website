@@ -8,19 +8,8 @@ export interface Props {
 const { image, name, quote } = Astro.props;
 ---
 
-<div
-  class="flex-direction vertical-center content-stretch grid grid-cols-4 gap-4 py-10 text-center"
->
-  <div class="p-6">
-    <img src="/images" alt="logo.png" />
-    <p class="text-2xl font-semibold leading-loose">Sayar Myo Win Zaw</p>
-    <p>"Who needs a degree when you're schooling life?"</p>
-  </div>
-  <div>02</div>
-  <div>03</div>
-  <div>04</div>
-  <div>05</div>
-  <div>06</div>
-  <div>07</div>
-  <div>08</div>
+<div class="p-6">
+  <img src={image} alt="logo.png" />
+  <p class="text-2xl font-semibold leading-loose">{name}</p>
+  <p class="text-base">{quote}</p>
 </div>

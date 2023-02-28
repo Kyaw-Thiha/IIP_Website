@@ -9,15 +9,50 @@ interface TeamMember {
 
 const members: Array<TeamMember> = [
   {
-    name: "",
-    image: "",
-    quote: "",
+    name: "Sayar Myo Win Zaw",
+    image: "/images/our-team/syr-myo-3.png",
+    quote: `"Who needs a degree when you're schooling life?"`,
+  },
+  {
+    name: "Sayar Myo Win Zaw",
+    image: "/images/our-team/syr-myo-2.png",
+    quote: `"Who needs a degree when you're schooling life?"`,
+  },
+  {
+    name: "Sayar Myo Win Zaw",
+    image: "/images/our-team/syr-myo-1.png",
+    quote: `"Who needs a degree when you're schooling life?"`,
+  },
+  {
+    name: "Sayar Myo Win Zaw",
+    image: "/images/our-team/syr-myo-1.png",
+    quote: `"Who needs a degree when you're schooling life?"`,
+  },
+  {
+    name: "Sayar Myo Win Zaw",
+    image: "/images/our-team/syr-myo-1.png",
+    quote: `"Who needs a degree when you're schooling life?"`,
+  },
+  {
+    name: "Sayar Myo Win Zaw",
+    image: "/images/our-team/syr-myo-1.png",
+    quote: `"Who needs a degree when you're schooling life?"`,
+  },
+  {
+    name: "Sayar Myo Win Zaw",
+    image: "/images/our-team/syr-myo-1.png",
+    quote: `"Who needs a degree when you're schooling life?"`,
+  },
+  {
+    name: "Sayar Myo Win Zaw",
+    image: "/images/our-team/syr-myo-1.png",
+    quote: `"Who needs a degree when you're schooling life?"`,
   },
 ];
 ---
 
-<div>
-  <h2>Our Team</h2>
+<div class="mx-6">
+  <h2 class="text-center">Our Team</h2>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere diam id
     ligula bibendum pulvinar. Quisque scelerisque, turpis vestibulum rhoncus
@@ -25,14 +60,29 @@ const members: Array<TeamMember> = [
     enim. Pellentesque ut lacinia enim.
   </p>
   <div>
-    {
-      members.map((member) => (
-        <MemberCard
-          image={member.image}
-          name={member.name}
-          quote={member.quote}
-        />
-      ))
-    }
+    <img class="bg-img" src="/images/our-team/bg.png" alt="" />
+    <div
+      class="flex-direction vertical-center content-stretch grid grid-cols-4 gap-4 py-8 px-5 text-center"
+    >
+      {
+        members.map((member) => (
+          <MemberCard
+            image={member.image}
+            name={member.name}
+            quote={member.quote}
+          />
+        ))
+      }
+    </div>
   </div>
 </div>
+
+<style>
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 60%;
+    z-index: -10;
+  }
+</style>
