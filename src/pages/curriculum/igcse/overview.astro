@@ -1,0 +1,17 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "@layouts/Layout.astro";
+import IGCSECurriculum from "@layouts/IGCSECurriculum.astro";
+
+changeLanguage("en");
+---
+
+<Layout title="IGCSE Curriculum | IIP">
+  <IGCSECurriculum
+    title="IGCSE"
+    active="overview"
+    link="/curriculum/igcse/pathway"
+  >
+    <div></div>
+  </IGCSECurriculum>
+</Layout>
