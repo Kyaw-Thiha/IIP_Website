@@ -3,20 +3,73 @@
 
 <div class="founder_main">
   <h1><b>Meet Our Founders</b></h1>
-  <div>
-    <img src="Fo" alt="Daw Aye Aye Aung" />
-    <img src="" alt="U Kyaw Thiha" />
-    <img src="" alt="Daw Myat Thit Mon" />
+  <div class="row">
+    <div class="column">
+      <img
+        class="border-4 border-primary"
+        src="/images/founders/aye-aye-aung.jpg"
+        alt="Daw Aye Aye Aung"
+        style="width:100%"
+      />
+      <p class="name">Daw Aye Aye Aung</p>
+      <p>Principal</p>
+    </div>
+    <div class="column">
+      <img
+        class="border-4 border-primary"
+        src="/images/founders/kyaw-thiha.jpg"
+        alt="U Kyaw Thiha"
+        style="width:100%"
+      />
+      <p class="name">U Kyaw Thiha</p>
+      <p>Finance Director</p>
+    </div>
+    <div class="column">
+      <img
+        class="border-4 border-primary"
+        src="/images/founders/myat-thit-mon.jpg"
+        alt="Daw Myat Thit Mon"
+        style="width:100%"
+      />
+      <p class="name">Daw Myat Thit Mon</p>
+      <p>Managing Director</p>
+    </div>
   </div>
 </div>
 <style>
   h1 {
-    font-size: 30px;
+    font-size: 40px;
+    text-align: center;
   }
   .founder_main {
-    margin: 30px;
+    margin: 20px;
+  }
+  .row {
+    display: flex;
+    margin: 40px;
+  }
+  .column {
+    flex: 33.33%;
+    padding: 20px;
+    margin: 40px;
   }
   img {
-    position: absolute;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 4px solid gray;
+  }
+  .h1 {
+    text-align: center;
+  }
+  .name {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+  }
+  p {
+    font-size: 15px;
+    text-align: center;
   }
 </style>
