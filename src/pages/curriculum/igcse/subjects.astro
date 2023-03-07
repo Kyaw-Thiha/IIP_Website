@@ -2,6 +2,7 @@
 import { changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import IGCSECurriculum from "@layouts/IGCSECurriculum.astro";
+import { majors } from "./subjectsData";
 
 changeLanguage("en");
 ---
@@ -12,6 +13,17 @@ changeLanguage("en");
     active="subjects"
     link="/curriculum/igcse/studying"
   >
-    <div></div>
+    <div>
+      <div class="mx-8 mt-8 rounded-xl bg-gray-300 px-8 py-4">
+        <h2 class="text-center text-4xl">Choose Your Subject</h2>
+        <div class="mt-12 grid grid-cols-5 gap-2">
+          {
+            majors.map((major) => (
+              <div class="bg-primary rounded-lg py-4 px-4 text-white">Hi</div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
   </IGCSECurriculum>
 </Layout>
