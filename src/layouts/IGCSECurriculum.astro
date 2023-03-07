@@ -9,33 +9,62 @@ export interface Props {
 }
 
 const { title, active, link } = Astro.props;
+
+const getLinkClass = (
+  link: "overview" | "pathway" | "subjects" | "studying" | "apply"
+) => {
+  if (link == active) {
+    return "bg-gray-300 py-2 px-2 rounded-lg";
+  } else {
+    return "";
+  }
+};
 ---
 
 <!--Nav bar -->
-<div>
+<div class="flex flex-col">
   <h2 class="ml-5">{title}</h2>
-  <div class="ml-1 flex">
+
+  <!-- Navigation -->
+  <div class="ml-1 mt-4 flex flex-row">
     <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
-      <Link href="/admission/year-1_to_7">Overview</Link>
+      <Link href="/curriculum/igcse/overview" class={getLinkClass("overview")}>
+        Overview
+      </Link>
     </div>
     <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
-      <Link href="/admission/year-8_to_9">Pathway</Link>
+      <Link href="/curriculum/igcse/pathway" class={getLinkClass("pathway")}>
+        Pathway
+      </Link>
     </div>
     <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
-      <Link href="/admission/igcse">Subject</Link>
+      <Link href="/curriculum/igcse/subjects" class={getLinkClass("subjects")}>
+        Subjects
+      </Link>
     </div>
     <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
-      <Link href="/admission/a-level">Studying at IIP</Link>
+      <Link href="/curriculum/igcse/studying" class={getLinkClass("studying")}>
+        Studying at IIP
+      </Link>
     </div>
     <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
-      <Link href="/admission/a-level">Applying</Link>
+      <Link href="/curriculum/igcse/apply" class={getLinkClass("apply")}>
+        Apply
+      </Link>
     </div>
   </div>
-  <!--body -->
+
+  <!--Body -->
+  <div class="min-h-[30vh]">
+    <slot />
+  </div>
 
   <!--Button -->
-  <slot />
-  <div class="mt-20 flex items-center justify-center">
-    <Button class="rounded-2xl py-3 px-56" href={link} label="Apply Now" />
+  <div class="mt-20 mb-20 flex items-center justify-center justify-self-end">
+    <Button
+      class="rounded-2xl py-3 px-40"
+      href={link}
+      label={active == "apply" ? "Apply Now" : "Next"}
+    />
   </div>
 </div>
