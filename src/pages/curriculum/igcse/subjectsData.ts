@@ -1,4 +1,4 @@
-export interface Career {
+export interface Major {
   icon: string;
   name: majorNames;
   coreSubjects: subjects[];
@@ -14,7 +14,7 @@ export type majorNames =
   | "Accounting"
   | "Law"
   | "Psychology"
-  | "Biologist"
+  | "Architecture"
   | "Art & Design";
 
 export type subjects =
@@ -32,33 +32,53 @@ export type subjects =
   | "Economics"
   | "History";
 
-export const majors: Career[] = [
+export const majors: Major[] = [
   {
-    icon: "",
+    icon: "/images/majors/medical.png",
     name: "Medical",
-    coreSubjects: ["EFL/ESL", "E Maths", "A Maths", "Biology", "Chemistry"],
-    optionalSubjects: [],
+    coreSubjects: [
+      "EFL/ESL",
+      "E Maths",
+      "A Maths",
+      "Biology",
+      "Chemistry",
+      "Physics",
+    ],
+    optionalSubjects: [
+      "Business",
+      "Accounting",
+      "Economics",
+      "History",
+      "ICT",
+      "Computer Science",
+    ],
   },
   {
-    icon: "",
+    icon: "/images/majors/engineering.png",
     name: "Engineering",
     coreSubjects: ["EFL/ESL", "E Maths", "A Maths", "Physics", "Chemistry"],
-    optionalSubjects: [],
+    optionalSubjects: ["ICT", "Computer Science", "Biology"],
   },
   {
-    icon: "",
+    icon: "/images/majors/computer-science.png",
     name: "Computer Science",
     coreSubjects: ["EFL/ESL", "E Maths", "A Maths", "Physics", "Chemistry"],
-    optionalSubjects: [],
+    optionalSubjects: ["Biology", "Business", "Accounting", "Economics"],
   },
   {
-    icon: "",
+    icon: "/images/majors/business.png",
     name: "Business",
     coreSubjects: ["EFL/ESL", "E Maths", "A Maths", "One Science", "Business"],
-    optionalSubjects: [],
+    optionalSubjects: [
+      "Physics",
+      "Chemistry",
+      "Biology",
+      "ICT",
+      "Computer Science",
+    ],
   },
   {
-    icon: "",
+    icon: "/images/majors/accounting.png",
     name: "Accounting",
     coreSubjects: [
       "EFL/ESL",
@@ -67,16 +87,28 @@ export const majors: Career[] = [
       "One Science",
       "Accounting",
     ],
-    optionalSubjects: [],
+    optionalSubjects: [
+      "Physics",
+      "Chemistry",
+      "Biology",
+      "ICT",
+      "Computer Science",
+    ],
   },
   {
-    icon: "",
+    icon: "/images/majors/economics.png",
     name: "Economics",
     coreSubjects: ["EFL/ESL", "E Maths", "A Maths", "One Science", "Economics"],
-    optionalSubjects: [],
+    optionalSubjects: [
+      "Physics",
+      "Chemistry",
+      "Biology",
+      "ICT",
+      "Computer Science",
+    ],
   },
   {
-    icon: "",
+    icon: "/images/majors/law.png",
     name: "Law",
     coreSubjects: [
       "EFL/ESL",
@@ -86,10 +118,16 @@ export const majors: Career[] = [
       "Chemistry",
       "Biology",
     ],
-    optionalSubjects: [],
+    optionalSubjects: [
+      "ICT",
+      "Computer Science",
+      "Accounting",
+      "Business",
+      "Economics",
+    ],
   },
   {
-    icon: "",
+    icon: "/images/majors/psychology.png",
     name: "Psychology",
     coreSubjects: [
       "EFL/ESL",
@@ -99,11 +137,17 @@ export const majors: Career[] = [
       "Chemistry",
       "Biology",
     ],
-    optionalSubjects: [],
+    optionalSubjects: [
+      "ICT",
+      "Computer Science",
+      "Accounting",
+      "Business",
+      "Economics",
+    ],
   },
   {
-    icon: "",
-    name: "Biologist",
+    icon: "/images/majors/architecture.png",
+    name: "Architecture",
     coreSubjects: [
       "EFL/ESL",
       "E Maths",
@@ -112,10 +156,16 @@ export const majors: Career[] = [
       "Chemistry",
       "Biology",
     ],
-    optionalSubjects: [],
+    optionalSubjects: [
+      "ICT",
+      "Computer Science",
+      "Accounting",
+      "Business",
+      "Economics",
+    ],
   },
   {
-    icon: "",
+    icon: "/images/majors/art-and-design.png",
     name: "Art & Design",
     coreSubjects: [
       "EFL/ESL",
@@ -125,6 +175,12 @@ export const majors: Career[] = [
       "Chemistry",
       "Biology",
     ],
-    optionalSubjects: [],
+    optionalSubjects: [
+      "ICT",
+      "Computer Science",
+      "Accounting",
+      "Business",
+      "Economics",
+    ],
   },
 ];
