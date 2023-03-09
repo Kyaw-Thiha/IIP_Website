@@ -7,34 +7,34 @@ import Link from "@components/Common/Link.astro";
 changeLanguage("en");
 
 interface Program {
-  name: string;
-  text: string;
-  image: string;
-  link: string;
-  reverse: boolean;
+    name: string;
+    text: string;
+    image: string;
+    link: string;
+    reverse: boolean;
 }
 const programs: Program[] = [
-  {
-    name: "IGCSE",
-    text: "This is class for IGCSE. Idk what else to write. Somebody replace this text.",
-    image: "/images/graduation_2022.png",
-    link: "/curriculum/igcse/overview",
-    reverse: false,
-  },
-  {
-    name: "Year 1-9",
-    text: "Class for kiddos,if you hear bad violin playing, yep thats them.",
-    image: "/images/hero-old.png",
-    link: "/curriculum/igcse/overview",
-    reverse: true,
-  },
-  {
-    name: "A Levels",
-    text: "This is the best class in the school. All hail Alvls. Somebody replace this text.",
-    image: "/images/hero.jpg",
-    link: "/curriculum/igcse/overview",
-    reverse: false,
-  },
+    {
+        name: "IGCSE",
+        text: "This is class for IGCSE. Idk what else to write. Somebody replace this text.",
+        image: "/images/graduation_2022.png",
+        link: "/curriculum/igcse/overview",
+        reverse: false,
+    },
+    {
+        name: "Year 1-9",
+        text: "Class for kiddos,if you hear bad violin playing, yep thats them.",
+        image: "/images/hero-old.png",
+        link: "/curriculum/igcse/overview",
+        reverse: true,
+    },
+    {
+        name: "A Levels",
+        text: "This is the best class in the school. All hail Alvls. Somebody replace this text.",
+        image: "/images/hero.jpg",
+        link: "/curriculum/igcse/overview",
+        reverse: false,
+    },
 ];
 ---
 
