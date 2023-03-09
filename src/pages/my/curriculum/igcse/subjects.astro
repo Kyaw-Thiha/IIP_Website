@@ -2,6 +2,7 @@
 import { changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import IGCSECurriculum from "@layouts/IGCSECurriculum.astro";
+import SubjectsList from "src/pages/curriculum/igcse/subjectsList.vue";
 
 changeLanguage("my");
 ---
@@ -12,6 +13,6 @@ changeLanguage("my");
     active="subjects"
     link="/curriculum/igcse/studying"
   >
-    <div></div>
+    <SubjectsList client:load />
   </IGCSECurriculum>
 </Layout>
