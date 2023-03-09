@@ -2,6 +2,7 @@
 import { changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import IGCSECurriculum from "@layouts/IGCSECurriculum.astro";
+import Link from "@components/Common/Link.astro";
 
 changeLanguage("my");
 ---
@@ -12,6 +13,74 @@ changeLanguage("my");
     active="studying"
     link="/curriculum/igcse/apply"
   >
-    <div></div>
+    <!--Student life -->
+    <div class="mt-11 ml-32 text-4xl">Student life</div>
+    <div class="mt-5 w-1/2" style="margin-left:auto; margin-right:auto;">
+      <img src="/images/hero.jpg" />
+    </div>
+    <div
+      class="text-x mt-5 mb-2 w-5/6 text-justify"
+      style="margin-left:auto; margin-right:auto;"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere diam
+      id ligula bibendum pulvinar. Quisque scelerisque, turpis vestibulum
+      rhoncus laoreet, lorem mauris convallis felis, quis interdum massa justo
+      egestas enim. Pellentesque ut lacinia enim.nean semper turpis nec blandit
+      facilisis. Sed dolor libero, scelerisque sed odio nec, varius fringilla
+      diam. Phasellus venenatis nec velit sed hendrerit. Donec fermentum dui ac
+      mi bibendum viverra. Sed consequat aliquam aliquet. Pellentesque posuere
+      nunc ut justo sodales, sit amet aliquam justo tincidunt. Donec eu nisl
+      velit.
+    </div>
+    <Link class="ml-32 text-blue-600" href="/images">See More Images</Link>
+
+    <!--Past Papers -->
+    <div class="mb-9 ml-32 mt-14 text-4xl">Past Papers</div>
+    <div
+      class="mt-5 w-5/6 text-justify text-xl"
+      style="margin-left:auto; margin-right:auto;"
+    >
+      Our curriculum is heavily past-paper centric. In contrast to the normal
+      after-the-syllabus past paper preparation, we expose our students to
+      difficult past exam questions while going through lessons in the syllabus
+      in parallel. This allows students to develop both the theoretical
+      knowledge and practical techniques needed to tackle any standardized exam.
+    </div>
+    <!--Weekly test -->
+
+    <div class="ml-32 mb-9 mt-14 text-4xl">Weekly tests</div>
+    <div
+      class="mt-5 w-5/6 text-justify text-xl"
+      style="margin-left:auto; margin-right:auto;"
+    >
+      Every week, we encourage students to sit a chapter end test for each of
+      their subjects. This acts as revision for the students and as a summative
+      assessment for the teachers.
+    </div>
+
+    <!--Midterm and final Exams -->
+
+    <div class="mb-9 mt-14 ml-32 text-4xl">Midterm and Final Exams</div>
+    <div
+      class="mt-5 w-5/6 text-justify text-xl"
+      style="margin-left:auto; margin-right:auto;"
+    >
+      Midterm exams are conducted halfway (or at times, one-third) through the
+      course and Final exams at the end of the year. These validate the academic
+      performances of students while also identifying those in need of an extra
+      push in studying.
+    </div>
+
+    <!--Guide -->
+
+    <div class="mb-9 mt-14 ml-32 text-4xl">Guide</div>
+    <div
+      class="mt-5 w-5/6 text-justify text-xl"
+      style="margin-left:auto; margin-right:auto;"
+    >
+      We offer students struggling in their academics personalized classes,
+      taught by none other than their subject teachers and graduates of IIP that
+      completed their levels with flying grades.
+    </div>
   </IGCSECurriculum>
 </Layout>
