@@ -1,0 +1,18 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "@layouts/Layout.astro";
+import SubjectsList from "src/pages/curriculum/a-level/subjectsList.vue";
+import ALevelCurriculum from "@layouts/ALevelCurriculum.astro";
+
+changeLanguage("en");
+---
+
+<Layout title="A-Level Curriculum | IIP">
+  <ALevelCurriculum
+    title="A-Level"
+    active="subjects"
+    link="/curriculum/a-level/studying"
+  >
+    <SubjectsList client:load />
+  </ALevelCurriculum>
+</Layout>
