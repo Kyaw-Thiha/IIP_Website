@@ -48,7 +48,7 @@ import { defineComponent, reactive, ref, onMounted } from "vue";
 import { majors } from "./subjectsData";
 
 export default defineComponent({
-  name: "IndexPage",
+  name: "SubjectList",
   components: {},
   setup() {
     const defaultMajor = {
