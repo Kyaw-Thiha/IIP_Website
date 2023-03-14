@@ -62,7 +62,15 @@ export const majors: Major[] = [
   {
     icon: "/images/majors/computer-science.png",
     name: "Computer Science",
-    coreSubjects: ["EFL/ESL", "E Maths", "A Maths", "Physics", "Chemistry"],
+    coreSubjects: [
+      "EFL/ESL",
+      "E Maths",
+      "A Maths",
+      "Physics",
+      "Chemistry",
+      "ICT",
+      "Computer Science",
+    ],
     optionalSubjects: ["Biology", "Business", "Accounting", "Economics"],
   },
   {
