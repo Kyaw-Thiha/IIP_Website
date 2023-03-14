@@ -1,0 +1,72 @@
+---
+import Button from "@components/Common/Button.astro";
+import Link from "@components/Common/Link.astro";
+
+export interface Props {
+  title: string;
+  active: "overview" | "pathway" | "subjects" | "studying" | "apply";
+  link: string;
+}
+
+const { title, active, link } = Astro.props;
+
+const getLinkClass = (link: "overview" | "subjects" | "studying" | "apply") => {
+  if (link == active) {
+    return "bg-gray-300 py-2 px-2 rounded-lg";
+  } else {
+    return "";
+  }
+};
+---
+
+<!--Nav bar -->
+<div class="flex flex-col">
+  <h2 class="ml-5">{title}</h2>
+
+  <!-- Navigation -->
+  <div class="ml-1 mt-4 flex flex-row">
+    <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
+      <Link
+        href="/curriculum/year-1_to_9/overview"
+        class={getLinkClass("overview")}
+      >
+        Overview
+      </Link>
+    </div>
+    <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
+      <Link
+        href="/curriculum/year-1_to_9/subjects"
+        class={getLinkClass("subjects")}
+      >
+        Subjects
+      </Link>
+    </div>
+    <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
+      <Link
+        href="/curriculum/year-1_to_9/studying"
+        class={getLinkClass("studying")}
+      >
+        Studying at IIP
+      </Link>
+    </div>
+    <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
+      <Link href="/curriculum/year-1_to_9/apply" class={getLinkClass("apply")}>
+        Apply
+      </Link>
+    </div>
+  </div>
+
+  <!--Body -->
+  <div class="min-h-[30vh]">
+    <slot />
+  </div>
+
+  <!--Button -->
+  <div class="mt-20 mb-20 flex items-center justify-center justify-self-end">
+    <Button
+      class="rounded-2xl py-3 px-40"
+      href={link}
+      label={active == "apply" ? "Apply Now" : "Next"}
+    />
+  </div>
+</div>

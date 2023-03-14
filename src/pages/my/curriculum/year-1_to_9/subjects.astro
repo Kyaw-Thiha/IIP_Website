@@ -1,0 +1,16 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "@layouts/Layout.astro";
+import Year1To9Curriculum from "@layouts/Year1To9Curriculum.astro";
+
+changeLanguage("my");
+---
+
+<Layout title="Year 1 To 9 Curriculum | IIP">
+  <Year1To9Curriculum
+    title="Year 1 To 9"
+    active="subjects"
+    link="/curriculum/year-1_to_9/studying"
+  />
+  <div></div>
+</Layout>
