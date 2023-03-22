@@ -4,11 +4,28 @@
 
 <script lang="ts">
 import { defineComponent, reactive, ref, onMounted } from "vue";
-import { majors } from "./subjectsData";
 
 export default defineComponent({
   name: "Alumni",
   components: {},
+  props: {
+    name: {
+      type: String,
+      required: true,
+    },
+    year: {
+      type: Number,
+      required: true,
+    },
+    major: {
+      type: String,
+      required: true,
+    },
+    subjects: {
+      type: String,
+      required: true,
+    },
+  },
   setup() {
     const variable = ref("");
     const data = reactive([
