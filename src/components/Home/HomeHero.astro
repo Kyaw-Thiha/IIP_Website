@@ -1,7 +1,7 @@
 ---
 import Button from "@components/Common/Button.astro";
 import Image from "@components/Common/Image.astro";
-import Slideshow from "@components/Common/Slideshow.astro";
+import { t } from "i18next";
 
 const images = ["images/hero.jpg", "images/graduation_2022.png"];
 ---
@@ -9,13 +9,15 @@ const images = ["images/hero.jpg", "images/graduation_2022.png"];
 <!-- The hero image and text -->
 <div class="flex min-h-[60vh]">
   <div class="flex flex-[0.5] flex-col items-center justify-center">
-    <h3 class="mb-3 w-4/5 text-center text-black">Where excellence is found</h3>
+    <h3 class="mb-3 w-4/5 text-center text-black">
+      {t("home:hero.primaryText")}
+    </h3>
     <h4 class="text center p-3 text-2xl text-black">
-      and Aristotle's excellence at that
+      {t("home:hero.secondaryText")}
     </h4>
     <div class="mt-12 flex items-center justify-center">
       <Button
-        label="Browse Programs"
+        label={t("home:hero.btnLabel")}
         class="py-6 px-12 rounded-2xl text-black text-3xl"
         secondary
         href="/programs"

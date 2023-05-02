@@ -1,4 +1,9 @@
 {
+  "hero": {
+    "primaryText": "Where excellence is found",
+    "secondaryText": "and Aristotle's excellence at that",
+    "btnLabel": "Browse Programs"
+  },
   "programs": {
     "IGCSE": "These are classes for freaking kiddos. Idk what else to write. Somebody replace this text.",
     "Year 1-9": "This is class for IGCSE. Idk what else to write. Somebody replace this text.",
@@ -6,6 +11,11 @@
   },
   "about-us": {
     "title": "About Us",
-    "description": "Students attending in IIP school will get unlimited support to their creations. The school will provide absolute safety to the kids therefore parents can enroll without being worried. IIP provides both CIE and Edexcel exam board and in addition to that, the school is a licensed edexcel centre. IIP have produced many talented student over the years."
+    "description": "Students attending in IIP school will get unlimited support to their creations. The school will provide absolute safety to the kids therefore parents can enroll without being worried. IIP provides both CIE and Edexcel exam board and in addition to that, the school is a licensed edexcel centre. IIP have produced many talented student over the years.",
+    "linkLabel": "Read More"
+  },
+  "alumni": {
+    "title": "Alumni",
+    "linkLabel": "See All"
   }
 }
