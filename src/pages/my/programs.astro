@@ -1,8 +1,8 @@
 ---
-import { changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import Button from "@components/Common/Button.astro";
 import Link from "@components/Common/Link.astro";
+import { t, changeLanguage } from "i18next";
 
 changeLanguage("my");
 
@@ -51,7 +51,7 @@ const programs: Program[] = [
             <h4>{program.text}</h4>
             <div class="mt-12 flex items-center justify-center">
               <Link href={program.link}>
-                <Button class="rounded-2xl py-3 px-8" label="Enroll Now" />
+                <Button class="rounded-2xl px-8 py-3" label="Enroll Now" />
               </Link>
             </div>
           </div>
