@@ -3,6 +3,8 @@ import Button from "@components/Common/Button.astro";
 import Image from "@components/Common/Image.astro";
 import { t } from "i18next";
 
+import heroImage from "@assets/hero.jpg";
+
 const images = ["images/hero.jpg", "images/graduation_2022.png"];
 ---
 
@@ -26,8 +28,6 @@ const images = ["images/hero.jpg", "images/graduation_2022.png"];
   </div>
 
   <div class="flex-1">
-    <Image src="/images/hero.jpg" alt="Hero Image" objectFit="contain" />
-    <!-- <img src="/images/hero.jpg" alt="Hero Image" class="h-full" /> -->
-    <!-- <Slideshow images={images} /> -->
+    <Image src={heroImage} alt="Hero Image" height={500} />
   </div>
 </div>

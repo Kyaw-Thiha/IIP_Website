@@ -1,60 +1,41 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
 
 export interface Props {
-  src: string;
+  src: ImageMetadata;
   alt: string;
   expandFullScreen?: boolean;
   class?: string;
-  placeholder?: "dominantColor" | "blurred" | "tracedSVG" | "none";
-  objectFit?: "fill" | "contain" | "cover" | "none" | "scale-down";
   width?: number;
   height?: number;
 }
 
-const { src, alt, expandFullScreen, class:parentClass, placeholder, objectFit, width, height  } = Astro.props;
+const {
+  src,
+  alt,
+  expandFullScreen,
+  class: parentClass,
+  width,
+  height,
+} = Astro.props;
 
 // Adding in image classes
 //
 // Class of 'fullscreen' or 'no-fullscreen' is added to flag image
 // as requiring full screen or not
-const imageClass = `img ${expandFullScreen ? "fullscreen" : "no-fullscreen"} ${parentClass}`;
+const imageClass = `img ${
+  expandFullScreen ? "fullscreen" : "no-fullscreen"
+} ${parentClass}`;
 ---
 
 <!-- Normal image -->
 <div class={imageClass}>
-  <!-- <Picture
-    src={src}
-    alt={alt}
-    placeholder={placeholder}
-    objectFit={objectFit}
-    width={width}
-    height={height}
-    artDirectives={[
-      {
-        src: src,
-        media: "(orientation: potrait)",
-        breakpoints: {
-          count: 4,
-          minWidth: 128,
-          maxWidth: 1024,
-        },
-      },
-    ]}
-  /> -->
-  <!-- <Picture
-    src={src}
-    alt={alt}
-    widths={[400, 800, 1200]}
-    height={height}
-    aspectRatio="1:1"
-  /> -->
   <Image
     src={src}
     alt={alt}
-    width={width ?? 300}
-    height={height ?? 300}
-    
+    width={width ?? src.width}
+    height={height ?? src.height}
   />
 </div>
 
@@ -64,16 +45,15 @@ const imageClass = `img ${expandFullScreen ? "fullscreen" : "no-fullscreen"} ${p
     <div class="full-img hidden flex-row items-center justify-center">
       <div class="w-[80vw]">
         <Image
-    src={src}
-    alt={alt}
-    width={width ?? 300}
-    height={height ?? 300}
-    
-  /> 
+          src={src}
+          alt={alt}
+          width={width ?? 300}
+          height={height ?? 300}
+        />
       </div>
     </div>
   ) : (
-    <></>
+    <div />
   )
 }
 
@@ -126,7 +106,7 @@ const imageClass = `img ${expandFullScreen ? "fullscreen" : "no-fullscreen"} ${p
     top: 0;
     left: 0;
     width: 100vw;
-    height:100vh;
+    height: 100vh;
     background-size: cover;
     background-repeat: no-repeat no-repeat;
     background-position: center center;
