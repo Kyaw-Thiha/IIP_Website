@@ -1,5 +1,5 @@
 ---
-import { Picture, } from "astro-imagetools/components";
+import { Image } from 'astro:assets';
 
 export interface Props {
   src: string;
@@ -8,8 +8,8 @@ export interface Props {
   class?: string;
   placeholder?: "dominantColor" | "blurred" | "tracedSVG" | "none";
   objectFit?: "fill" | "contain" | "cover" | "none" | "scale-down";
-  width?: string;
-  height?: string;
+  width?: number;
+  height?: number;
 }
 
 const { src, alt, expandFullScreen, class:parentClass, placeholder, objectFit, width, height  } = Astro.props;
@@ -23,7 +23,7 @@ const imageClass = `img ${expandFullScreen ? "fullscreen" : "no-fullscreen"} ${p
 
 <!-- Normal image -->
 <div class={imageClass}>
-  <Picture
+  <!-- <Picture
     src={src}
     alt={alt}
     placeholder={placeholder}
@@ -41,6 +41,20 @@ const imageClass = `img ${expandFullScreen ? "fullscreen" : "no-fullscreen"} ${p
         },
       },
     ]}
+  /> -->
+  <!-- <Picture
+    src={src}
+    alt={alt}
+    widths={[400, 800, 1200]}
+    height={height}
+    aspectRatio="1:1"
+  /> -->
+  <Image
+    src={src}
+    alt={alt}
+    width={width ?? 300}
+    height={height ?? 300}
+    
   />
 </div>
 
@@ -49,22 +63,13 @@ const imageClass = `img ${expandFullScreen ? "fullscreen" : "no-fullscreen"} ${p
   expandFullScreen ? (
     <div class="full-img hidden flex-row items-center justify-center">
       <div class="w-[80vw]">
-        <Picture
-          src={src}
-          alt={alt}
-          placeholder={placeholder}
-          artDirectives={[
-            {
-              src: src,
-              media: "(orientation: potrait)",
-              breakpoints: {
-                count: 3,
-                minWidth: 128,
-                maxWidth: 1024,
-              },
-            },
-          ]}
-        />
+        <Image
+    src={src}
+    alt={alt}
+    width={width ?? 300}
+    height={height ?? 300}
+    
+  /> 
       </div>
     </div>
   ) : (
