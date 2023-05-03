@@ -5,9 +5,9 @@
     "btnLabel": "Browse Programs"
   },
   "programs": {
-    "IGCSE": "These are classes for freaking kiddos. Idk what else to write. Somebody replace this text.",
-    "Year 1-9": "This is class for IGCSE. Idk what else to write. Somebody replace this text.",
-    "A-Level": "This is the best class in the school. All hail Alvls. Somebody replace this text."
+    "IGCSE": "A two-year secondary education program designed for students aged 14 to 16.",
+    "Year 1-9": "First nine years of compulsory education where students develop foundational skills and knowledge.",
+    "A-Level": "A two-year advanced secondary education program that follows on from the IGCSE curriculum for students."
   },
   "about-us": {
     "title": "About Us",
