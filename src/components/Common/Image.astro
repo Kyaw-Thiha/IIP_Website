@@ -30,14 +30,13 @@ const imageClass = `img ${
 ---
 
 <!-- Normal image -->
-<div class={imageClass}>
-  <Image
-    src={src}
-    alt={alt}
-    width={width ?? src.width}
-    height={height ?? src.height}
-  />
-</div>
+<Image
+  src={src}
+  alt={alt}
+  width={width ?? src.width}
+  height={height ?? src.height}
+  class={imageClass}
+/>
 
 <!-- Expanded image in full screen -->
 {
@@ -47,8 +46,8 @@ const imageClass = `img ${
         <Image
           src={src}
           alt={alt}
-          width={width ?? 300}
-          height={height ?? 300}
+          width={width ?? src.width}
+          height={height ?? src.height}
         />
       </div>
     </div>
