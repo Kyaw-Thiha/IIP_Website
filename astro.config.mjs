@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import astroI18next from "astro-i18next";
 import sitemap from "@astrojs/sitemap";
 import vue from "@astrojs/vue";
+import { sharpImageService } from "astro/assets";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,5 +14,8 @@ export default defineConfig({
     : "https://www.my-site.dev",
   experimental: {
     assets: true,
+  },
+  image: {
+    service: sharpImageService(),
   },
 });
