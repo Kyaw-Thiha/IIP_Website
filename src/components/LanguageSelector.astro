@@ -129,8 +129,8 @@
   label {
     cursor: pointer;
     text-indent: -9999px;
-    width: 80px;
-    height: 40px;
+    width: 60px;
+    height: 30px;
     background: #d7e3e3;
     display: block;
     border-radius: 100px;
@@ -164,10 +164,10 @@
 
   .handler {
     position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 30px;
-    height: 30px;
+    top: 2.5px;
+    left: 2px;
+    width: 25px;
+    height: 25px;
     /* background: #03a9f4; */
     /* background-image: url("https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/flags/1x1/gb.svg"); */
     background-image: url("https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/flags/1x1/gb.svg");
@@ -182,7 +182,7 @@
   }
 
   input:checked + label .handler {
-    left: calc(100% - 5px);
+    left: calc(100% - 2.5px);
     transform: translateX(-100%);
     background: #f44336;
     background-image: url("https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/flags/1x1/mm.svg");
@@ -190,5 +190,23 @@
 
   input:active + label .handler {
     /* width: 50px; */
+  }
+
+  @media (min-width: 1024px) {
+    label {
+      width: 80px;
+      height: 40px;
+    }
+
+    .handler {
+      top: 5px;
+      left: 5px;
+      width: 30px;
+      height: 30px;
+    }
+
+    input:checked + label .handler {
+      left: calc(100% - 5px);
+    }
   }
 </style>

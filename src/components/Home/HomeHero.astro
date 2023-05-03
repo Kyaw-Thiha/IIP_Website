@@ -9,9 +9,11 @@ const images = ["images/hero.jpg", "images/graduation_2022.png"];
 ---
 
 <!-- The hero image and text -->
-<div class="flex min-h-[60vh]">
-  <div class="flex flex-[0.5] flex-col items-center justify-center">
-    <h3 class="mb-3 w-4/5 text-center text-black">
+<div class="flex min-h-[60vh] md:flex-col-reverse lg:min-h-[60vh] lg:flex-row">
+  <div
+    class="hidden flex-col items-center justify-center md:flex-[0.5] lg:flex"
+  >
+    <h3 class="mb-3 w-4/5 text-center text-5xl leading-normal text-black">
       {t("home:hero.primaryText")}
     </h3>
     <h4 class="text center p-3 text-2xl text-black">
@@ -27,7 +29,37 @@ const images = ["images/hero.jpg", "images/graduation_2022.png"];
     </div>
   </div>
 
-  <div class="flex-1">
-    <Image src={heroImage} alt="Hero Image" height={500} />
+  <div class="relative flex flex-1">
+    <Image
+      src={heroImage}
+      alt="Hero Image"
+      height={500}
+      class="object-cover opacity-50 lg:opacity-100"
+    />
+
+    <!-- The code below is for display on smaller screens: phones and tablets -->
+    <div
+      class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 lg:hidden"
+    >
+      <div class="w-[90vw] flex-col items-center justify-center">
+        <h3
+          class="mb-3 text-center text-3xl leading-normal text-black md:text-5xl md:leading-normal"
+        >
+          {t("home:hero.primaryText")}
+        </h3>
+        <h4 class="text center p-3 text-center text-lg text-black md:text-2xl">
+          {t("home:hero.secondaryText")}
+        </h4>
+        <div class="mt-8 flex items-center justify-center md:mt-12">
+          <Button
+            label={t("home:hero.btnLabel")}
+            class="rounded-2xl px-4 py-2 text-lg text-black md:px-4 md:py-3 md:text-2xl"
+            secondary
+            href="/programs"
+          />
+        </div>
+      </div>
+    </div>
+    <!--  -->
   </div>
 </div>

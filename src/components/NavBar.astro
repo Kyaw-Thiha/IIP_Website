@@ -1,21 +1,24 @@
 ---
 import LanguageSelector from "./LanguageSelector.astro";
 import Link from "@components/Common/Link.astro";
+
+import Logo from "@assets/logo.png";
+import Image from "@components/Common/Image.astro";
 ---
 
 <div>
   <div class="bg-primary py-1 text-white">
     <div class="flex items-center justify-center">
       <Link href="/" class="flex items-center hover:no-underline">
-        <img
-          src="/images/logo.png"
+        <Image
+          src={Logo}
           alt="Logo"
-          width="150"
-          height="130"
-          class="flex-[0.1]"
+          width={150}
+          height={130}
+          class="hidden flex-[0.1] md:block"
         />
 
-        <h1 class="flex-1 text-2xl md:text-5xl">
+        <h1 class="flex-1 text-center text-2xl md:text-5xl md:leading-normal">
           Institute of International Professionalism
         </h1>
       </Link>
@@ -25,13 +28,17 @@ import Link from "@components/Common/Link.astro";
     <div></div>
     <div
       id="navbuttons"
-      class="mb-0 mr-0 flex items-center justify-center md:mb-2 md:mr-4"
+      class="mb-0 mr-0 flex items-center justify-center gap-2 md:mb-2 md:mr-4 md:gap-4"
     >
       <div class="mr-0 flex md:mr-3">
-        <div class="text-md mx-2 flex items-center text-center md:text-xl">
+        <div
+          class="text-md mx-2 hidden items-center text-center md:flex md:text-xl"
+        >
           <Link color="white" href="about-us">About Us</Link>
         </div>
-        <div class="text-md mx-2 flex items-center text-center md:text-xl">
+        <div
+          class="text-md mx-2 hidden items-center text-center md:flex md:text-xl"
+        >
           <Link color="white" href="programs">Programs</Link>
         </div>
         <div class="text-md mx-2 flex items-center text-center md:text-xl">
@@ -43,7 +50,7 @@ import Link from "@components/Common/Link.astro";
       </div>
 
       <div class="mr-2 flex items-center justify-center">
-        <!-- <LanguageSelector /> -->
+        <LanguageSelector />
       </div>
     </div>
   </div>

@@ -6,6 +6,7 @@ export interface Props {
   src: ImageMetadata;
   alt: string;
   expandFullScreen?: boolean;
+  id?: string;
   class?: string;
   width?: number;
   height?: number;
@@ -15,6 +16,7 @@ const {
   src,
   alt,
   expandFullScreen,
+  id,
   class: parentClass,
   width,
   height,
@@ -35,6 +37,7 @@ const imageClass = `img ${
   alt={alt}
   width={width ?? src.width}
   height={height ?? src.height}
+  id={id}
   class={imageClass}
 />
 
@@ -48,6 +51,7 @@ const imageClass = `img ${
           alt={alt}
           width={width ?? src.width}
           height={height ?? src.height}
+          id={id}
         />
       </div>
     </div>

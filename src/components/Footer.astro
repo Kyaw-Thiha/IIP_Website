@@ -1,73 +1,92 @@
 ---
 import Link from "@components/Common/Link.astro";
+import Image from "@components/Common/Image.astro";
+
+import Logo from "@assets/logo.png";
+import Banner from "@assets/banner.jpg";
+import Graduation from "@assets/graduation_2022.png";
 ---
 
-<footer class="footer">
-  <img id="bgimg" src="/images/graduation_2022.png" alt="Background Image" />
-  <div id="info">
-    <p>
-      🏫 Address: 1B, Wingabar Street, Bahan, Shwe Gone Daing Township, Yangon
-    </p>
-    <p>
-      🏫 Address: 1B, Wingabar Street, Bahan, Shwe Gone Daing Township, Yangon
-    </p>
-    <p>
-      🏫 Address: 1B, Wingabar Street, Bahan, Shwe Gone Daing Township, Yangon
-    </p>
+<footer class="footer hidden md:block">
+  <!-- <img id="bgimg" src="/images/graduation_2022.png" alt="Background Image" /> -->
+  <Image id="bgimg" src={Graduation} alt="Background Image" />
+  <section class="flex w-full justify-between">
+    <div id="info">
+      <p>
+        🏫 Address: 1B, Wingabar Street, Bahan, Shwe Gone Daing Township, Yangon
+      </p>
+      <p>
+        🏫 Address: 1B, Wingabar Street, Bahan, Shwe Gone Daing Township, Yangon
+      </p>
+      <p>
+        🏫 Address: 1B, Wingabar Street, Bahan, Shwe Gone Daing Township, Yangon
+      </p>
 
-    <div class="my-2 flex items-center text-[20px] text-white">
-      <img
-        src="https://img.icons8.com/plasticine/100/null/phone.png"
-        class="mr-1 inline-block"
-        width="25"
-        height="25"
-      />
-      Phone:+959450407041, +959450407042
-    </div>
-    <div class="my-2 flex items-center text-[20px] text-white">
-      <img
-        src="https://img.icons8.com/color/48/null/facebook-new.png"
-        class="mr-1 inline-block"
-        width="25"
-        height="25"
-      />
-      Facebook: <a
-        href="https://www.facebook.com/IIPInternationalSchool/"
-        target="_blank">Institute of International Professionalism</a
-      >
-    </div>
-    <div class="my-2 flex items-center text-[20px] text-white">
-      <img
-        src="https://img.icons8.com/color/48/null/gmail--v1.png"
-        class="mr-1 inline-block"
-        width="25"
-        height="25"
-      />
-      Email: <a href="mailto:info@iprofessionalism.com"
-        >info@iprofessionalism.com</a
-      >
-    </div>
+      <div class="my-2 flex items-center text-[20px] text-white">
+        <img
+          src="https://img.icons8.com/plasticine/100/null/phone.png"
+          class="mr-1 inline-block"
+          width="25"
+          height="25"
+        />
+        Phone:+959450407041, +959450407042
+      </div>
+      <div class="my-2 flex items-center text-[20px] text-white">
+        <img
+          src="https://img.icons8.com/color/48/null/facebook-new.png"
+          class="mr-1 inline-block"
+          width="25"
+          height="25"
+        />
+        Facebook: <a
+          href="https://www.facebook.com/IIPInternationalSchool/"
+          target="_blank">Institute of International Professionalism</a
+        >
+      </div>
+      <div class="my-2 flex items-center text-[20px] text-white">
+        <img
+          src="https://img.icons8.com/color/48/null/gmail--v1.png"
+          class="mr-1 inline-block"
+          width="25"
+          height="25"
+        />
 
-    <!-- <a target="_blank" href="https://icons8.com/icon/118497/facebook"
-      >Facebook icon by Icons8</a
-    > -->
-    <!-- <a target="_blank" href="https://icons8.com/icon/37246/gmail-logo">Gmail Logo icon by Icons8</a> -->
-    <!-- <a target="_blank" href="https://icons8.com/icon/12921/phone">Phone icon by Icons8</a> -->
-    <div class="mt-6 text-white">
-      <Link href="/our-team">
-        Designed with ❤️ by the A-level Team (2021-2023)
-      </Link>
+        Email: <a href="mailto:info@iprofessionalism.com"
+          >info@iprofessionalism.com</a
+        >
+      </div>
+
+      <!-- <a target="_blank" href="https://icons8.com/icon/118497/facebook"
+        >Facebook icon by Icons8</a
+      > -->
+      <!-- <a target="_blank" href="https://icons8.com/icon/37246/gmail-logo">Gmail Logo icon by Icons8</a> -->
+      <!-- <a target="_blank" href="https://icons8.com/icon/12921/phone">Phone icon by Icons8</a> -->
+      <div class="mt-6 text-white">
+        <Link href="/our-team">
+          Designed with ❤️ by the A-level Team (2021-2023)
+        </Link>
+      </div>
     </div>
-  </div>
-  <div class="iiplogo">
-    <div>
-      <img src="/images/logo.png" alt="IIP Logo" />
+    <div class="iiplogo">
+      <div>
+        <Image src={Logo} alt="IIP Logo" width={300} height={300} />
+      </div>
+      <div>
+        <Image src={Banner} alt="IIP Banner" width={300} />
+      </div>
     </div>
-    <div>
-      <img class="iipbanner" src="/images/banner.jpg" alt="IIP banner" />
-    </div>
+  </section>
+</footer>
+
+<!-- For small screens: Phones -->
+<footer class="flex md:hidden">
+  <div class="bg-primary py-4 text-center text-white">
+    <Link href="/our-team">
+      Designed with ❤️ by the A-level Team (2021-2023)
+    </Link>
   </div>
 </footer>
+<!--  -->
 
 <style>
   .footer {
@@ -75,8 +94,8 @@ import Link from "@components/Common/Link.astro";
     width: auto;
     height: 500px;
     position: relative;
-    display: flex;
-    justify-content: space-between;
+    /* display: flex; */
+    /* justify-content: space-between; */
   }
 
   #bgimg {
