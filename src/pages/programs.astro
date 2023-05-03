@@ -3,10 +3,8 @@ import Layout from "@layouts/Layout.astro";
 import Button from "@components/Common/Button.astro";
 import Link from "@components/Common/Link.astro";
 import { t, changeLanguage } from "i18next";
-
 import Image from "@components/Common/Image.astro";
 import type { ImageMetadata } from "astro";
-
 import IGCSEImage from "@assets/graduation_2022.png";
 import Year1To9Image from "@assets/graduation_2022.png";
 import ALevelImage from "@assets/graduation_2022.png";
@@ -14,34 +12,34 @@ import ALevelImage from "@assets/graduation_2022.png";
 changeLanguage("en");
 
 interface Program {
-  name: string;
-  text: string;
-  image: ImageMetadata;
-  link: string;
-  reverse: boolean;
+    name: string;
+    text: string;
+    image: ImageMetadata;
+    link: string;
+    reverse: boolean;
 }
 const programs: Program[] = [
-  {
-    name: "IGCSE",
-    text: "This is class for IGCSE. Idk what else to write. Somebody replace this text.",
-    image: IGCSEImage,
-    link: "/curriculum/igcse/overview",
-    reverse: false,
-  },
-  {
-    name: "Year 1-9",
-    text: "Class for kiddos,if you hear bad violin playing, yep thats them.",
-    image: Year1To9Image,
-    link: "/curriculum/year-1_to_9/overview",
-    reverse: true,
-  },
-  {
-    name: "A Levels",
-    text: "This is the best class in the school. All hail Alvls. Somebody replace this text.",
-    image: ALevelImage,
-    link: "/curriculum/a-level/overview",
-    reverse: false,
-  },
+    {
+        name: "IGCSE",
+        text: t("programs:IGCSE.text"),
+        image: IGCSEImage,
+        link: "/curriculum/igcse/overview",
+        reverse: false,
+    },
+    {
+        name: "Year 1-9",
+        text: t("programs:Year-1-To-9.text"),
+        image: Year1To9Image,
+        link: "/curriculum/year-1_to_9/overview",
+        reverse: true,
+    },
+    {
+        name: "A Levels",
+        text: t("programs:A-Level.text"),
+        image: ALevelImage,
+        link: "/curriculum/a-level/overview",
+        reverse: false,
+    },
 ];
 ---
 
