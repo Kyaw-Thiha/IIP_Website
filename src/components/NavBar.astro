@@ -15,32 +15,35 @@ import Link from "@components/Common/Link.astro";
           class="flex-[0.1]"
         />
 
-        <h1 class="flex-1 text-5xl">
+        <h1 class="flex-1 text-2xl md:text-5xl">
           Institute of International Professionalism
         </h1>
       </Link>
     </div>
   </div>
-  <div class="navbar">
+  <div class="navbar py-4 md:py-2">
     <div></div>
-    <div id="navbuttons" class="mb-2 mr-4 flex items-center justify-center">
-      <div class="mr-3 flex">
-        <div class="mx-2 text-xl">
+    <div
+      id="navbuttons"
+      class="mb-0 mr-0 flex items-center justify-center md:mb-2 md:mr-4"
+    >
+      <div class="mr-0 flex md:mr-3">
+        <div class="text-md mx-2 flex items-center text-center md:text-xl">
           <Link color="white" href="about-us">About Us</Link>
         </div>
-        <div class="mx-2 text-xl">
+        <div class="text-md mx-2 flex items-center text-center md:text-xl">
           <Link color="white" href="programs">Programs</Link>
         </div>
-        <div class="mx-2 text-xl">
+        <div class="text-md mx-2 flex items-center text-center md:text-xl">
           <Link color="white" href="admission/igcse">Admissions</Link>
         </div>
-        <div class="mx-2 text-xl">
+        <div class="text-md mx-2 flex items-center text-center md:text-xl">
           <Link color="white" href="contact-us">Contact Us</Link>
         </div>
       </div>
 
       <div class="mr-2 flex items-center justify-center">
-        <LanguageSelector />
+        <!-- <LanguageSelector /> -->
       </div>
     </div>
   </div>
