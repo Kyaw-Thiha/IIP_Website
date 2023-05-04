@@ -1,25 +1,24 @@
 ---
+import { t } from "i18next";
 ---
 
 <div class="AboutUsHeader">
   <div class="MissionTextSection">
-    <h1 class="text-secondary">Mission Statement</h1>
-    <p class="MissionText">
-      <p class="subheader">About Us</p>
+    <h1 class="text-secondary">{t("about-us:mission-statement.title")}</h1>
+    <div class="MissionText">
+      <p class="subheader">{t("about-us:mission-statement.about-us.title")}</p>
       <p>
-        International School with UK Curriculum, Both Cambridge and Edexcel
-        Primary, Secondary and Advanced Level, IGCSE O Level, A Level.
+        {t("about-us:mission-statement.about-us.text")}
       </p>
-    </p>
-    <p class="MissionText">
-      <p class="subheader">Additional Information</p>
+    </div>
+    <div class="MissionText">
+      <p class="subheader">
+        {t("about-us:mission-statement.additional-information.title")}
+      </p>
       <p>
-        This institute standout academic programs for IGCSE & A level students
-        mainly on UK Curriculum. We promote the learning activities of every
-        student and provide strong academic fundamentals built on a foundation
-        of character education to leverage their university progression.
+        {t("about-us:mission-statement.additional-information.text")}
       </p>
-    </p>
+    </div>
   </div>
   <!-- <div class="iiplogo">
     <div>

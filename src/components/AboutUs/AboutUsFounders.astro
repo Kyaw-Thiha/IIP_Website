@@ -1,38 +1,47 @@
 ---
+import { t } from "i18next";
+import Image from "@components/Common/Image.astro";
+
+import DawAyeAyeAungImage from "@assets/founders/aye-aye-aung.jpg";
+import UKyawThiha from "@assets/founders/kyaw-thiha.jpg";
+import DawMyatThitMon from "@assets/founders/myat-thit-mon.jpg";
 ---
 
 <div class="founder_main">
-  <h1><b>Meet Our Founders</b></h1>
+  <h1><b>{t("about-us:founders.title")}</b></h1>
   <div class="row">
     <div class="column">
-      <img
+      <!-- <img
         class="border-4 border-primary"
         src="/images/founders/aye-aye-aung.jpg"
         alt="Daw Aye Aye Aung"
         style="width:100%"
+      /> -->
+      <Image
+        src={DawAyeAyeAungImage}
+        alt="Principal Daw Aye Aye Aung"
+        class="w-full border-4 border-primary"
       />
-      <p class="name">Daw Aye Aye Aung</p>
-      <p>Principal</p>
+      <p class="name">{t("about-us:founders.daw-aye-aye-aung.name")}</p>
+      <p>{t("about-us:founders.daw-aye-aye-aung.role")}</p>
     </div>
     <div class="column">
-      <img
-        class="border-4 border-primary"
-        src="/images/founders/kyaw-thiha.jpg"
-        alt="U Kyaw Thiha"
-        style="width:100%"
+      <Image
+        src={UKyawThiha}
+        alt="Finance Director U Kyaw Thiha"
+        class="w-full border-4 border-primary"
       />
-      <p class="name">U Kyaw Thiha</p>
-      <p>Finance Director</p>
+      <p class="name">{t("about-us:founders.kyaw-thiha.name")}</p>
+      <p>{t("about-us:founders.kyaw-thiha.role")}</p>
     </div>
     <div class="column">
-      <img
-        class="border-4 border-primary"
-        src="/images/founders/myat-thit-mon.jpg"
-        alt="Daw Myat Thit Mon"
-        style="width:100%"
+      <Image
+        src={DawMyatThitMon}
+        alt="Managing Director Daw Myat Thit Mon"
+        class="w-full border-4 border-primary"
       />
-      <p class="name">Daw Myat Thit Mon</p>
-      <p>Managing Director</p>
+      <p class="name">{t("about-us:founders.myat-thit-mon.name")}</p>
+      <p>{t("about-us:founders.myat-thit-mon.role")}</p>
     </div>
   </div>
 </div>

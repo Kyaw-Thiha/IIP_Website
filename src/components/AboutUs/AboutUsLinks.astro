@@ -1,31 +1,29 @@
 ---
 import Link from "@components/Common/Link.astro";
+import { t } from "i18next";
 ---
 
 <div>
-  <div class="main_link">
-    <h1><b>Related Links</b></h1>
+  <div class="mx-12 my-12">
+    <h1><b>{t("about-us:links.title")}</b></h1>
     <div class="mt-5 flex flex-col gap-4 text-[20px]">
       <Link class="text-blue-700 hover:text-secondary" href="achievements">
-        Achievements
+        {t("about-us:links.achievements")}
       </Link>
       <Link class="text-blue-700 hover:text-secondary" href="alumni">
-        Alumini
+        {t("about-us:links.alumni")}
       </Link>
       <Link class="text-blue-700 hover:text-secondary" href="previous-grades">
-        Previous Grades
+        {t("about-us:links.previous-grades")}
       </Link>
       <Link class="text-blue-700 hover:text-secondary" href="announcements">
-        Announcements
+        {t("about-us:links.announcements")}
       </Link>
     </div>
   </div>
   <style>
     h1 {
       font-size: 30px;
-    }
-    .main_link {
-      margin: 30px;
     }
   </style>
 </div>

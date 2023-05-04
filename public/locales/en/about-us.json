@@ -1,0 +1,39 @@
+{
+  "mission-statement": {
+    "title": "Mission Statement",
+    "about-us": {
+      "title": "About Us",
+      "text": "International School with UK Curriculum, Both Cambridge and Edexcel Primary, Secondary and Advanced Level, IGCSE O Level, A Level."
+    },
+    "additional-information": {
+      "title": "Additional Information",
+      "text": "This institute standout academic programs for IGCSE & A level students mainly on UK Curriculum. We promote the learning activities of every student and provide strong academic fundamentals built on a foundation of character education to leverage their university progression."
+    }
+  },
+  "founders": {
+    "title": "Meet Our Founders",
+    "daw-aye-aye-aung": {
+      "name": "Daw Aye Aye Aung",
+      "role": "Principal"
+    },
+    "kyaw-thiha": {
+      "name": "U Kyaw Thiha",
+      "role": "Finance Director"
+    },
+    "myat-thit-mon": {
+      "name": "Daw Myat Thit Mon",
+      "role": "Managing Director"
+    }
+  },
+  "history": {
+    "title": "History",
+    "text": "The Institute of International Professionalism was established in 2016 as a school offering the IGCSE curriculum to students seeking an internationally recognized qualification. Over the years, the school has grown and expanded its offerings to provide a wider range of educational opportunities. Today, the Institute of International Professionalism provides not only IGCSE courses but also A-Levels and Year-1 to 9 classes. With its commitment to academic excellence, the school has earned a reputation for providing high-quality education that prepares students for success in their future academic and professional endeavors."
+  },
+  "links": {
+    "title": "Related Links",
+    "achievements": "Achievements",
+    "alumni": "Alumni",
+    "previous-grades": "Previous Grades",
+    "announcements": "Announcements"
+  }
+}

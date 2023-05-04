@@ -1,26 +1,23 @@
 ---
+import { t } from "i18next";
 ---
 
-<div>
-  <div class="history_main">
-    <h1><b>History</b></h1>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem
-      sed delectus corrupti debitis ex voluptatum rerum perspiciatis ab, minima
-      culpa incidunt maxime reiciendis obcaecati expedita tempora fugiat iure
-      molestiae dolorem!
-    </p>
-  </div>
+<div class="mx-12">
+  <h1 class="mb-4"><b>{t("about-us:history.title")}</b></h1>
+  <p>
+    {t("about-us:history.text")}
+  </p>
 </div>
 
 <style>
   h1 {
     font-size: 30px;
   }
+
   p {
     text-align: justify;
   }
   .history_main {
-    margin: 30px;
+    /* margin: 30px; */
   }
 </style>
