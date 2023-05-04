@@ -8,48 +8,56 @@ import DawMyatThitMon from "@assets/founders/myat-thit-mon.jpg";
 ---
 
 <div class="founder_main">
-  <h1><b>{t("about-us:founders.title")}</b></h1>
-  <div class="row">
-    <div class="column">
-      <!-- <img
-        class="border-4 border-primary"
-        src="/images/founders/aye-aye-aung.jpg"
-        alt="Daw Aye Aye Aung"
-        style="width:100%"
-      /> -->
+  <h1 class="mb-12 text-center text-2xl md:text-4xl">
+    <b>{t("about-us:founders.title")}</b>
+  </h1>
+  <div class="ga-4 flex flex-wrap">
+    <div class="mb-12 flex flex-col lg:basis-1/3">
       <Image
         src={DawAyeAyeAungImage}
         alt="Principal Daw Aye Aye Aung"
-        class="w-full border-4 border-primary"
+        class="mb-4 w-full border-4 border-primary lg:w-[90%]"
       />
-      <p class="name">{t("about-us:founders.daw-aye-aye-aung.name")}</p>
-      <p>{t("about-us:founders.daw-aye-aye-aung.role")}</p>
+      <p class="name text-center text-xl md:text-2xl">
+        {t("about-us:founders.daw-aye-aye-aung.name")}
+      </p>
+      <p class="text-center text-lg md:text-xl">
+        {t("about-us:founders.daw-aye-aye-aung.role")}
+      </p>
     </div>
-    <div class="column">
+    <div class="mb-12 flex flex-col lg:w-[90%] lg:basis-1/3">
       <Image
         src={UKyawThiha}
         alt="Finance Director U Kyaw Thiha"
-        class="w-full border-4 border-primary"
+        class="mb-8 w-full border-4 border-primary lg:w-[90%]"
       />
-      <p class="name">{t("about-us:founders.kyaw-thiha.name")}</p>
-      <p>{t("about-us:founders.kyaw-thiha.role")}</p>
+      <p class="name text-center text-lg md:text-xl">
+        {t("about-us:founders.kyaw-thiha.name")}
+      </p>
+      <p class="text-center text-lg md:text-xl">
+        {t("about-us:founders.kyaw-thiha.role")}
+      </p>
     </div>
-    <div class="column">
+    <div class="mb-4 flex w-full flex-col lg:w-[90%] lg:basis-1/3">
       <Image
         src={DawMyatThitMon}
         alt="Managing Director Daw Myat Thit Mon"
-        class="w-full border-4 border-primary"
+        class="mb-8 w-full border-4 border-primary"
       />
-      <p class="name">{t("about-us:founders.myat-thit-mon.name")}</p>
-      <p>{t("about-us:founders.myat-thit-mon.role")}</p>
+      <p class="name text-center text-lg md:text-xl">
+        {t("about-us:founders.myat-thit-mon.name")}
+      </p>
+      <p class="text-center text-lg md:text-xl">
+        {t("about-us:founders.myat-thit-mon.role")}
+      </p>
     </div>
   </div>
 </div>
 <style>
-  h1 {
+  /* h1 {
     font-size: 40px;
     text-align: center;
-  }
+  } */
   .founder_main {
     margin: 20px;
   }
@@ -69,16 +77,10 @@ import DawMyatThitMon from "@assets/founders/myat-thit-mon.jpg";
     margin-right: auto;
     border: 4px solid gray;
   }
-  .h1 {
-    text-align: center;
-  }
+
   .name {
     font-size: 20px;
     font-weight: bold;
     padding-top: 20px;
-  }
-  p {
-    font-size: 15px;
-    text-align: center;
   }
 </style>
