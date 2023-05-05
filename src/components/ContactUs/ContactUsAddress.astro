@@ -1,73 +1,115 @@
 ---
+import { t } from "i18next";
 import Map from "@components/Common/Map.astro";
 import Button from "@components/Common/Button.astro";
+import Image from "@components/Common/Image.astro";
+
+import Campus1 from "@assets/hero.jpg";
+import Campus2 from "@assets/hero.jpg";
+import Campus3 from "@assets/hero.jpg";
+
 interface Address {
   text: string;
   src: string;
 }
 
-// const names = ["Yadanar", "Hnin Pwint", "Hnin Oo"];
-// console.log(names[0]);
-
-// const yadanar = {
-//   age: 19,
-//   school: "IIP",
-//   hobbies: ["dancing", "singing"],
-// };
-
 const addresses: Address[] = [
   {
-    text: "No. 1B, Wingabar Street, Shwegonedine, Bahan, Yangon, Myanmar",
+    text: t("contact-us:address.address-1.text"),
     src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1511.273696124255!2d96.15731153433755!3d16.804273828418847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1ed2bea3ecf41%3A0xb865bb161d3290fb!2sInstitute%20of%20International%20Professionalism%20(IIP)!5e0!3m2!1sen!2smm!4v1676608624809!5m2!1sen!2smm",
   },
   {
-    text: "27, Thiri Min Galar Street,(Former Artira Road), Kamaryut Township,Yangon",
+    text: t("contact-us:address.address-2.text"),
     src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3819.057724551744!2d96.12565641440032!3d16.82349218841886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c194ca5bd4426d%3A0x5a9b495bb8d17d37!2sInstitute%20of%20International%20Professionalism!5e0!3m2!1sen!2smm!4v1676622851177!5m2!1sen!2smm",
   },
   {
-    text: "No. 1B, Wingabar Street, Shwegonedine, Bahan, Yangon, Myanmar",
+    text: t("contact-us:address.address-3.text"),
     src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1511.273696124255!2d96.15731153433755!3d16.804273828418847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1ed2bea3ecf41%3A0xb865bb161d3290fb!2sInstitute%20of%20International%20Professionalism%20(IIP)!5e0!3m2!1sen!2smm!4v1676608624809!5m2!1sen!2smm",
   },
 ];
 ---
 
 <!--FIrst map -->
-<div class="mx-8 my-5 block text-xl">
-  From Year 1 to 9 : {addresses[0].text}
-</div>
-<div class="inline-flex">
-  <div class="mx-8">
-    <img src="images/hero.jpg" width="800" height="400" />
+<section class="flex flex-col gap-16">
+  <div id="First Map" class="flex flex-col gap-6">
+    <div class="text-center text-lg md:text-xl">
+      From Year 1 to 9 : {addresses[0].text}
+    </div>
+    <div class="flex flex-row justify-center">
+      <div class="mx-8 hidden lg:block">
+        <Image src={Campus1} alt={addresses[0].text} width={800} height={400} />
+      </div>
+      <Map
+        src={addresses[0].src}
+        title={addresses[0].text}
+        class="hidden md:block"
+        width="550"
+        height="500"
+      />
+      <Map
+        src={addresses[0].src}
+        title={addresses[0].text}
+        class="block md:hidden"
+        width="300"
+        height="300"
+      />
+    </div>
   </div>
-  <div>
-    <Map src={addresses[0].src} width="550" height="500" />
+
+  <div id="Second Map" class="flex flex-col gap-6">
+    <div class="text-center text-lg md:text-xl">
+      IGCSE : {addresses[1].text}
+    </div>
+    <div class="flex flex-row justify-center">
+      <div class="mx-8 hidden lg:block">
+        <Image src={Campus2} alt={addresses[1].text} width={800} height={400} />
+      </div>
+      <Map
+        src={addresses[1].src}
+        title={addresses[1].text}
+        class="hidden md:block"
+        width="550"
+        height="500"
+      />
+      <Map
+        src={addresses[1].src}
+        title={addresses[1].text}
+        class="block md:hidden"
+        width="300"
+        height="300"
+      />
+    </div>
+  </div>
+</section>
+
+<div id="Third Map" class="flex flex-col gap-6">
+  <div class="text-center text-lg md:text-xl">
+    A-level : {addresses[2].text}
+  </div>
+  <div class="flex flex-row justify-center">
+    <div class="mx-8 hidden lg:block">
+      <Image src={Campus3} alt={addresses[2].text} width={800} height={400} />
+    </div>
+    <Map
+      src={addresses[2].src}
+      title={addresses[2].text}
+      class="hidden md:block"
+      width="550"
+      height="500"
+    />
+    <Map
+      src={addresses[2].src}
+      title={addresses[2].text}
+      class="block md:hidden"
+      width="300"
+      height="300"
+    />
   </div>
 </div>
 
-<div class="second map">
-  <div class="mx-8 my-5 block text-xl">IGCSE : {addresses[1].text}</div>
-  <div class="inline-flex">
-    <div class="mx-8">
-      <img src="images/hero.jpg" width="800" height="400" />
-    </div>
-    <div>
-      <Map src={addresses[1].src} width="550" height="500" />
-    </div>
-  </div>
-</div>
-
-<div class="third map">
-  <div class="mx-8 block text-xl">Alevel : {addresses[2].text}</div>
-  <div class="inline-flex">
-    <div class="mx-8">
-      <img src="images/hero.jpg" width="800" height="400" />
-    </div>
-    <div>
-      <Map src={addresses[2].src} width="550" height="500" />
-    </div>
-  </div>
-</div>
-
-<div class="mt-20 flex items-center justify-center">
-  <Button class="rounded-2xl py-3 px-56 mb-9" label="Apply Now" />
+<div class="mt-12 flex items-center justify-center md:mt-20">
+  <Button
+    class="mb-9 rounded-2xl px-32 py-3 md:px-56"
+    label={t("contact-us:buttonText")}
+  />
 </div>
