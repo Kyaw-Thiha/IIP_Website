@@ -1,0 +1,33 @@
+{
+  "title": "Contact Us",
+  "details": {
+    "phone": {
+      "title": "Give us a call",
+      "text-1": "09 458844188",
+      "text-2": "or",
+      "text-3": "09 405554100"
+    },
+    "address": {
+      "title": "Pay us a visit",
+      "text": "27, Thiri Min Galar Street,(Former Artira Road), Kamaryut Township,Yangon"
+    },
+    "email": {
+      "title": "Send us an email",
+      "text-1": "info@iprofessionalism.com",
+      "text-2": "or",
+      "text-3": "iipexam3@iipschool.edu.mm"
+    }
+  },
+  "address": {
+    "address-1": {
+      "text": "No. 1B, Wingabar Street, Shwegonedine, Bahan, Yangon, Myanmar"
+    },
+    "address-2": {
+      "text": "No. 27, Thiri Min Galar Street,(Former Artira Road), Kamaryut Township,Yangon"
+    },
+    "address-3": {
+      "text": "No. 1B, Wingabar Street, Shwegonedine, Bahan, Yangon, Myanmar"
+    }
+  },
+  "buttonText": "Apply Now"
+}

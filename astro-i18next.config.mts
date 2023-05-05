@@ -2,6 +2,6 @@
 export default {
   defaultLocale: "en",
   locales: ["en", "my"],
-  namespaces: ["common", "home", "programs", "about-us"],
+  namespaces: ["common", "home", "programs", "about-us", "contact-us"],
   defaultNamespace: "common",
 };
