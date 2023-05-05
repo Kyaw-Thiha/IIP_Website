@@ -2,11 +2,12 @@
 export interface Props {
   src: string;
   title?: string;
-  width: string;
-  height: string;
+  class?: string;
+  width?: string;
+  height?: string;
 }
 
-const { src, title, width, height } = Astro.props;
+const { src, title, class: className, width, height } = Astro.props;
 ---
 
 <iframe
@@ -14,6 +15,7 @@ const { src, title, width, height } = Astro.props;
   title={title}
   width={width}
   height={height}
+  class={className}
   style="border:0;"
   allowfullscreen=""
   loading="lazy"
