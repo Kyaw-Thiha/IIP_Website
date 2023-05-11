@@ -1,4 +1,6 @@
 ---
+import { t } from "i18next";
+
 import Image from "@components/Common/Image.astro";
 import image1 from "@assets/our-team/syr-myo-2.png";
 import image2 from "@assets/our-team/syr-myo-2.png";
@@ -43,7 +45,7 @@ const images = [
 
 <div class="mb-20 md:mx-12 md:mb-40">
   <h3 class="mb-8 mt-12 text-center text-4xl md:mb-16 md:text-6xl">
-    Our Memories
+    {t("our-team:memories.title")}
   </h3>
   <div class="md:px-16">
     <!-- For Desktop/Tablets, show the mosaic -->
