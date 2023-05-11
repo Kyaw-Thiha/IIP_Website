@@ -1,91 +1,75 @@
 ---
+import Image from "@components/Common/Image.astro";
+import image1 from "@assets/our-team/syr-myo-2.png";
+import image2 from "@assets/our-team/syr-myo-2.png";
+import image3 from "@assets/our-team/syr-myo-2.png";
+import image4 from "@assets/our-team/syr-myo-2.png";
+import image5 from "@assets/our-team/syr-myo-2.png";
+import image6 from "@assets/our-team/syr-myo-2.png";
+
+const images = [
+  {
+    className: "img1",
+    alt: "",
+    data: image1,
+  },
+  {
+    className: "img2",
+    alt: "",
+    data: image2,
+  },
+  {
+    className: "img3",
+    alt: "",
+    data: image3,
+  },
+  {
+    className: "img4",
+    alt: "",
+    data: image4,
+  },
+  {
+    className: "img5",
+    alt: "",
+    data: image5,
+  },
+  {
+    className: "img6",
+    alt: "",
+    data: image6,
+  },
+];
 ---
 
-<div class="mx-6 mb-40">
-  <h3 class="my-10 text-center">Our Memories</h3>
-
-  <div class="container items-center justify-center">
-    <div class="mosaic">
-      <div class="img1">
-        <img
-          class="rotateleft"
-          src="/images/our-team/syr-myo-2.png"
-          alt="logo.png"
-          style="width:200px; height: auto; transform:rotate(-20deg);"
-        />
-      </div>
-
-      <div class="img2">
-        <img
-          class="rotateleft"
-          src="/images/our-team/syr-myo-2.png"
-          alt="logo.png"
-          style="width:200px; height: auto; transform:rotate(20deg);"
-        />
-      </div>
-
-      <div class="img3">
-        <img
-          class="rotateleft"
-          src="/images/our-team/syr-myo-2.png"
-          alt="logo.png"
-          style="width:200px; height: auto; transform:rotate(-20deg);"
-        />
-      </div>
-
-      <div class="img4">
-        <img
-          class="rotateleft"
-          src="/images/our-team/syr-myo-2.png"
-          alt="logo.png"
-          style="width:200px; height: auto; transform:rotate(20deg);"
-        />
-      </div>
-      <div class="img5">
-        <img
-          class="rotateleft"
-          src="/images/our-team/syr-myo-2.png"
-          alt="logo.png"
-          style="width:200px; height: auto; transform:rotate(-20deg);"
-        />
-      </div>
-      <div class="img6">
-        <img
-          class="rotateleft"
-          src="/images/our-team/syr-myo-2.png"
-          alt="logo.png"
-          style="width:200px; height: auto; transform:rotate(20deg);"
-        />
-      </div>
+<div class="mb-20 md:mx-12 md:mb-40">
+  <h3 class="mb-8 mt-12 text-center text-4xl md:mb-16 md:text-6xl">
+    Our Memories
+  </h3>
+  <div class="md:px-16">
+    <!-- For Desktop/Tablets, show the mosaic -->
+    <div class="hidden grid-cols-6 md:grid">
+      {
+        images.map((image, index) => (
+          <div class={image.className}>
+            <Image
+              class={index % 2 == 0 ? "rotate-[-20deg]" : "rotate-[20deg]"}
+              src={image.data}
+              alt={image.alt}
+              width={200}
+            />
+          </div>
+        ))
+      }
+    </div>
+    <!-- For mobile phones, show list of images -->
+    <div class="flex flex-col items-center gap-6 md:hidden">
+      {
+        images.map((image, index) => (
+          <div class={image.className}>
+            <Image src={image.data} alt={image.alt} width={300} />
+          </div>
+        ))
+      }
     </div>
   </div>
-
-  <style>
-    .container {
-      padding-left: 50px;
-      padding-right: 50px;
-      margin: auto;
-    }
-    .mosaic {
-      display: grid;
-    }
-    .img1 {
-      grid-column: 1;
-    }
-    .img2 {
-      grid-column: 2;
-    }
-    .img3 {
-      grid-column: 3;
-    }
-    .img4 {
-      grid-column: 4;
-    }
-    .img5 {
-      grid-column: 5;
-    }
-    .img6 {
-      grid-column: 6;
-    }
-  </style>
 </div>
