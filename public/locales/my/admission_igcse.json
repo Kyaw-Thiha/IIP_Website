@@ -1,0 +1,17 @@
+{
+  "requirement": {
+    "text-1": "Must be in age of 13 to 18",
+    "text-2": "Must finished Year-9 or equivalent",
+    "text-3": "Myanmar School Grade-8",
+    "text-4": "Singapore Course Secondary-2",
+    "text-5": "Can attend if completed year 8 with all A*s",
+    "text-6": "Dun be an idiot kiddo"
+  },
+  "about-igcse": {
+    "text-1": "School fees - $1000",
+    "text-2": "Campus - 1, Wingabar street, shwe gon dine",
+    "text-3": "Dress Code- Uniform",
+    "text-4": "Curriculum - CIE (or) Edexcel",
+    "text-5": "Duration - 18 months"
+  }
+}

@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
 import Admission from "@layouts/Admission.astro";
 import Layout from "@layouts/Layout.astro";
 
@@ -13,30 +13,42 @@ changeLanguage("en");
         <div class="flex-[0.7]">
           <!--first box-->
           <div class="">
-            <div class="ml-4 h-1/2 w-[325px] rounded-xl bg-gray-300 md:w-full">
+            <div
+              class="ml-0.5 h-1/2 w-[310px] rounded-xl bg-gray-300 md:w-full"
+            >
               <p>
                 <ul class="mb:ml-9 ml-3 list-disc p-7">
-                  <li class="mb-5">Must be in age of 12 or above</li>
-                  <li class="mb-2">Must finished Year-7 or equivalent</li>
+                  <li class="mb-5">
+                    {t("admission_year_8-9:requirement.text-1")}
+                  </li>
+                  <li class="mb-2">
+                    {t("admission_year_8-9:requirement.text-2")}
+                  </li>
                   <ul class="ml-9 list-decimal">
-                    <li class="mb-2">Myanmar School Grade-7</li>
-                    <li class="mb-2">Singapore Course Secondary-1</li>
+                    <li class="mb-2">
+                      {t("admission_year_8-9:requirement.text-3")}
+                    </li>
+                    <li class="mb-2">
+                      {t("admission_year_8-9:requirement.text-4")}
+                    </li>
                   </ul>
                   <li class="mb-2">
-                    Can attend if completed year 7 with all A*s
+                    {t("admission_year_8-9:requirement.text-5")}
                   </li>
-                  <li class="mb-2">Dun fail year 7</li>
+                  <li class="mb-2">
+                    {t("admission_year_8-9:requirement.text-6")}
+                  </li>
                 </ul>
               </p>
             </div>
           </div>
           <!--second box -->
-          <div class="mb:ml-4 ml-3 mt-8 rounded-xl bg-gray-300 p-7">
-            <p class="ml-4">School fees - $1000</p>
-            <p class="ml-4">Campus - 1, Wingabar street, shwe gon dine</p>
-            <p class="ml-4">Dress Code- Uniform</p>
-            <p class="ml-4">curriculum - year 8</p>
-            <p class="ml-4">Duration - a year</p>
+          <div class="mb:ml-4 ml-0.5 mt-8 w-[310px] rounded-xl bg-gray-300 p-7">
+            <p class="ml-4">{t("admission_year_8-9:about-year_8-9.text-1")}</p>
+            <p class="ml-4">{t("admission_year_8-9:about-year_8-9.text-2")}</p>
+            <p class="ml-4">{t("admission_year_8-9:about-year_8-9.text-3")}</p>
+            <p class="ml-4">{t("admission_year_8-9:about-year_8-9.text-4")}</p>
+            <p class="ml-4">{t("admission_year_8-9:about-year_8-9.text-5")}</p>
           </div>
         </div>
 

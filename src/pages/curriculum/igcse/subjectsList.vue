@@ -1,8 +1,8 @@
 <template>
-  <div class="mx-8 mt-8 rounded-xl bg-gray-300 px-8 py-4">
+  <div class="mt-8 bg-gray-300 px-4 py-4 md:mx-8 md:rounded-xl md:px-8">
     <h2 class="text-center text-4xl">Choose Your Major</h2>
     <div class="mt-12">
-      <div class="grid grid-cols-5 gap-2">
+      <div class="grid grid-cols-2 gap-2 md:grid-cols-5">
         <button
           class="flex flex-col items-center justify-center gap-5 rounded-lg bg-primary px-4 py-4 text-white"
           v-for="(major, index) in majors"
@@ -23,15 +23,18 @@
 
   <div class="mx-8 mt-12">
     <h2 class="mb-8 text-4xl">Subject Guide</h2>
-    <div class="flex" v-if="currentMajor.name != ''">
+    <div
+      class="flex flex-col gap-12 md:flex-row md:gap-0"
+      v-if="currentMajor.name != ''"
+    >
       <div class="flex-1">
-        <h3 class="mb-4 text-3xl">Core Subjects</h3>
+        <h3 class="mb-4 text-xl md:text-3xl">Core Subjects</h3>
         <div v-for="(subject, index) in currentMajor.coreSubjects" :key="index">
           {{ subject }}
         </div>
       </div>
       <div class="flex-1">
-        <h3 class="mb-4 text-3xl">Non-Essential Subjects</h3>
+        <h3 class="mb-4 text-xl md:text-3xl">Non-Essential Subjects</h3>
         <div
           v-for="(subject, index) in currentMajor.optionalSubjects"
           :key="index"

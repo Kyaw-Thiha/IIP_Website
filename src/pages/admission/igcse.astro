@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
 import Admission from "@layouts/Admission.astro";
 import Layout from "@layouts/Layout.astro";
 import Image from "@components/Common/Image.astro";
@@ -13,30 +13,36 @@ changeLanguage("en");
       <div class="flex-[0.7]">
         <!--first box-->
         <div class="">
-          <div class="ml-4 h-1/2 w-[325px] rounded-xl bg-gray-300 md:w-full">
+          <div class="ml-0.5 h-1/2 w-[310px] rounded-xl bg-gray-300 md:w-full">
             <p>
               <ul class="mb:ml-9 ml-3 list-disc p-7">
-                <li class="mb-5">Must be in age of 13 to 18</li>
-                <li class="mb-2">Must finished Year-9 or equivalent</li>
+                <li class="mb-5">{t("admission_igcse:requirement.text-1")}</li>
+                <li class="mb-2">{t("admission_igcse:requirement.text-2")}</li>
                 <ul class="ml-9 list-decimal">
-                  <li class="mb-2">Myanmar School Grade-8</li>
-                  <li class="mb-2">Singapore Course Secondary-2</li>
+                  <li class="mb-2">
+                    {t("admission_igcse:requirement.text-3")}
+                  </li>
+                  <li class="mb-2">
+                    {t("admission_igcse:requirement.text-4")}
+                  </li>
                 </ul>
                 <li class="mb-2">
-                  Can attend if completed year 8 with all A*s
+                  {t("admission_igcse:requirement.text-5")}
                 </li>
-                <li class="mb-2">Dun be an idiot kiddo</li>
+                <li class="mb-2">{t("admission_igcse:requirement.text-6")}</li>
               </ul>
             </p>
           </div>
         </div>
         <!--second box -->
-        <div class="mb:ml-4 ml-3 mt-8 rounded-xl bg-gray-300 p-7">
-          <p class="ml-4">School fees - $1000</p>
-          <p class="ml-4">Campus - 1, Wingabar street, shwe gon dine</p>
-          <p class="ml-4">Dress Code- Uniform</p>
-          <p class="ml-4">curriculum - CIE (or) Edexcel</p>
-          <p class="ml-4">Duration - 18 months</p>
+        <div
+          class="ml-0.5 mt-8 w-[310px] rounded-xl bg-gray-300 p-7 md:ml-4 md:w-full"
+        >
+          <p class="ml-4">{t("admission_igcse:about-igcse.text-1")}</p>
+          <p class="ml-4">{t("admission_igcse:about-igcse.text-2")}</p>
+          <p class="ml-4">{t("admission_igcse:about-igcse.text-3")}</p>
+          <p class="ml-4">{t("admission_igcse:about-igcse.text-4")}</p>
+          <p class="ml-4">{t("admission_igcse:about-igcse.text-5")}</p>
         </div>
       </div>
 

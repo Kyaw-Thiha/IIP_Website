@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import IGCSECurriculum from "@layouts/IGCSECurriculum.astro";
 
@@ -14,37 +14,40 @@ changeLanguage("en");
   >
     <div>
       <!--First grey box -->
-      <div class="ml-7 block text-3xl md:hidden">Overview</div>
+      <div class="ml-7 block text-3xl md:hidden">
+        {t("curriculum_ig_over:overview.text-1")}
+      </div>
       <div
         class="mx-auto mb-14 mt-12 w-5/6 rounded-xl bg-gray-300 px-8 py-4 text-xl"
       >
         <div class="mb-2">
-          Duration <div class="ml-2 inline">: 1 year and 6 months</div>
+          {t("curriculum_ig_over:overview.text-2")}
+          <div class="ml-2 inline">
+            {t("curriculum_ig_over:overview.text-3")}
+          </div>
         </div>
-        <div class="mb-4 ml-24">: 2 years</div>
+        <div class="mb-4 ml-24">{t("curriculum_ig_over:overview.text-4")}</div>
         <div class="mb-2">
-          Minimum requirements :
-          <div class="block md:ml-7 md:inline">- Year 9 completion</div>
+          {t("curriculum_ig_over:overview.text-5")}
+          <div class="block md:ml-7 md:inline">
+            {t("curriculum_ig_over:overview.text-6")}
+          </div>
         </div>
 
         <div class="mb-4 block md:ml-7">
-          - Myanmar school Grade 8 completion
+          {t("curriculum_ig_over:overview.text-7")}
         </div>
-        <div>Minimum subjects <div class="ml-20 inline">- 6 subjects</div></div>
+        <div>
+          {t("curriculum_ig_over:overview.text-8")}
+          <div class="inline md:ml-7">
+            {t("curriculum_ig_over:overview.text-9")}
+          </div>
+        </div>
       </div>
       <!-- Paragraph-->
       <!--That's it hope you can write easily!! just put the data and that's pretty much it -->
       <div class="mx-auto w-5/6 text-justify text-xl">
-        IGCSE (International General Certificate of Secondary Education) is a
-        two-year secondary education program designed for students aged 14 to
-        16. It is an internationally recognized qualification that is equivalent
-        to the GCSE (General Certificate of Secondary Education) in the UK. The
-        IGCSE curriculum covers a wide range of subjects, including English,
-        Mathematics, Sciences, Humanities, and Languages. The program is
-        designed to prepare students for further education, such as the
-        International Baccalaureate (IB) or A-levels, or for entering the
-        university foundation programme. Students take exams at the end of the
-        two-year program and receive certificates based on their performance.
+        {t("curriculum_ig_over:para.text-1")}
       </div>
     </div>
   </IGCSECurriculum>
