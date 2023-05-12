@@ -2,6 +2,7 @@
 import { changeLanguage } from "i18next";
 import Admission from "@layouts/Admission.astro";
 import Layout from "@layouts/Layout.astro";
+import { t } from "i18next";
 
 changeLanguage("en");
 ---
@@ -9,14 +10,16 @@ changeLanguage("en");
 <Layout title="A-Level Admission | IIP">
   <Admission title="A-Level Admission" active="a-level" link="">
     <div>
-      <div class="mt-12 flex gap-x-11">
+      <div class="ml-5 mt-5 flex gap-x-11 md:mt-12">
         <div class="flex-[0.7]">
           <!--first box-->
           <div class="">
-            <div class="ml-6 h-1/2 rounded-xl bg-gray-300">
+            <div class="ml-4 h-1/2 w-[325px] rounded-xl bg-gray-300 md:w-full">
               <p>
-                <ul class="ml-9 list-disc p-7">
-                  <li class="mb-5">Must finish within 2 years</li>
+                <ul class="ml-3 list-disc p-7 md:ml-9">
+                  <li class="mb-5">
+                    {t("admission_a-level:requirement.text-1")}
+                  </li>
                   <li class="mb-2">
                     Must finished IGCSE with minimum Bs or equivalent
                   </li>
@@ -25,13 +28,13 @@ changeLanguage("en");
                     <li class="mb-2">GED or OSSD</li>
                   </ul>
                   <li class="mb-2">Must take a minimum of 3 subjects</li>
-                  <li class="mb-2">Must be able to stand pressure</li>
+                  <li class="mb-2">Must be able to withstand pressure</li>
                 </ul>
               </p>
             </div>
           </div>
           <!--second box -->
-          <div class="mt-8 ml-6 rounded-xl bg-gray-300 p-7">
+          <div class="ml-3 mt-8 rounded-xl bg-gray-300 p-7 md:ml-4">
             <p class="ml-4">School fees - $2000</p>
             <p class="ml-4">Campus - 1, Wingabar street, shwe gon dine</p>
             <p class="ml-4">Dress Code- Casual</p>
@@ -41,7 +44,11 @@ changeLanguage("en");
         </div>
 
         <div class="flex-1">
-          <img src="/images/hero.jpg" alt="" class="h-full object-cover" />
+          <img
+            src="/images/hero.jpg"
+            alt=""
+            class="hidden h-full object-cover md:block"
+          />
           <!-- <Image
             src="/images/graduation_2022.png"
             alt="Hero Image"

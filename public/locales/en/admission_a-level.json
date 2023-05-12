@@ -1,0 +1,17 @@
+{
+  "requirements": {
+    "text-1": "Must finish within 2 years",
+    "text-2": "Must finished IGCSE with minimum Bs or equivalent",
+    "text-3": "Myanmar School Grade-10",
+    "text-4": "GED or OSSD",
+    "text-5": "Must take a minimum of 3 subjects",
+    "text-6": "Must be able to withstand pressure"
+  },
+  "about-alevel": {
+    "text-1": "School fees - $2000",
+    "text-2": "Campus - 1, Wingabar street, shwe gon dine",
+    "text-3": "Dress Code- Casual",
+    "text-4": "Curriculum - CIE (or) Edexcel",
+    "text-5": "Duration - 18 months"
+  }
+}

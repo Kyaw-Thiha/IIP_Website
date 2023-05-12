@@ -9,6 +9,7 @@ export default {
     "about-us",
     "contact-us",
     "our-team",
+    "admission_a-level",
   ],
   defaultNamespace: "common",
 };

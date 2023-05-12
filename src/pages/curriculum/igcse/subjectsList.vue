@@ -4,7 +4,7 @@
     <div class="mt-12">
       <div class="grid grid-cols-5 gap-2">
         <button
-          class="flex flex-col items-center justify-center gap-5 rounded-lg bg-primary py-4 px-4 text-white"
+          class="flex flex-col items-center justify-center gap-5 rounded-lg bg-primary px-4 py-4 text-white"
           v-for="(major, index) in majors"
           :key="index"
           @click="onMajorClick(major.name)"

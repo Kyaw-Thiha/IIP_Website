@@ -7,10 +7,11 @@ import Banner from "@assets/banner.jpg";
 import Graduation from "@assets/graduation_2022.png";
 ---
 
+<!-- md:block -->
 <footer class="footer hidden md:block">
   <!-- <img id="bgimg" src="/images/graduation_2022.png" alt="Background Image" /> -->
-  <Image id="bgimg" src={Graduation} alt="Background Image" />
-  <section class="flex w-full justify-between">
+  <!-- <Image id="bgimg" src={Graduation} alt="Background Image" /> -->
+  <section class="flex w-full items-center justify-between">
     <div id="info">
       <p>
         🏫 Address: 1B, Wingabar Street, Bahan, Shwe Gone Daing Township, Yangon
@@ -69,11 +70,14 @@ import Graduation from "@assets/graduation_2022.png";
     </div>
     <div class="iiplogo">
       <div>
+        <img src="/src/assets/logo_transparent.png" alt="" />
+      </div>
+      <!-- <div>
         <Image src={Logo} alt="IIP Logo" width={300} height={300} />
       </div>
       <div>
         <Image src={Banner} alt="IIP Banner" width={300} />
-      </div>
+      </div> -->
     </div>
   </section>
 </footer>
@@ -87,12 +91,27 @@ import Graduation from "@assets/graduation_2022.png";
   </div>
 </footer>
 <!--  -->
-
+<!-- #181f4b -->
 <style>
+  @media only screen and (max-width: 600px) {
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    p {
+      font-size: 5px;
+    }
+  }
+  footer {
+    background: url("/src/assets/graduation_2022.png") no-repeat #181f4b;
+    background-size: cover;
+    background-blend-mode: soft-light;
+  }
   .footer {
     background-color: #181f4b;
     width: auto;
-    height: 500px;
+    height: auto;
     position: relative;
     /* display: flex; */
     /* justify-content: space-between; */
@@ -109,17 +128,13 @@ import Graduation from "@assets/graduation_2022.png";
   }
 
   .iiplogo {
-    width: 300px;
-    display: flex;
+    width: 400px;
+    margin-right: 50px;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-right: 50px;
-  }
-
-  .iipbanner {
-    width: 3000px;
-    height: auto;
+    margin-right: 50px; */
   }
 
   p {
