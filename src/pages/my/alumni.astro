@@ -1,10 +1,13 @@
 ---
 import { changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
+import AlumniList from "@components/Alumni/AlumniList";
 
 changeLanguage("my");
 ---
 
 <Layout title="IIP International School">
-  <main></main>
+  <main>
+    <AlumniList client:load />
+  </main>
 </Layout>
