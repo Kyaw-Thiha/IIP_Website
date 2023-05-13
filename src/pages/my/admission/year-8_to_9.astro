@@ -8,10 +8,65 @@ changeLanguage("my");
 
 <Layout title="Year 8 to 9 Admission | IIP">
   <Admission title="Year 8 to 9 Admission" active="year-8_to_9" link="">
-    <div>
+    <div class="flex gap-x-11">
+      <!--First column -->
+          <div class="flex-[0.8] ml-1 mt-10">
+              <!--First box-->
+                <div class="rounded-xl ml-5 bg-gray-300 ">
+                    <ul class="ml-9 list-disc p-7">
+                      <li class="mb-5">
+                        {t("admission_year_1-7:requirement.text-1")}
+                      </li>
+                      <ul class="ml-9 list-decimal"></ul>
+                      <li class="mb-2">
+                        {t("admission_year_1-7:requirement.text-2")}
+                      </li>
+                    </ul>
+                </div>
+              <!--First box-->
+              <!--second box-->
+                <div class="rounded-xl ml-5 bg-gray-300 mt-9">
+                           <p class="ml-4">{t("admission_year_1-7:about-year_1-7.text-1")}</p>
+                            <p class="ml-4">
+                              {t("admission_year_1-7:about-year_1-7.text-2")}
+                            </p>
+                            <p class="ml-4">{t("admission_year_1-7:about-year_1-7.text-3")}</p>
+                            <p class="ml-4">{t("admission_year_1-7:about-year_1-7.text-4")}</p>
+                            <p class="ml-4">{t("admission_year_1-7:about-year_1-7.text-5")}</p>
+                </div>
+              <!--second box-->
+          </div>
+      <!--First column -->
+            <!--Second column -->  
+            <div class="flex-1 mt-10">
+              <img
+              src="/images/logo.png"
+              alt=""
+              class="hidden md:block h-full object-cover "
+            />
+            </div>
+            <!--Second column -->
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div>
       <div class="ml-5 mt-5 flex gap-x-11 md:mt-12">
         <div class="flex-[0.7]">
-          <!--first box-->
+          first box
           <div class="">
             <div
               class="ml-0.5 h-1/2 w-[310px] rounded-xl bg-gray-300 md:w-full"
@@ -42,7 +97,7 @@ changeLanguage("my");
               </p>
             </div>
           </div>
-          <!--second box -->
+          second box 
           <div class="mb:ml-4 ml-0.5 mt-8 w-[310px] rounded-xl bg-gray-300 p-7">
             <p class="ml-4">{t("admission_year_8-9:about-year_8-9.text-1")}</p>
             <p class="ml-4">{t("admission_year_8-9:about-year_8-9.text-2")}</p>
@@ -60,6 +115,6 @@ changeLanguage("my");
           />
         </div>
       </div>
-    </div>
+    </div> -->
   </Admission>
 </Layout>

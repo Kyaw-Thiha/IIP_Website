@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import IGCSECurriculum from "@layouts/IGCSECurriculum.astro";
 
@@ -75,18 +75,7 @@ changeLanguage("en");
 
       <div class="ml-8 mt-11 text-4xl md:ml-32">CIE Vs Edexcel</div>
       <div class="mx-8 mt-4">
-        Body text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-        posuere diam id ligula bibendum pulvinar. Quisque scelerisque, turpis
-        vestibulum rhoncus laoreet, lorem mauris convallis felis, quis interdum
-        massa justo egestas enim. Pellentesque ut lacinia enim. Duis ex erat,
-        placerat eu fermentum vehicula, feugiat quis erat. Aenean semper turpis
-        nec blandit facilisis. Sed dolor libero, scelerisque sed odio nec,
-        varius fringilla diam. Phasellus venenatis nec velit sed hendrerit.
-        Donec fermentum dui ac mi bibendum viverra. Sed consequat aliquam
-        aliquet. Pellentesque posuere nunc ut justo sodales, sit amet aliquam
-        justo tincidunt. Donec eu nisl velit. Nullam euismod est lectus, et
-        dictum mauris luctus sed. Duis non porta purus. Integer non felis ac mi
-        gravida accumsan nec eu sem.
+        {t("curriculum_ig_path:para.text-1")}
       </div>
       <!-- <div class="mt-2 w-5/6 text-justify text-xl">
   

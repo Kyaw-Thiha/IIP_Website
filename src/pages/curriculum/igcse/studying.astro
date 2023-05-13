@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import IGCSECurriculum from "@layouts/IGCSECurriculum.astro";
 import Link from "@components/Common/Link.astro";
@@ -14,7 +14,9 @@ changeLanguage("en");
     link="/curriculum/igcse/apply"
   >
     <!--Student life -->
-    <div class="ml-8 mt-11 text-3xl md:ml-32">Student life</div>
+    <div class="ml-8 mt-11 text-3xl md:ml-32">
+      {t("curriculum_ig_study:topic.title-1")}
+    </div>
     <div
       class="mt-5 w-5/6 md:w-1/2"
       style="margin-left:auto; margin-right:auto;"
@@ -25,65 +27,56 @@ changeLanguage("en");
       class="mb-2 mt-5 w-5/6 text-justify text-xl"
       style="margin-left:auto; margin-right:auto;"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere diam
-      id ligula bibendum pulvinar. Quisque scelerisque, turpis vestibulum
-      rhoncus laoreet, lorem mauris convallis felis, quis interdum massa justo
-      egestas enim. Pellentesque ut lacinia enim.nean semper turpis nec blandit
-      facilisis. Sed dolor libero, scelerisque sed odio nec, varius fringilla
-      diam. Phasellus venenatis nec velit sed hendrerit. Donec fermentum dui ac
-      mi bibendum viverra. Sed consequat aliquam aliquet. Pellentesque posuere
-      nunc ut justo sodales, sit amet aliquam justo tincidunt. Donec eu nisl
-      velit.
+      {t("curriculum_ig_study:Para.body-1")}
     </div>
-    <Link class="ml-32 text-blue-600" href="/images">See More Images</Link>
+    <Link class="ml-32 text-blue-600" href="/images">
+      {t("curriculum_ig_study:topic.link")}
+    </Link>
 
     <!--Past Papers -->
-    <div class="mb-9 ml-8 mt-11 text-4xl md:ml-32">Past Papers</div>
+    <div class="mb-9 ml-8 mt-11 text-4xl md:ml-32">
+      {t("curriculum_ig_study:topic.title-2")}
+    </div>
     <div
       class="mt-5 w-5/6 text-justify text-xl"
       style="margin-left:auto; margin-right:auto;"
     >
-      Our curriculum is heavily past-paper centric. In contrast to the normal
-      after-the-syllabus past paper preparation, we expose our students to
-      difficult past exam questions while going through lessons in the syllabus
-      in parallel. This allows students to develop both the theoretical
-      knowledge and practical techniques needed to tackle any standardized exam.
+      {t("curriculum_ig_study:Para.body-2")}
     </div>
     <!--Weekly test -->
 
-    <div class="mb-9 ml-8 mt-11 text-4xl md:ml-32">Weekly tests</div>
+    <div class="mb-9 ml-8 mt-11 text-4xl md:ml-32">
+      {t("curriculum_ig_study:topic.title-3")}
+    </div>
     <div
       class="mt-5 w-5/6 text-justify text-xl"
       style="margin-left:auto; margin-right:auto;"
     >
-      Every week, we encourage students to sit a chapter end test for each of
-      their subjects. This acts as revision for the students and as a summative
-      assessment for the teachers.
+      {t("curriculum_ig_study:Para.body-3")}
     </div>
 
     <!--Midterm and final Exams -->
 
-    <div class="mb-9 ml-8 mt-11 text-4xl md:ml-32">Midterm and Final Exams</div>
+    <div class="mb-9 ml-8 mt-11 text-4xl md:ml-32">
+      {t("curriculum_ig_study:topic.title-4")}
+    </div>
     <div
       class="mt-5 w-5/6 text-justify text-xl"
       style="margin-left:auto; margin-right:auto;"
     >
-      Midterm exams are conducted halfway (or at times, one-third) through the
-      course and Final exams at the end of the year. These validate the academic
-      performances of students while also identifying those in need of an extra
-      push in studying.
+      {t("curriculum_ig_study:Para.body-4")}
     </div>
 
     <!--Guide -->
 
-    <div class="mb-9 ml-8 mt-11 text-4xl md:ml-32">Guide</div>
+    <div class="mb-9 ml-8 mt-11 text-4xl md:ml-32">
+      {t("curriculum_ig_study:topic.title-5")}
+    </div>
     <div
       class="mt-5 w-5/6 text-justify text-xl"
       style="margin-left:auto; margin-right:auto;"
     >
-      We offer students struggling in their academics personalized classes,
-      taught by none other than their subject teachers and graduates of IIP that
-      completed their levels with flying grades.
+      {t("curriculum_ig_study:Para.body-5")}
     </div>
   </IGCSECurriculum>
 </Layout>

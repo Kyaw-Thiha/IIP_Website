@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import Button from "@components/Common/Button.astro";
 import Link from "@components/Common/Link.astro";
@@ -28,7 +28,7 @@ changeLanguage("en");
         <h2
           class="mb-12 mt-8 text-center text-4xl leading-loose text-primary md:mb-24 md:mt-12 md:text-[80px]"
         >
-          So, What are you waiting for?
+          {t("curriculum_ig_apply:sentence.text-1")}
         </h2>
 
         <Button
@@ -43,13 +43,13 @@ changeLanguage("en");
       <h1 class="text-3xl font-semibold">Related Links</h1>
       <div class="mt-5 flex flex-col gap-4 text-[20px]">
         <Link class="text-blue-700 hover:text-secondary" href="CIE credited">
-          Is the school CIE credited?
+          {t("curriculum_ig_apply:sentence.text-2")}
         </Link>
         <Link class="text-blue-700 hover:text-secondary" href="class size">
-          What is the class size?
+          {t("curriculum_ig_apply:sentence.text-3")}
         </Link>
         <Link class="text-blue-700 hover:text-secondary" href="previous-grades">
-          Are online class available?
+          {t("curriculum_ig_apply:sentence.text-4")}
         </Link>
       </div>
     </div>

@@ -14,6 +14,9 @@ export default {
     "admission_year_1-7",
     "admission_year_8-9",
     "curriculum_ig_over",
+    "curriculum_ig_study",
+    "curriculum_ig_path",
+    "curriculum_ig_apply",
   ],
   defaultNamespace: "common",
 };
