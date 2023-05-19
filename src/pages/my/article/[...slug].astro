@@ -1,0 +1,21 @@
+---
+import { changeLanguage } from "i18next";
+export const prerender = true;
+import { getCollection } from "astro:content";
+
+changeLanguage("my");
+
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+    const articleEntries = await getCollection("article");
+    return articleEntries.map((article) => ({
+        params: { slug: article.slug },
+        props: { entry: article },
+    }));
+}
+// 2. When it's time to render, you can get the entry directly from the prop
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Content />
