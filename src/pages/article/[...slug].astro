@@ -7,26 +7,32 @@ import Layout from "@layouts/Layout.astro";
 changeLanguage("en");
 
 interface Props {
-    entry: {
-        id: string;
-        slug: string;
-        body: string;
-        collection: string;
-        data: {
-            title: string;
-            relatedLinks: string[];
-            lastUpdated: Date;
-        };
-        render: Function;
+  entry: {
+    id: string;
+    slug: string;
+    body: string;
+    collection: string;
+    data: {
+      title: string;
+      relatedLinks: relatedLinksType[];
+      lastUpdated: Date;
     };
+    render: Function;
+  };
 }
+
+interface relatedLinksType {
+  text: string;
+  path: string;
+}
+
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
-    const articleEntries = await getCollection("article");
-    return articleEntries.map((article) => ({
-        params: { slug: article.slug },
-        props: { entry: article },
-    }));
+  const articleEntries = await getCollection("article");
+  return articleEntries.map((article) => ({
+    params: { slug: article.slug },
+    props: { entry: article },
+  }));
 }
 // 2. When it's time to render, you can get the entry directly from the prop
 const { entry } = Astro.props;
@@ -43,6 +49,23 @@ const { Content } = await entry.render();
         </p>
       </div>
       <Content />
+      <div class="mt-8 md:mt-12">
+        <h2>Related Links</h2>
+        <div class="mt-4 flex flex-col gap-2">
+          {
+            entry.data.relatedLinks.map((link) => {
+              return (
+                <a
+                  href={link.path}
+                  class="text-blue-700 no-underline hover:underline active:brightness-75"
+                >
+                  {link.text}
+                </a>
+              );
+            })
+          }
+        </div>
+      </div>
     </article>
   </main>
 </Layout>

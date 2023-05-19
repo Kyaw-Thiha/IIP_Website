@@ -1,7 +1,7 @@
 ---
-title: "[Subjects that would help when taking a business major"
+title: "Business Major"
 lastUpdated: "2023-05-19"
-relatedLinks: [What should I do after IGCSE?]
+relatedLinks: [{ text: "What should I do after IGCSE?", path: "/articles" }]
 # You can look at markdown examples at
 # https://www.markdownguide.org/basic-syntax/
 ---

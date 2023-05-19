@@ -5,7 +5,9 @@ const articleCollection = defineCollection({
   // type: "content",
   schema: z.object({
     title: z.string(),
-    relatedLinks: z.array(z.string()),
+    relatedLinks: z
+      .array(z.object({ text: z.string(), path: z.string() }))
+      .optional(),
     // You can also transform a date string (e.g. "2022-07-08") to a Date object
     lastUpdated: z.string().transform((str) => new Date(str)),
     image: z.string().optional(),

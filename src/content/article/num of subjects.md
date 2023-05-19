@@ -1,7 +1,7 @@
 ---
 title: "How many subjects do I need?"
 lastUpdated: "2023-05-19"
-relatedLinks: [What should I do after IGCSE?]
+relatedLinks: []
 # You can look at markdown examples at
 # https://www.markdownguide.org/basic-syntax/
 ---

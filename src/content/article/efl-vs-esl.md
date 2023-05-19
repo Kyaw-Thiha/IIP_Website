@@ -1,7 +1,7 @@
 ---
 title: "EFL vs ESL"
 lastUpdated: "2023-05-19"
-relatedLinks: [You might want to know more about Computer Science vs ICT]
+relatedLinks: []
 # You can look at markdown examples at
 # https://www.markdownguide.org/basic-syntax/
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Example"
 lastUpdated: "2023-05-19"
-relatedLinks: [What's the difference between ICT and Computer Science?]
+relatedLinks: []
 # You can look at markdown examples at
 # https://www.markdownguide.org/basic-syntax/
 ---

@@ -1,7 +1,7 @@
 ---
 title: "What subjects do I need for medicine?"
 lastUpdated: "2023-05-19"
-relatedLinks: [Subjects that would help when taking a business major]
+relatedLinks: []
 # You can look at markdown examples at
 # https://www.markdownguide.org/basic-syntax/
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Shuold I do foundation or alevel?"
 lastUpdated: "2023-05-19"
-relatedLinks: [What subjects do I need for medicine?]
+relatedLinks: []
 # You can look at markdown examples at
 # https://www.markdownguide.org/basic-syntax/
 ---

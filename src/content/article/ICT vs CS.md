@@ -1,7 +1,7 @@
 ---
 title: "ICT vs CS"
 lastUpdated: "2023-05-19"
-relatedLinks: [How does economics differ from business?]
+relatedLinks: []
 # You can look at markdown examples at
 # https://www.markdownguide.org/basic-syntax/
 ---
