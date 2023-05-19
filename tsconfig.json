@@ -4,15 +4,11 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@assets/*": [
-        "src/assets/*"
-      ]
+      "@server/*": ["src/server/*"],
+      "@client/*": ["src/client/*"],
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@assets/*": ["src/assets/*"]
     },
     "jsxImportSource": "react"
   }

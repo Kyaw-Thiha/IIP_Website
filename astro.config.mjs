@@ -9,12 +9,20 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
+  output: "server",
   integrations: [tailwind(), astroI18next(), sitemap(), vue(), react()],
-  site: import.meta.env.DEV ? "http://localhost:3000" : "https://www.my-site.dev",
+  site: import.meta.env.DEV
+    ? "http://localhost:3000"
+    : "https://www.my-site.dev",
+  vite: {
+    define: {
+      "process.env.NODE_ENV": `'${process.env.NODE_ENV}'`,
+    },
+  },
   experimental: {
-    assets: true
+    assets: true,
   },
   image: {
-    service: sharpImageService()
-  }
+    service: sharpImageService(),
+  },
 });

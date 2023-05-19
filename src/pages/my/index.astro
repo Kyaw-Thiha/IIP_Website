@@ -28,6 +28,14 @@ changeLanguage("my");
     </div>
   </main>
 </Layout>
+<script>
+  import { trpcAstro } from "@client/index";
+
+  const data = await trpcAstro.igcseClass.getAll.query(
+    undefined // no input
+  );
+  console.log(data);
+</script>
 
 <style>
   main {
