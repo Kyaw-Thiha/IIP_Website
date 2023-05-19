@@ -6,6 +6,8 @@ const articleCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     relatedLinks: z.array(z.string()),
+    // You can also transform a date string (e.g. "2022-07-08") to a Date object
+    lastUpdated: z.string().transform((str) => new Date(str)),
     image: z.string().optional(),
     imageAlt: z.string().optional(),
   }),
