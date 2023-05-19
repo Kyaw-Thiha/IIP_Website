@@ -12,6 +12,10 @@ module.exports = {
         primary: "#181F4B",
         secondary: "#F29023",
         background: "#F3F1EC",
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
         // secondary: {
         //   100: "#e8810e",
         //   200: "#cb710c",
