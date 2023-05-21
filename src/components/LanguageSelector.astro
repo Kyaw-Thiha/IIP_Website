@@ -49,7 +49,7 @@
 
         //Adding in buffer time to allow smooth transition
         setTimeout(() => {
-          location.assign(`${domain}/${myanmarLanguageCode}${route}`); //Changing the route
+          location.replace(`${domain}/${myanmarLanguageCode}${route}`); //Changing the route
         }, 250);
       }
     } else {
@@ -72,7 +72,7 @@
 
         //Adding in buffer time to allow smooth transition
         setTimeout(() => {
-          location.assign(`${domain}${newRoute}`); //Changing the route
+          location.replace(`${domain}${newRoute}`); //Changing the route
         }, 250);
       }
     }
