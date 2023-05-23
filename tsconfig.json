@@ -8,7 +8,8 @@
       "@client/*": ["src/client/*"],
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@assets/*": ["src/assets/*"]
+      "@assets/*": ["src/assets/*"],
+      "@helpers/*": ["src/helpers/*"]
     },
     "jsxImportSource": "react"
   }
