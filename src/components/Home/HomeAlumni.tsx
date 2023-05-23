@@ -2,19 +2,32 @@ import { useEffect, useState } from "react";
 import {
   IGCSEAlumniInterface,
   fetchIGCSEAlumniLatestTopThree,
-  getRandomImage,
 } from "@helpers/igcseAlumni";
+import { getRandomImage, getShortGrades } from "@helpers/alumni";
+import {
+  ALevelAlumniInterface,
+  fetchALevelAlumniLatestTopThree,
+} from "@helpers/aLevelAlumni";
 
 function HomeAlumni() {
   const [igcseAlumni, setIGCSEAlumni] = useState([] as IGCSEAlumniInterface[]);
+  const [aLevelAlumni, setALevelAlumni] = useState(
+    [] as ALevelAlumniInterface[]
+  );
 
   useEffect(() => {
     fetchIGCSE();
+    fetchALevel();
   }, []);
 
   const fetchIGCSE = async () => {
     const igcseData = await fetchIGCSEAlumniLatestTopThree();
     setIGCSEAlumni(igcseData as IGCSEAlumniInterface[]);
+  };
+
+  const fetchALevel = async () => {
+    const aLevelData = await fetchALevelAlumniLatestTopThree();
+    setALevelAlumni(aLevelData as ALevelAlumniInterface[]);
   };
 
   return (
@@ -48,12 +61,79 @@ function HomeAlumni() {
                   height={300}
                 />
               )}
+              <h4 className="mt-2 text-center text-lg font-medium">
+                {getShortGrades({
+                  efl: alumni.efl,
+                  esl: alumni.esl,
+                  emaths: alumni.emaths,
+                  amaths: alumni.amaths,
+                  chemistry: alumni.chemistry,
+                  physics: alumni.physics,
+                  biology: alumni.biology,
+                  ict: alumni.ict,
+                  cs: alumni.cs,
+                  business: alumni.business,
+                  accounting: alumni.accounting,
+                  economics: alumni.economics,
+                  history: alumni.history,
+                  geography: alumni.geography,
+                  psychology: alumni.psychology,
+                })}
+              </h4>
             </div>
           );
         })}
       </div>
 
-      <div className="mx-4 mt-8 text-lg md:flex md:justify-center">
+      <h2 className="mb-2 mt-32 text-center text-xl md:mb-8 md:text-3xl">
+        A Level
+      </h2>
+      <div className="mx-4 flex flex-col items-center justify-center gap-4 md:mx-8 md:flex-row md:gap-12">
+        {aLevelAlumni.map((alumni) => {
+          return (
+            <div key={alumni.id}>
+              <h3 className="mb-2 text-center text-lg text-muted-foreground md:mb-4 md:text-2xl">
+                {alumni.name}
+              </h3>
+              {alumni.image == "" ? (
+                <img
+                  src={getRandomImage(alumni.gender)}
+                  alt={`Image of ${alumni.name}`}
+                  width={300}
+                  height={300}
+                />
+              ) : (
+                <img
+                  src={alumni.image}
+                  alt={`Image of ${alumni.name}`}
+                  width={300}
+                  height={300}
+                />
+              )}
+              <h4 className="mt-2 text-center text-lg font-medium">
+                {getShortGrades({
+                  efl: alumni.english,
+                  emaths: alumni.pureMaths,
+                  amaths: alumni.furtherMaths,
+                  chemistry: alumni.chemistry,
+                  physics: alumni.physics,
+                  biology: alumni.biology,
+                  ict: alumni.it,
+                  cs: alumni.cs,
+                  business: alumni.business,
+                  accounting: alumni.accounting,
+                  economics: alumni.economics,
+                  history: alumni.history,
+                  geography: alumni.geography,
+                  psychology: alumni.psychology,
+                })}
+              </h4>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mx-4 mt-4 text-lg md:mt-12 md:flex md:justify-center">
         <a href="/alumni" className="text-blue-700 hover:underline">
           See All
         </a>
