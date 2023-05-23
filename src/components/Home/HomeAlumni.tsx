@@ -36,7 +36,7 @@ function HomeAlumni() {
         Alumni
       </h2>
 
-      <h2 className="mb-2 mt-4 text-center text-xl md:mb-8 md:text-3xl">
+      <h2 className="mb-2 mt-4 text-center text-xl font-medium md:mb-8 md:text-3xl md:font-medium">
         IGCSE
       </h2>
       <div className="mx-4 flex flex-col items-center justify-center gap-4 md:mx-8 md:flex-row md:gap-12">
@@ -85,7 +85,7 @@ function HomeAlumni() {
         })}
       </div>
 
-      <h2 className="mb-2 mt-32 text-center text-xl md:mb-8 md:text-3xl">
+      <h2 className="mb-2 mt-32 text-center text-xl font-medium md:mb-8 md:text-3xl md:font-medium">
         A Level
       </h2>
       <div className="mx-4 flex flex-col items-center justify-center gap-4 md:mx-8 md:flex-row md:gap-12">
