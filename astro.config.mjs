@@ -8,7 +8,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
+  output: "static",
   integrations: [tailwind(), astroI18next(), sitemap(), vue(), react()],
   site: import.meta.env.DEV
     ? "http://localhost:3000"
