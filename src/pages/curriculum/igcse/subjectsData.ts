@@ -1,9 +1,11 @@
 export interface Major {
   icon: string;
-  name: majorNames;
+  name?: majorNames;
   coreSubjects: subjects[];
   optionalSubjects: subjects[];
 }
+
+// export type MajorKey = keyof Major;
 
 export type majorNames =
   | "Medical"
