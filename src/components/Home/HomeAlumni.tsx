@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
-import { Image } from "astro:assets";
-// import AlumniBoy1 from "@assets/alumni/AlumniBoy-1.png";
-// import AlumniBoy2 from "@assets/alumni/AlumniBoy-2.png";
-// import AlumniBoy3 from "@assets/alumni/AlumniBoy-3.png";
-// import AlumniGirl1 from "@assets/alumni/AlumniGirl-1.png";
-// import AlumniGirl2 from "@assets/alumni/AlumniGirl-2.png";
-// import AlumniGirl3 from "@assets/alumni/AlumniGirl-3.png";
+// import { Image } from "astro:assets";
+import AlumniBoy1 from "@assets/alumni/AlumniBoy-1.png";
+import AlumniBoy2 from "@assets/alumni/AlumniBoy-2.png";
+import AlumniBoy3 from "@assets/alumni/AlumniBoy-3.png";
+import AlumniGirl1 from "@assets/alumni/AlumniGirl-1.png";
+import AlumniGirl2 from "@assets/alumni/AlumniGirl-2.png";
+import AlumniGirl3 from "@assets/alumni/AlumniGirl-3.png";
 
-interface AlumniInterface {
+interface IGCSEAlumniInterface {
   id: string;
   name: string;
   image: string;
+  gender: "Male" | "Female";
   esl: number;
   efl: number;
   emaths: number;
@@ -30,68 +31,59 @@ interface AlumniInterface {
   extraSubjectsGrades: number[] | undefined;
 }
 
-const HomeAlumni: React.FC = () => {
-  const [data, setData] = useState([] as AlumniInterface[]);
+function HomeAlumni() {
+  const [igcseAlumni, setIGCSEAlumni] = useState([] as IGCSEAlumniInterface[]);
 
   useEffect(() => {
+    console.log("hi");
     fetchData();
   }, []);
 
   const fetchData = async () => {
+    console.log("hello");
     try {
       const response = await fetch(
         "https://iip-admin-website.vercel.app/api/igcseClass/getLatestTopThree"
       );
       const jsonData = await response.json();
-      setData(jsonData[0].alumni);
-
-      console.log(jsonData);
+      setIGCSEAlumni(jsonData[0].alumni);
     } catch (error) {
       console.log("Error fetching data:", error);
     }
   };
 
-  // const getRandomImage = () => {
-  //   const images = [
-  //     AlumniBoy1,
-  //     AlumniBoy2,
-  //     AlumniBoy3,
-  //     AlumniGirl1,
-  //     AlumniGirl2,
-  //     AlumniGirl3,
-  //   ];
+  const getRandomImage = (gender: string) => {
+    const boyImages = [AlumniBoy1.src, AlumniBoy2.src, AlumniBoy3.src];
+    const girlImages = [AlumniGirl1.src, AlumniGirl2.src, AlumniGirl3.src];
 
-  //   return images[Math.floor(Math.random() * images.length)];
-  // };
+    if (gender == "Male") {
+      return boyImages[Math.floor(Math.random() * boyImages.length)];
+    } else {
+      return girlImages[Math.floor(Math.random() * girlImages.length)];
+    }
+  };
 
   return (
     <section className="mb-8 min-h-[40vh] md:mb-0">
       <h2 className="mb-4 text-center text-4xl font-bold leading-normal text-secondary md:mb-12 md:text-6xl">
         Alumni
       </h2>
-      <div className="mx-4 flex flex-col items-center justify-center gap-4 md:mx-8 md:flex-row md:gap-8">
-        {/* <div className="alumni-image">
-          <img src="/images/logo.png" />
-        </div>
-        <div className="alumni-image text-center">
-          <img src="/images/logo.png" />
-        </div>
-        <div className="alumni-image text-center">
-          <img src="/images/logo.png" />
-        </div> */}
-        {data.map((alumni) => {
+      <div className="mx-4 flex flex-col items-center justify-center gap-4 md:mx-8 md:flex-row md:gap-12">
+        {igcseAlumni.map((alumni) => {
           return (
-            <div>
-              {alumni.name}
+            <div key={alumni.id}>
+              <h3 className="mb-2 text-center text-lg md:mb-4 md:text-2xl">
+                {alumni.name}
+              </h3>
               {alumni.image == "" ? (
-                <Image
-                  src={alumni.image}
+                <img
+                  src={getRandomImage(alumni.gender)}
                   alt={`Image of ${alumni.name}`}
                   width={300}
                   height={300}
                 />
               ) : (
-                <Image
+                <img
                   src={alumni.image}
                   alt={`Image of ${alumni.name}`}
                   width={300}
@@ -109,6 +101,6 @@ const HomeAlumni: React.FC = () => {
       </div>
     </section>
   );
-};
+}
 
 export default HomeAlumni;
