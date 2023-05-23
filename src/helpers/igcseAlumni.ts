@@ -1,21 +1,3 @@
-import AlumniBoy1 from "@assets/alumni/AlumniBoy-1.png";
-import AlumniBoy2 from "@assets/alumni/AlumniBoy-2.png";
-import AlumniBoy3 from "@assets/alumni/AlumniBoy-3.png";
-import AlumniGirl1 from "@assets/alumni/AlumniGirl-1.png";
-import AlumniGirl2 from "@assets/alumni/AlumniGirl-2.png";
-import AlumniGirl3 from "@assets/alumni/AlumniGirl-3.png";
-
-export const getRandomImage = (gender: string) => {
-  const boyImages = [AlumniBoy1.src, AlumniBoy2.src, AlumniBoy3.src];
-  const girlImages = [AlumniGirl1.src, AlumniGirl2.src, AlumniGirl3.src];
-
-  if (gender == "Male") {
-    return boyImages[Math.floor(Math.random() * boyImages.length)];
-  } else {
-    return girlImages[Math.floor(Math.random() * girlImages.length)];
-  }
-};
-
 export interface IGCSEAlumniInterface {
   id: string;
   name: string;
