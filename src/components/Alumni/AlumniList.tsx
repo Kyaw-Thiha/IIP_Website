@@ -3,6 +3,7 @@ import { Input } from "@components/ui/input";
 
 import { SearchIcon, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 import {
   IGCSEAlumniInterface,
   IGCSEClassInterface,
@@ -31,6 +32,10 @@ import {
 import { getRandomImage, getShortGrades } from "@helpers/alumni";
 
 function AlumniList() {
+  // Variable for auto animating
+  const [parent, enableAnimation] = useAutoAnimate();
+
+  // Variales used to query for alumni
   const [curriculum, setCurriculum] = useState("IGCSE" as "IGCSE" | "A-Levels");
   const [classes, setClasses] = useState(
     [] as IGCSEClassInterface[] | ALevelClassInterface[]
@@ -39,6 +44,7 @@ function AlumniList() {
   const [classSeries, setClassSeries] = useState(
     "May/Jun" as IGCSESeriesType | ALevelSeriesType
   );
+  // Storing the currently rendered alumni
   const [alumni, setAlumni] = useState(
     [] as IGCSEAlumniInterface[] | ALevelAlumniInterface[]
   );
@@ -46,6 +52,7 @@ function AlumniList() {
   const [prevAlumni, setPrevAlumni] = useState(
     [] as IGCSEAlumniInterface[] | ALevelAlumniInterface[]
   );
+  // Used to define whether or not user is searching
   const [isSearching, setIsSearching] = useState(false);
 
   const [searchText, setSearchText] = useState("");
@@ -192,7 +199,7 @@ function AlumniList() {
         })}
       </div>
 
-      <div className="mt-4">
+      <div className="mt-4" ref={parent}>
         {alumni.map((alumni) => {
           return (
             <div key={alumni.id}>
