@@ -12,6 +12,7 @@ export interface IGCSEAlumniInterface {
   gender: "Male" | "Female";
   esl: number;
   efl: number;
+  englishLiterature: number;
   emaths: number;
   amaths: number;
   chemistry: number;

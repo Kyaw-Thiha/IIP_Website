@@ -65,6 +65,7 @@ function HomeAlumni() {
                 {getShortGrades({
                   efl: alumni.efl,
                   esl: alumni.esl,
+                  englishLiterature: alumni.englishLiterature,
                   emaths: alumni.emaths,
                   amaths: alumni.amaths,
                   chemistry: alumni.chemistry,
@@ -112,7 +113,7 @@ function HomeAlumni() {
               )}
               <h4 className="mt-2 text-center text-lg font-medium">
                 {getShortGrades({
-                  efl: alumni.english,
+                  english: alumni.english,
                   emaths: alumni.pureMaths,
                   amaths: alumni.furtherMaths,
                   chemistry: alumni.chemistry,
