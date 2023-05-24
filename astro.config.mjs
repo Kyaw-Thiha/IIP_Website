@@ -16,6 +16,9 @@ export default defineConfig({
     define: {
       "process.env.NODE_ENV": `'${process.env.NODE_ENV}'`,
     },
+    ssr: {
+      noExternal: ["@radix-ui/react-slot", "@radix-ui/react-compose-refs"],
+    },
   },
   experimental: {
     assets: true,

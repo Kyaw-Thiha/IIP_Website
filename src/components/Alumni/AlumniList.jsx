@@ -2,7 +2,7 @@ import { Button } from "@components/ui/button";
 import { Input } from "@components/ui/input";
 
 import { SearchIcon } from "lucide-react";
-import "./Alumni.css";
+import "@components/Alumni/Alumni.css";
 
 function AlumniList() {
   return (
