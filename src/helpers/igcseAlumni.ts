@@ -70,3 +70,17 @@ export const fetchIGCSEClassByYearAndSeries = async (
     console.log("Error fetching data:", error);
   }
 };
+
+export const searchIGCSEAlumniByName = async (name: string) => {
+  try {
+    const formattedName = encodeURIComponent(name);
+    const response = await fetch(
+      `https://iip-admin-website.vercel.app/api/igcseAlumni/search?name=${formattedName}`
+    );
+    const jsonData = await response.json();
+
+    return jsonData as IGCSEAlumniInterface[];
+  } catch (error) {
+    console.log("Error fetching data:", error);
+  }
+};
