@@ -29,10 +29,12 @@ export interface IGCSEAlumniInterface {
   extraSubjectsGrades: number[] | undefined;
 }
 
+const apiDomain = "https://iip-admin-website.vercel.app";
+
 export const fetchIGCSEAlumniLatestTopThree = async () => {
   try {
     const response = await fetch(
-      "https://iip-admin-website.vercel.app/api/igcseClass/getLatestTopThree"
+      `${apiDomain}/api/igcseClass/getLatestTopThree`
     );
     const jsonData = await response.json();
 
@@ -44,9 +46,7 @@ export const fetchIGCSEAlumniLatestTopThree = async () => {
 
 export const fetchIGCSEClasses = async () => {
   try {
-    const response = await fetch(
-      "https://iip-admin-website.vercel.app/api/igcseClass/getAll"
-    );
+    const response = await fetch(`${apiDomain}/api/igcseClass/getAll`);
     const jsonData = await response.json();
 
     return jsonData as IGCSEClassInterface;
@@ -61,7 +61,7 @@ export const fetchIGCSEClassByYearAndSeries = async (
 ) => {
   try {
     const response = await fetch(
-      `https://iip-admin-website.vercel.app/api/igcseClass/getByYearAndSeries?year=${year}&series=${series}`
+      `${apiDomain}/api/igcseClass/getByYearAndSeries?year=${year}&series=${series}`
     );
     const jsonData = await response.json();
 
@@ -75,7 +75,7 @@ export const searchIGCSEAlumniByName = async (name: string) => {
   try {
     const formattedName = encodeURIComponent(name);
     const response = await fetch(
-      `https://iip-admin-website.vercel.app/api/igcseAlumni/search?name=${formattedName}`
+      `${apiDomain}/api/igcseAlumni/search?name=${formattedName}`
     );
     const jsonData = await response.json();
 
