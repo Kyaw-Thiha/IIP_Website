@@ -28,13 +28,11 @@ export interface ALevelAlumniInterface {
   extraSubjectsGrades: number[] | undefined;
 }
 
-const apiDomain = "https://iip-admin-website.vercel.app";
+const apiURL = "https://iip-admin-website.vercel.app";
 
 export const fetchALevelAlumniLatestTopThree = async () => {
   try {
-    const response = await fetch(
-      `${apiDomain}/api/aLevelClass/getLatestTopThree`
-    );
+    const response = await fetch(`${apiURL}/api/aLevelClass/getLatestTopThree`);
     const jsonData = await response.json();
 
     return jsonData[0].alumni as ALevelAlumniInterface[];
@@ -45,7 +43,7 @@ export const fetchALevelAlumniLatestTopThree = async () => {
 
 export const fetchALevelClasses = async () => {
   try {
-    const response = await fetch(`${apiDomain}/api/aLevelClass/getAll`);
+    const response = await fetch(`${apiURL}/api/aLevelClass/getAll`);
     const jsonData = await response.json();
 
     return jsonData as ALevelClassInterface;
@@ -60,7 +58,7 @@ export const fetchALevelClassByYearAndSeries = async (
 ) => {
   try {
     const response = await fetch(
-      `${apiDomain}/api/aLevelClass/getByYearAndSeries?year=${year}&series=${series}`
+      `${apiURL}/api/aLevelClass/getByYearAndSeries?year=${year}&series=${series}`
     );
     const jsonData = await response.json();
 
@@ -74,7 +72,7 @@ export const searchALevelAlumniByName = async (name: string) => {
   try {
     const formattedName = encodeURIComponent(name);
     const response = await fetch(
-      `${apiDomain}/api/aLevelAlumni/search?name=${formattedName}`
+      `${apiURL}/api/aLevelAlumni/search?name=${formattedName}`
     );
     const jsonData = await response.json();
 
