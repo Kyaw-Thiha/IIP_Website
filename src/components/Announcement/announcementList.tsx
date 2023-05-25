@@ -49,7 +49,7 @@ function AnnouncementList() {
           return (
             <article
               key={announcement.id}
-              className="grid grid-cols-2 items-center justify-around bg-gray-300 p-4 md:border-l-8 md:border-double md:border-secondary md:p-6 lg:flex-row"
+              className="items-center justify-around bg-gray-300 p-4 md:grid md:grid-cols-2 md:border-l-8 md:border-double md:border-secondary md:p-6 lg:flex-row"
             >
               <div>
                 <h1 className="mb-4 mt-1 p-1 text-center text-3xl font-bold">
@@ -57,7 +57,7 @@ function AnnouncementList() {
                 </h1>
                 <div className="flex items-center justify-center">
                   <img
-                    className="h-1/2 w-1/2"
+                    className="h-full w-full md:h-1/2 md:w-1/2"
                     src={announcement.image}
                     alt={`Image for announcement titled - ${announcement.title}`}
                   />
