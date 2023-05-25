@@ -12,7 +12,12 @@ const { image, name, quote } = Astro.props;
 ---
 
 <div class="p-6">
-  <Image src={image} alt=`Image of ${name}` height={400} />
+  <Image
+    src={image}
+    alt=`Image of ${name}`
+    height={400}
+    class="h-[400px] object-cover object-top"
+  />
   <p class="text-xl font-semibold leading-loose md:text-2xl md:leading-loose">
     {name}
   </p>
