@@ -158,7 +158,7 @@ function AlumniList() {
             <SearchIcon className="ml-2 h-6 w-6" />
           </Button>
         </div>
-        <div className="col-span-1 flex items-center justify-center">
+        <div className="col-span-2 flex items-center justify-center">
           <Button
             onClick={() => setCurriculum("IGCSE")}
             size="lg"
@@ -184,20 +184,39 @@ function AlumniList() {
             A-Levels
           </Button>
         </div>
-        {/* <div></div> */}
       </div>
 
       {/*  */}
 
-      <div className="mt-2 flex flex-row gap-4">
+      <div className="mt-8 grid grid-cols-2 md:mt-2 md:flex md:flex-row md:gap-4">
         {classes.map((batch) => {
           return (
-            <Button key={batch.id} variant="link">
+            <Button
+              key={batch.id}
+              variant="link"
+              onClick={() => {
+                setClassYear(batch.year);
+                setClassSeries(batch.series);
+              }}
+            >
               {batch.series} {batch.year}
             </Button>
           );
         })}
       </div>
+
+      {curriculum == "A-Levels" && classYear == 2023 ? (
+        <div className="mt-8 flex flex-col gap-2">
+          <p className="text-lg">
+            This website was designed with ❤️ by the A-level Team (2021 - 2023).
+          </p>
+          <a href="/our-team" className="text-blue-700 hover:underline">
+            Click this to learn more
+          </a>
+        </div>
+      ) : (
+        <></>
+      )}
 
       <div className="mt-4" ref={parent}>
         {alumni.map((alumni) => {
