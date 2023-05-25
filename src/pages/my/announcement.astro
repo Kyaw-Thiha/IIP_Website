@@ -1,6 +1,7 @@
 ---
 import { changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
+import AnnouncementList from "@components/Announcement/announcementList";
 
 changeLanguage("my");
 ---
@@ -11,52 +12,5 @@ changeLanguage("my");
   >
     Announcements
   </h1>
-  <!--announcement window -->
-  <section class="mb-20 flex flex-col gap-4 md:mx-6 md:mb-32 md:gap-8">
-    <div
-      class="divide-d flex flex-col items-center justify-around bg-gray-300 p-4 md:border-l-8 md:border-double md:border-secondary md:p-6 lg:flex-row"
-    >
-      <div>
-        <h1 class="mb-4 mt-1 p-1 text-center text-3xl font-bold">Title</h1>
-        <div class="flex items-center justify-center">
-          <img class="h-1/2 w-1/2" src="/images/logo.png" alt="" />
-        </div>
-      </div>
-      <article class="mt-8 text-justify lg:w-4/5 lg:p-12">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at
-        ipsam totam consequuntur similique porro voluptate saepe sit aut,
-        inventore optio recusandae quos sunt dolorem sequi, natus, ab
-        dignissimos illo quae. Esse similique alias voluptate enim odit
-        voluptates ipsa fugit neque, reprehenderit odio ea praesentium nam
-        commodi illum nemo, nesciunt nostrum at, dolorum dignissimos
-        necessitatibus quia dolore assumenda. Consectetur tempora nisi iure amet
-        voluptatem tenetur tempore voluptates id nulla sapiente explicabo fugiat
-        unde maxime itaque non, facere quibusdam? ...
-        <a href="#more" class="text-blue-700">Read More</a>
-      </article>
-    </div>
-    <!--announcement window -->
-    <div
-      class="divide-d flex flex-col items-center justify-around bg-gray-300 p-4 md:border-l-8 md:border-double md:border-secondary md:p-6 lg:flex-row"
-    >
-      <div>
-        <h1 class="mb-4 mt-1 p-1 text-center text-3xl font-bold">Title</h1>
-        <div class="flex items-center justify-center">
-          <img class="h-1/2 w-1/2" src="/images/logo.png" alt="" />
-        </div>
-      </div>
-      <article class="mt-8 text-justify lg:w-4/5 lg:p-12">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at
-        ipsam totam consequuntur similique porro voluptate saepe sit aut,
-        inventore optio recusandae quos sunt dolorem sequi, natus, ab
-        dignissimos illo quae. Esse similique alias voluptate enim odit
-        voluptates ipsa fugit neque, reprehenderit odio ea praesentium nam
-        commodi illum nemo, nesciunt nostrum at, dolorum dignissimos
-        necessitatibus quia dolore assumenda. Consectetur tempora nisi iure amet
-        voluptatem tenetur tempore voluptates id nulla sapiente explicabo fugiat
-        unde maxime itaque non, facere quibusdam? ...
-        <a href="#more" class="text-blue-700">Read More</a>
-      </article>
-    </div>
-  </section>
+  <AnnouncementList client:load />
 </Layout>
