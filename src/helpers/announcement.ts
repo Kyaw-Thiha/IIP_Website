@@ -7,6 +7,13 @@ export interface AnnouncementInterface {
   text: string;
 }
 
+export const defaultAnnouncement = {
+  id: "",
+  title: "",
+  image: "",
+  text: "",
+};
+
 export const fetchAnnouncements = async () => {
   try {
     const response = await fetch(`${apiURL}/api/announcement/getAll`);
@@ -18,9 +25,9 @@ export const fetchAnnouncements = async () => {
   }
 };
 
-export const fetchAnnouncementById = async () => {
+export const fetchAnnouncementById = async (id: string) => {
   try {
-    const response = await fetch(`${apiURL}/api/announcement/getById`);
+    const response = await fetch(`${apiURL}/api/announcement/getById?id=${id}`);
     const jsonData = await response.json();
 
     return jsonData as AnnouncementInterface;
