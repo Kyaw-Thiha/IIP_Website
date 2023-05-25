@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 import {
   defaultAnnouncement,
   fetchAnnouncements,
@@ -8,6 +9,9 @@ import type { AnnouncementInterface } from "src/helpers/announcement";
 import Announcement from "@components/Announcement/announcement";
 
 function AnnouncementList() {
+  // Variable for auto animating
+  const [parent, enableAnimation] = useAutoAnimate();
+
   const [announcements, setAnnouncements] = useState(
     [] as AnnouncementInterface[]
   );
@@ -37,7 +41,10 @@ function AnnouncementList() {
 
   if (isList) {
     return (
-      <section className="mb-20 flex flex-col gap-4 md:mx-6 md:mb-32 md:gap-8">
+      <section
+        ref={parent}
+        className="mb-20 flex flex-col gap-4 md:mx-6 md:mb-32 md:gap-8"
+      >
         {announcements.map((announcement) => {
           return (
             <article
