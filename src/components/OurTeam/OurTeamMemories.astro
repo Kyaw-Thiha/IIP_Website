@@ -8,6 +8,7 @@ import OneBigMouth from "@assets/our-team/one_big_mouth.jpg";
 import HtutEating from "@assets/our-team/htut_eating.jpg";
 import SleepyGroupPhoto from "@assets/our-team/sleepy_group_photo.jpg";
 import AnotherSleepyGroupPhoto from "@assets/our-team/another_sleep_group_photo.jpg";
+
 import GroupPhoto from "@assets/our-team/group_photo.jpg";
 import Sleeping from "@assets/our-team/sleeping.jpg";
 
@@ -42,6 +43,9 @@ const images = [
     alt: "Another image of Kevin sleeping and the rest of the class",
     data: AnotherSleepyGroupPhoto,
   },
+];
+
+const secondImages = [
   {
     className: "img7",
     alt: "Class photo at the gym",
@@ -51,6 +55,26 @@ const images = [
     className: "img8",
     alt: "Image of Kevin and Min Thiha Chit sleeping",
     data: Sleeping,
+  },
+  {
+    className: "img3",
+    alt: "Image of One One's mouth through magnifying glass",
+    data: OneBigMouth,
+  },
+  {
+    className: "img4",
+    alt: "Image of Htut Myat Min eating",
+    data: HtutEating,
+  },
+  {
+    className: "img5",
+    alt: "Image of Kevin sleeping and the rest of the class",
+    data: SleepyGroupPhoto,
+  },
+  {
+    className: "img6",
+    alt: "Another image of Kevin sleeping and the rest of the class",
+    data: AnotherSleepyGroupPhoto,
   },
 ];
 
@@ -110,7 +134,7 @@ const chosenImages = getRandomSubset(images, 6);
     <!-- For mobile phones, show list of images -->
     <div class="flex flex-col items-center gap-6 md:hidden">
       {
-        images.map((image, index) => (
+        chosenImages.map((image, index) => (
           <div class={image.className}>
             <Image src={image.data} alt={image.alt} width={300} />
           </div>
