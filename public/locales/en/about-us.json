@@ -31,9 +31,9 @@
   },
   "links": {
     "title": "Related Links",
-    "achievements": "Achievements",
     "alumni": "Alumni",
-    "previous-grades": "Previous Grades",
-    "announcements": "Announcements"
+    "programs": "Programs",
+    "announcements": "Announcements",
+    "admission": "Admission"
   }
 }
