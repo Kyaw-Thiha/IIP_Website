@@ -131,7 +131,7 @@ function AlumniList() {
 
   return (
     <div className="mx-4 mt-12 flex flex-col md:mx-20">
-      <div className="grid w-full grid-cols-2 gap-12 md:grid-cols-4 ">
+      <div className="flex w-full flex-col gap-12 md:grid md:grid-cols-4 ">
         <div className="col-span-2 flex gap-4">
           <Input
             className="h-12"
@@ -184,7 +184,7 @@ function AlumniList() {
             A-Levels
           </Button>
         </div>
-        <div></div>
+        {/* <div></div> */}
       </div>
 
       {/*  */}
@@ -206,15 +206,15 @@ function AlumniList() {
               <Accordion type="single" collapsible>
                 <AccordionItem value="item-1">
                   <AccordionTrigger>
-                    <div className="grid grid-cols-4">
+                    <div className="flex flex-col md:grid md:grid-cols-4">
                       <h4 className="col-span-1 text-left text-lg">
                         {alumni.name}
                       </h4>
-                      <p className="col-span-1">
+                      <p className="col-span-1 hidden md:block ">
                         {curriculum} Class of {classSeries} {classYear}
                       </p>
                       <div></div>
-                      <h4 className="col-span-1 text-center text-lg">
+                      <h4 className="col-span-1 text-left text-lg text-muted-foreground md:text-center md:text-black">
                         {curriculum == "IGCSE"
                           ? getShortGrades({
                               efl: "efl" in alumni ? alumni.efl : 0,
@@ -261,27 +261,27 @@ function AlumniList() {
                     </div>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <div className="grid grid-cols-4">
+                    <div className="flex flex-col md:grid md:grid-cols-4">
                       <div>
                         {alumni.image == "" ? (
                           <img
                             src={getRandomImage(alumni.gender)}
                             alt={`Image of ${alumni.name}`}
-                            width={150}
-                            height={150}
+                            width={200}
+                            height={200}
                           />
                         ) : (
                           <img
                             src={alumni.image}
                             alt={`Image of ${alumni.name}`}
-                            width={150}
-                            height={150}
+                            width={200}
+                            height={200}
                           />
                         )}
                       </div>
                       <div className="col-span-3">
                         <h3 className="text-lg text-secondary">Subjects</h3>
-                        <div className="mt-4 flex gap-4">
+                        <div className="mt-4  grid grid-cols-2 gap-2 md:flex md:gap-4">
                           {curriculum == "IGCSE"
                             ? getLongIGCSEGrades(
                                 alumni as IGCSEAlumniInterface
