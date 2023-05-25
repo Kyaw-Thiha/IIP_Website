@@ -28,7 +28,7 @@ const subjectsList = () => {
                 <button
                   key={major.name}
                   onClick={() => onMajorClick(major?.name ?? "")}
-                  className="flex flex-col items-center justify-center gap-5 rounded-lg bg-primary px-4 py-4 text-white"
+                  className="flex flex-col items-center justify-center gap-5 rounded-lg bg-primary px-4 py-4 text-white hover:bg-primary/90 active:bg-primary/95"
                 >
                   <img
                     src={major.icon}
