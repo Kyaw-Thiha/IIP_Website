@@ -2,45 +2,87 @@
 import { t } from "i18next";
 
 import Image from "@components/Common/Image.astro";
-import image1 from "@assets/our-team/syr-myo-2.png";
-import image2 from "@assets/our-team/syr-myo-2.png";
-import image3 from "@assets/our-team/syr-myo-2.png";
-import image4 from "@assets/our-team/syr-myo-2.png";
-import image5 from "@assets/our-team/syr-myo-2.png";
-import image6 from "@assets/our-team/syr-myo-2.png";
+import WorkingOnThis from "@assets/our-team/working_on_this.jpg";
+import OrangeHelen from "@assets/our-team/orange_helen.jpg";
+import OneBigMouth from "@assets/our-team/one_big_mouth.jpg";
+import HtutEating from "@assets/our-team/htut_eating.jpg";
+import SleepyGroupPhoto from "@assets/our-team/sleepy_group_photo.jpg";
+import AnotherSleepyGroupPhoto from "@assets/our-team/another_sleep_group_photo.jpg";
+import GroupPhoto from "@assets/our-team/group_photo.jpg";
+import Sleeping from "@assets/our-team/sleeping.jpg";
 
 const images = [
   {
     className: "img1",
-    alt: "",
-    data: image1,
+    alt: "Image of Kevin & Min Thiha Chit working on this project",
+    data: WorkingOnThis,
   },
   {
     className: "img2",
-    alt: "",
-    data: image2,
+    alt: "Image of Helen eating orange",
+    data: OrangeHelen,
   },
   {
     className: "img3",
-    alt: "",
-    data: image3,
+    alt: "Image of One One's mouth through magnifying glass",
+    data: OneBigMouth,
   },
   {
     className: "img4",
-    alt: "",
-    data: image4,
+    alt: "Image of Htut Myat Min eating",
+    data: HtutEating,
   },
   {
     className: "img5",
-    alt: "",
-    data: image5,
+    alt: "Image of Kevin sleeping and the rest of the class",
+    data: SleepyGroupPhoto,
   },
   {
     className: "img6",
-    alt: "",
-    data: image6,
+    alt: "Another image of Kevin sleeping and the rest of the class",
+    data: AnotherSleepyGroupPhoto,
+  },
+  {
+    className: "img7",
+    alt: "Class photo at the gym",
+    data: GroupPhoto,
+  },
+  {
+    className: "img8",
+    alt: "Image of Kevin and Min Thiha Chit sleeping",
+    data: Sleeping,
   },
 ];
+
+function getRandomSubset(array: Array<any>, subsetSize: number) {
+  // Perform a shallow copy of the original array
+  const shuffledArray = array.slice();
+  const subset = [];
+  let currentIndex = array.length;
+  let temporaryValue, randomIndex;
+
+  // While there are elements remaining to shuffle
+  while (currentIndex !== 0) {
+    // Pick a remaining element
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // Swap it with the current element
+    temporaryValue = shuffledArray[currentIndex];
+    shuffledArray[currentIndex] = shuffledArray[randomIndex];
+    shuffledArray[randomIndex] = temporaryValue;
+  }
+
+  // Extract the first subsetSize elements
+  for (let i = 0; i < subsetSize; i++) {
+    subset.push(shuffledArray[i]);
+  }
+
+  return subset;
+}
+
+// Randomly choose 6 images out of all images to show to user
+const chosenImages = getRandomSubset(images, 6);
 ---
 
 <div class="mb-20 md:mx-12 md:mb-40">
@@ -51,10 +93,12 @@ const images = [
     <!-- For Desktop/Tablets, show the mosaic -->
     <div class="hidden grid-cols-6 md:grid">
       {
-        images.map((image, index) => (
+        chosenImages.map((image, index) => (
           <div class={image.className}>
             <Image
-              class={index % 2 == 0 ? "rotate-[-20deg]" : "rotate-[20deg]"}
+              class={`${
+                index % 2 == 0 ? "rotate-[-20deg]" : "rotate-[20deg]"
+              } h-[150px] object-cover`}
               src={image.data}
               alt={image.alt}
               width={200}
