@@ -38,8 +38,8 @@ export const fetchAnnouncementById = async (id: string) => {
 
 export const getShortText = (text: string) => {
   const words = text.split(" ");
-  if (words.length > 80) {
-    return `${words.slice(0, 80).join(" ")} ...`;
+  if (words.length > 50) {
+    return `${words.slice(0, 50).join(" ")} ...`;
   } else {
     return text;
   }
