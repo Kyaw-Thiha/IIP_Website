@@ -60,6 +60,7 @@ function HomeAlumni() {
                   alt={`Image of ${alumni.name}`}
                   width={300}
                   height={300}
+                  className="h-[300px] w-[300px] object-cover object-top"
                 />
               ) : (
                 <img
@@ -67,6 +68,7 @@ function HomeAlumni() {
                   alt={`Image of ${alumni.name}`}
                   width={300}
                   height={300}
+                  className="h-[300px] w-[300px] object-cover object-top"
                 />
               )}
               <h4 className="mt-2 text-center text-lg font-medium">

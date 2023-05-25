@@ -269,6 +269,7 @@ function AlumniList() {
                             alt={`Image of ${alumni.name}`}
                             width={200}
                             height={200}
+                            className="h-[200px] w-[200px] object-cover object-top"
                           />
                         ) : (
                           <img
@@ -276,6 +277,7 @@ function AlumniList() {
                             alt={`Image of ${alumni.name}`}
                             width={200}
                             height={200}
+                            className="h-[200px] w-[200px] object-cover object-top"
                           />
                         )}
                       </div>
