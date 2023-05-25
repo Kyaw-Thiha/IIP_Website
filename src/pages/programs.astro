@@ -12,34 +12,34 @@ import ALevelImage from "@assets/graduation_2022.png";
 changeLanguage("en");
 
 interface Program {
-  name: string;
-  text: string;
-  image: ImageMetadata;
-  link: string;
-  reverse: boolean;
+    name: string;
+    text: string;
+    image: ImageMetadata;
+    link: string;
+    reverse: boolean;
 }
 const programs: Program[] = [
-  {
-    name: "IGCSE",
-    text: t("programs:IGCSE.text"),
-    image: IGCSEImage,
-    link: "/curriculum/igcse/overview",
-    reverse: false,
-  },
-  {
-    name: "Year 1-9",
-    text: t("programs:Year-1-To-9.text"),
-    image: Year1To9Image,
-    link: "/curriculum/year-1_to_9/overview",
-    reverse: true,
-  },
-  {
-    name: "A Levels",
-    text: t("programs:A-Level.text"),
-    image: ALevelImage,
-    link: "/curriculum/a-level/overview",
-    reverse: false,
-  },
+    {
+        name: "IGCSE",
+        text: t("programs:IGCSE.text"),
+        image: IGCSEImage,
+        link: "/curriculum/igcse/overview",
+        reverse: false,
+    },
+    {
+        name: "Year 1-9",
+        text: t("programs:Year-1-To-9.text"),
+        image: Year1To9Image,
+        link: "/curriculum/year-1_to_9/overview",
+        reverse: true,
+    },
+    {
+        name: "A Levels",
+        text: t("programs:A-Level.text"),
+        image: ALevelImage,
+        link: "/curriculum/a-level/overview",
+        reverse: false,
+    },
 ];
 ---
 
