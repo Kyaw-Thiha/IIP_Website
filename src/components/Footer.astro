@@ -2,9 +2,7 @@
 import Link from "@components/Common/Link.astro";
 import Image from "@components/Common/Image.astro";
 
-import Logo from "@assets/logo.png";
-import Banner from "@assets/banner.jpg";
-import Graduation from "@assets/graduation_2022.png";
+import LogoTransparent from "@assets/logo_transparent.png";
 ---
 
 <!-- md:block -->
@@ -70,7 +68,8 @@ import Graduation from "@assets/graduation_2022.png";
     </div>
     <div class="iiplogo">
       <div>
-        <img src="/src/assets/logo_transparent.png" alt="" />
+        <!-- <img src="/src/assets/logo_transparent.png" alt="" /> -->
+        <Image src={LogoTransparent} alt="Transparent Logo" />
       </div>
       <!-- <div>
         <Image src={Logo} alt="IIP Logo" width={300} height={300} />
