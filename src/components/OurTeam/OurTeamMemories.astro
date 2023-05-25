@@ -11,6 +11,10 @@ import AnotherSleepyGroupPhoto from "@assets/our-team/another_sleep_group_photo.
 
 import GroupPhoto from "@assets/our-team/group_photo.jpg";
 import Sleeping from "@assets/our-team/sleeping.jpg";
+import GroupPhoto2 from "@assets/our-team/group_photo_2.jpg";
+import GroupPhoto3 from "@assets/our-team/group_photo_3.jpg";
+import GroupPhoto4 from "@assets/our-team/group_photo_4.jpg";
+import GroupPhoto5 from "@assets/our-team/group_photo_5.jpg";
 
 const images = [
   {
@@ -57,84 +61,107 @@ const secondImages = [
     data: Sleeping,
   },
   {
-    className: "img3",
-    alt: "Image of One One's mouth through magnifying glass",
-    data: OneBigMouth,
+    className: "img9",
+    alt: "Group photo at teacher's day",
+    data: GroupPhoto2,
   },
   {
-    className: "img4",
-    alt: "Image of Htut Myat Min eating",
-    data: HtutEating,
+    className: "img10",
+    alt: "Group photo at Hotpot shop",
+    data: GroupPhoto3,
   },
   {
-    className: "img5",
-    alt: "Image of Kevin sleeping and the rest of the class",
-    data: SleepyGroupPhoto,
+    className: "img11",
+    alt: "Group photo at funfair",
+    data: GroupPhoto4,
   },
   {
-    className: "img6",
-    alt: "Another image of Kevin sleeping and the rest of the class",
-    data: AnotherSleepyGroupPhoto,
+    className: "img12",
+    alt: "Group photo at graduation",
+    data: GroupPhoto5,
   },
 ];
 
-function getRandomSubset(array: Array<any>, subsetSize: number) {
-  // Perform a shallow copy of the original array
-  const shuffledArray = array.slice();
-  const subset = [];
-  let currentIndex = array.length;
-  let temporaryValue, randomIndex;
+// function getRandomSubset(array: Array<any>, subsetSize: number) {
+//   // Perform a shallow copy of the original array
+//   const shuffledArray = array.slice();
+//   const subset = [];
+//   let currentIndex = array.length;
+//   let temporaryValue, randomIndex;
 
-  // While there are elements remaining to shuffle
-  while (currentIndex !== 0) {
-    // Pick a remaining element
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
+//   // While there are elements remaining to shuffle
+//   while (currentIndex !== 0) {
+//     // Pick a remaining element
+//     randomIndex = Math.floor(Math.random() * currentIndex);
+//     currentIndex -= 1;
 
-    // Swap it with the current element
-    temporaryValue = shuffledArray[currentIndex];
-    shuffledArray[currentIndex] = shuffledArray[randomIndex];
-    shuffledArray[randomIndex] = temporaryValue;
-  }
+//     // Swap it with the current element
+//     temporaryValue = shuffledArray[currentIndex];
+//     shuffledArray[currentIndex] = shuffledArray[randomIndex];
+//     shuffledArray[randomIndex] = temporaryValue;
+//   }
 
-  // Extract the first subsetSize elements
-  for (let i = 0; i < subsetSize; i++) {
-    subset.push(shuffledArray[i]);
-  }
+//   // Extract the first subsetSize elements
+//   for (let i = 0; i < subsetSize; i++) {
+//     subset.push(shuffledArray[i]);
+//   }
 
-  return subset;
-}
-
-// Randomly choose 6 images out of all images to show to user
-const chosenImages = getRandomSubset(images, 6);
+//   return subset;
+// }
 ---
 
 <div class="mb-20 md:mx-12 md:mb-40">
-  <h3 class="mb-8 mt-12 text-center text-4xl md:mb-16 md:text-6xl">
+  <h3 class="mb-8 mt-20 text-center text-4xl md:mb-16 md:text-6xl">
     {t("our-team:memories.title")}
   </h3>
   <div class="md:px-16">
     <!-- For Desktop/Tablets, show the mosaic -->
-    <div class="hidden grid-cols-6 md:grid">
-      {
-        chosenImages.map((image, index) => (
-          <div class={image.className}>
-            <Image
-              class={`${
-                index % 2 == 0 ? "rotate-[-20deg]" : "rotate-[20deg]"
-              } h-[150px] object-cover`}
-              src={image.data}
-              alt={image.alt}
-              width={200}
-            />
-          </div>
-        ))
-      }
+    <div class="flex flex-col gap-20">
+      <div class="hidden grid-cols-6 md:grid">
+        {
+          images.map((image, index) => (
+            <div class={image.className}>
+              <Image
+                class={`${
+                  index % 2 == 0 ? "rotate-[-20deg]" : "rotate-[20deg]"
+                } h-[150px] object-cover`}
+                src={image.data}
+                alt={image.alt}
+                width={200}
+              />
+            </div>
+          ))
+        }
+      </div>
+      <div class="hidden grid-cols-6 md:grid">
+        {
+          secondImages.map((image, index) => (
+            <div class={image.className}>
+              <Image
+                class={`${
+                  index % 2 == 0 ? "rotate-[-20deg]" : "rotate-[20deg]"
+                } h-[150px] object-cover`}
+                src={image.data}
+                alt={image.alt}
+                width={200}
+              />
+            </div>
+          ))
+        }
+      </div>
     </div>
+
     <!-- For mobile phones, show list of images -->
     <div class="flex flex-col items-center gap-6 md:hidden">
       {
-        chosenImages.map((image, index) => (
+        images.map((image, index) => (
+          <div class={image.className}>
+            <Image src={image.data} alt={image.alt} width={300} />
+          </div>
+        ))
+      }
+      {
+        secondImages.map((image, index) => (
           <div class={image.className}>
             <Image src={image.data} alt={image.alt} width={300} />
           </div>
