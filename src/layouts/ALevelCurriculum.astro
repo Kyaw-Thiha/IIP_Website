@@ -23,10 +23,10 @@ const getLinkClass = (
 
 <!--Nav bar -->
 <div class="flex flex-col">
-  <h2 class="ml-5">{title}</h2>
+  <h2 class="ml-7 md:ml-5">{title}</h2>
 
   <!-- Navigation -->
-  <div class="ml-1 mt-4 flex flex-row">
+  <div class="ml-1 mt-4 hidden flex-row md:flex">
     <div class="ml-4 mr-2 border-r-2 border-black pr-4 text-2xl text-blue-700">
       <Link
         href="/curriculum/a-level/overview"
@@ -69,9 +69,9 @@ const getLinkClass = (
   </div>
 
   <!--Button -->
-  <div class="mt-20 mb-20 flex items-center justify-center justify-self-end">
+  <div class="mb-20 mt-20 flex items-center justify-center justify-self-end">
     <Button
-      class="rounded-2xl py-3 px-40"
+      class="rounded-2xl px-40 py-3"
       href={link}
       label={active == "apply" ? "Apply Now" : "Next"}
     />
