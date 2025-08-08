@@ -1,3 +1,6 @@
+# Website for IIP Internation School
+You can see the the demo version at [https://iip-website.vercel.app/](https://iip-website.vercel.app/)
+
 # Astro Starter Kit: Basics
 
 ```
