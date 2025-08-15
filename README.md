@@ -1,5 +1,8 @@
 # Website for IIP Internation School
-You can see the the demo version at [https://iip-website.vercel.app/](https://iip-website.vercel.app/)
+This is the website of IIP international school.
+- You can see the public website demo at [https://iip-website.vercel.app/](https://iip-website.vercel.app/)
+- You can see the admin website demo at [https://iip-admin-website.vercel.app/](https://iip-admin-website.vercel.app/sign-in?callbackUrl=https%3A%2F%2Fiip-admin-website.vercel.app%2F)
+- The code for admin website can be found at [https://github.com/Kyaw-Thiha/IIP_Admin_Website](https://github.com/Kyaw-Thiha/IIP_Admin_Website)
 
 # Astro Starter Kit: Basics
 
